@@ -1,6 +1,5 @@
-// Criar um programa que calcula a média
-// das notas entre os alunos e envia
-// mensagem do cálculo da média.
+/* Criar um programa que calcula a média
+das notas entre os alunos e envia mensagem do cálculo da média. */
 
 /* Operações de comparação:
 == igual a
@@ -199,3 +198,70 @@ console.log("Resultado da média em Array de objetos: " + (somaNotas / arraydeAl
 //Outra forma de fazer, porém, é mais verbosa e não é dinâmica
 //const mediaArray = (arraydeAlunos[0].nota + arraydeAlunos[1].nota + arraydeAlunos[2].nota) / 3
 //console.log("Resultado da média em Array de objetos: " + mediaArray.toFixed(2))
+
+
+// ### FUNÇÕES E MÉTODOS ###
+
+/* Criar um programa que calcula a média
+das turmas de alunos e envia mensagem do cálculo da média. */
+
+const alunosDaTurmaA = [
+    {
+        nome: "Mayk",
+        nota: 8.7
+    },
+    {
+        nome: "Diego",
+        nota: 9
+    },
+    {
+        nome: "Fulano",
+        nota: 6
+    }
+]
+
+const alunosDaTurmaB = [
+    {
+        nome: "Cleiton",
+        nota: 6
+    },
+    {
+        nome: "Robson",
+        nota: 4
+    },
+    {
+        nome: "Siclano",
+        nota: 5
+    }
+]
+
+//Função para calcular a média
+function calculaMedia(alunos) {
+    let somaNotas = 0;
+
+    for (notaTurma of alunos) {
+        somaNotas += notaTurma.nota
+    }
+
+    return (somaNotas / alunos.length).toFixed(2)
+}
+
+const media1 = calculaMedia(alunosDaTurmaA)
+const media2 = calculaMedia(alunosDaTurmaB)
+
+console.log("Resultado da média da turma A na função: " + media1)
+console.log("Resultado da média da turma B na função: " + media2)
+
+//Função para enviar mensagem
+function enviaMensagem(media, turma) {
+
+    if (media > 5) {
+        console.log(`A média da turma ${turma} foi de ${media}. Parabéns!`) //Com 2 casas decimais
+
+    } else {
+        console.log(`A média da turma ${turma} foi menor ou igual a 5`)
+    }
+}
+
+enviaMensagem(media1, 'Turma A')
+enviaMensagem(media2, 'Turma B')
