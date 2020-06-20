@@ -216,7 +216,7 @@ const alunosDaTurmaA = [
     },
     {
         nome: "Fulano",
-        nota: 6
+        nota: 4
     }
 ]
 
@@ -265,3 +265,34 @@ function enviaMensagem(media, turma) {
 
 enviaMensagem(media1, 'Turma A')
 enviaMensagem(media2, 'Turma B')
+
+
+
+/* Marcar aluno como reprovado se a nota for menor que 5,
+e enviar uma mensagem.
+O atributo de reprivado será inserido via código nos arrays 
+dos alunos da turma A e B */
+
+function marcarComoReprovado(aluno) {
+    aluno.reprovado = false;
+
+    if (aluno.nota < 5) {
+        aluno.reprovado = true;
+    }
+}
+
+function enviarMensagemReprovado(aluno, turma) {
+    if (aluno.reprovado) {
+        console.log(`O aluno ${aluno.nome} da turma ${turma} está reprovado!`)
+    }
+}
+
+function alunosReprovados(alunos, turma) {
+    for (aluno of alunos) {
+        marcarComoReprovado(aluno);
+        enviarMensagemReprovado(aluno, turma);
+    }
+}
+
+alunosReprovados(alunosDaTurmaA, "A")
+alunosReprovados(alunosDaTurmaB, "B")
