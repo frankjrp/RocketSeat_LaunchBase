@@ -16,7 +16,20 @@ const usuarios = [
     }
 ]
 
+/* O método some() testa se ao menos um dos elementos no array passa no teste implementado
+pela função atribuída e retorna um valor true ou false. */
+
 function checaSeUsuarioUsaCSS(usuario) {
+
+    return usuario.tecnologias.some(item => item === "CSS"); //Utilizando o método SOME
+}
+
+//console.log(checaSeUsuarioUsaCSS(usuarios[2]))
+
+
+//### Outra maneira de fazer a função, percorrendo todos os itens do array de tecnologias ###
+
+/* function checaSeUsuarioUsaCSS(usuario) {
     let possuiTec = false;
 
     for (tec of usuario.tecnologias) {
@@ -26,7 +39,7 @@ function checaSeUsuarioUsaCSS(usuario) {
     }
 
     return possuiTec;
-}
+} */
 
 //console.log(checaSeUsuarioUsaCSS(usuarios[2]))
 
@@ -43,13 +56,12 @@ for (user of usuarios) {
 }
 
 
-//Outra forma de fazer seria assim:
+//Outra forma de fazer o for seria assim:
 
 /* for (let i = 0; i < usuarios.length; i++) {
     const usuarioTrabalhaComCSS = checaSeUsuarioUsaCSS(usuarios[i]);
-  
+
     if (usuarioTrabalhaComCSS) {
       console.log(`O usuário ${usuario[i].nome} trabalha com CSS`);
     }
   } */
-  
