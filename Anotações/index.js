@@ -296,3 +296,28 @@ function alunosReprovados(alunos, turma) {
 
 alunosReprovados(alunosDaTurmaA, "A")
 alunosReprovados(alunosDaTurmaB, "B")
+
+
+/* ### Achando o maior valor dentro de um array ###
+Utilizando os métodos REDUCE e Math.max */
+
+const usuarios = [{
+    nome: "João",
+    pontos: [5.8, 7.3, 9.1, 4.9, 7.9]
+},
+{
+    nome: "Maria",
+    pontos: [5.8, 7.3, 9.1, 9.9, 7.9]
+},
+{
+    nome: "Pedro",
+    pontos: [5.9, 8.1, 5.1, 6.9, 7.9]
+}]
+
+for (user of usuarios) {
+    const higherPoint = user.pontos.reduce((a, b) => {
+        return Math.max(a, b);
+    }, 0); //Sempre utilizar um valor inicial para evitar erro na verificação (array vazio).
+
+    console.log(`${user.nome} - Nota máxima: ${higherPoint}`)
+}
