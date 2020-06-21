@@ -19,16 +19,13 @@ const usuarios = [
 ];
 
 function calculaSaldo(receitas, despesas) {
-    let somaReceitas = 0;
-    let somaDespesas = 0;
+    const somaReceitas = receitas.reduce((acc, curr) => {
+        return acc + curr;
+    }, 0);
 
-    for (value of receitas) {
-        somaReceitas += value;
-    }
-
-    for (value of despesas) {
-        somaDespesas += value;
-    }
+    const somaDespesas = despesas.reduce((acc, curr) => {
+        return acc + curr;
+    }, 0);
 
     return (somaReceitas - somaDespesas).toFixed(2);
 }
@@ -41,7 +38,7 @@ for (user of usuarios) {
 
     if (saldo > 0) {
         console.log(`${user.nome} possui saldo POSITIVO de ${saldo}`)
-    }else {
+    } else {
         console.log(`${user.nome} possui saldo NEGATIVO de ${saldo}`)
     }
 }
