@@ -314,10 +314,29 @@ const usuarios = [{
     pontos: [5.9, 8.1, 5.1, 6.9, 7.9]
 }]
 
+let higherPointValues = [];
+
 for (user of usuarios) {
     const higherPoint = user.pontos.reduce((a, b) => {
         return Math.max(a, b);
     }, 0); //Sempre utilizar um valor inicial para evitar erro na verificação (array vazio).
 
-    console.log(`${user.nome} - Nota máxima: ${higherPoint}`)
+    const namePoint = {
+        nome: user.nome,
+        pontuação: higherPoint
+    }
+
+    higherPointValues.push(namePoint);
 }
+
+console.table(higherPointValues);
+
+const higherPoint = higherPointValues.reduce((a, b) => {
+    return Math.max(a, b.pontuação);
+}, 0);
+
+const winnerStudent = higherPointValues.filter((nota) => {
+    return nota.pontuação === higherPoint;
+})
+
+console.table(winnerStudent)
