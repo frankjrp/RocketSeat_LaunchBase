@@ -1,0 +1,74 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: rgba(117, 117, 156, 0.801);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: rgba(117, 117, 156, 0.377);
+    border-bottom: 1px solid rgba(117, 117, 156, 0.836);
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div legend {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div legend#desc {
+    margin-top: 40px;
+    align-items: initial;
+}
+
+header div legend img {
+    border-radius: 50%;
+    height: 70px;
+    border: 2px solid rgba(117, 117, 156, 0.945);
+}
+
+header div legend h1 {
+    color: white;
+    font-size: 28px;
+    padding: 0 32px;
+}
+
+div legend p, ul {
+    text-align: justify;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0 60px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    color: #20202c;
+}
+
+legend#links {
+    margin-top: 20px;
+}
+
+legend#links a {
+    padding: 20px;
+    color: rgba(73, 11, 131, 0.815);
+    text-decoration: none;
+}
+
+legend#links a:hover {
+    color: blanchedalmond;
+    text-decoration: underline;
+    transition: color 400ms;
+}
