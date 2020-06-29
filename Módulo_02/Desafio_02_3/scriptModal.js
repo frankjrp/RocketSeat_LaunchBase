@@ -2,12 +2,21 @@ const modalOverlay = document.querySelector(".modal_overlay");
 const modal = document.querySelector(".modal");
 const cards = document.querySelectorAll(".card");
 
+let view_width = window.matchMedia("(max-width: 900px)");
+
 for (let card of cards) {
     const courseId = card.id;
 
     card.addEventListener("click", () => {
-        modalOverlay.classList.add("active");
-        modalOverlay.querySelector("iframe").src = (`https://rocketseat.com.br/${courseId}`);
+        
+        if (view_width.matches) {
+            window.open(`https://rocketseat.com.br/${courseId}`, '_blank');
+
+        } else {
+            modalOverlay.classList.add("active");
+            modalOverlay.querySelector("iframe").src = (`https://rocketseat.com.br/${courseId}`);
+
+        }        
     })
 }
 
