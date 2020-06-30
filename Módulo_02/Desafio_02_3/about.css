@@ -44,13 +44,14 @@ header div legend img {
     border-radius: 50%;
     height: 70px;
     border: 2px solid var(--color-details);
+    margin: 0 10px;
 }
 
 header div legend h1 {
     color: var(--color-details);
     filter: brightness(115%);
     font-size: 28px;
-    padding: 0 32px;
+    margin: 0 10px;
 }
 
 div legend p, ul {
