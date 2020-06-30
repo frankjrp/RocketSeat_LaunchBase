@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.header-container {
+    width: 940px;
+    margin: 10px auto 0;
+    padding-bottom: 30px;
+}
+
+.header-container nav {
+    display: grid;
+    grid-template-columns: 1fr 0fr 4fr;
+    font-size: 16px;
+    line-height: 19px;
+    gap: 0 30px;
+}
+
+.header-container nav p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.intro {
+    background-color: #FBDFDB;
+    width: 940px;
+    height: 366px;
+    border-radius: 30px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.intro .image-container {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.intro .desc {
+    display: grid;
+    gap: 10px;
+    width: 316px;
+    position: absolute;
+    left: 60px;
+    bottom: 117px;
+}
+
+.intro .desc p#title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.intro .desc p#text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    color: #000000;
+    filter: opacity(70%);
+}
+
+.cards-title {
+    max-width: 940px;
+    margin: 50px auto 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;    
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.cards {
+    max-width: 940px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card .image-container {
+    width: 300px;
+    height: 140px;
+    margin-bottom: 20px;
+}
+
+.card .image-container img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card-content {
+    display: grid;
+    gap: 5px 0;
+}
+
+.card .card-content p#name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+
+}
+
+.card .card-content p#by {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;    
+    line-height: 16px;
+    color: #777777;
+}
