@@ -41,6 +41,7 @@
 
 .card .image-container {
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .card .image-container img {
@@ -83,4 +84,85 @@
     font-size: 14px;
     line-height: 16px;
     margin: 0 auto;
+}
+
+/* === MODAL === */
+
+.modal_overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    max-width: 660px;
+    height: 413px;
+    margin: 0 auto;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.modal .modal_content {
+    margin: 0 auto;
+}
+
+.card-modal .image-container {
+    margin-bottom: 20px;
+}
+
+.card-modal .image-container img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.card-modal .card-content {
+    display: grid;
+    gap: 5px 0;
+    text-align: center;
+}
+
+.card-modal .card-content p#name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+
+}
+
+.card-modal .card-content p#by {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;    
+    line-height: 16px;
+    color: #777777;
+}
+
+.close-modal {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.close-modal P {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #999999;
+    cursor: pointer;
+}
+
+/* === MODAL.ACTIVE */
+
+.modal_overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
