@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>About</title>
+{% endblock head %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/about.css">
+{% endblock style %}
+
+{% block header %}
+
+    <header>
+        <div id="header">
+            <legend>
+                <img src="/assets/logo.jpg" alt="Logotipo Rocketseat">
+                <h1>Rocketseat</h1>
+            </legend>
+
+            <div id="content">
+                <a href="/">Cursos</a>
+            </div>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <div>
+        <legend id="desc">
+            <p>As melhores tecnologias em programação, direto ao ponto e do jeito certo. No meio de tanta informação e da quantidade de ferramentas que surgem todos os dias, você precisa de alguém que te leve na direção certa.<br>
+                <br>Imagine você dominando as mesmas tecnologias adotadas pelos melhores times do mundo, construindo aplicações de alta performance e se destacando entre os maiores programadores.</p>
+            <ul>
+                Principais tecnologias utilizadas:
+                <br>
+                <br>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Nodejs</li>
+                <li>Sqlite</li>
+                <li>Nunjucks</li>
+            </ul>
+        </legend>
+    </div>
+
+    <div>
+        <legend id="links">
+            <a href="https://github.com/rocketseat" target="_blank">Github</a>
+            <a href="https://instagram.com/rocketseat_oficial" target="_blank">Instagram</a>
+            <a href="https://fb.com/rocketseat" target="_blank">Facebook</a>
+        </legend>
+    </div>
+
+{% endblock content%}

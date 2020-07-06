@@ -1,0 +1,91 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>Cursos</title>
+{% endblock head %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/courses.css">
+{% endblock style %}
+
+{% block header %}
+
+    <header>
+        <h1>Cursos oferecidos</h1>
+        <div id="about">
+            <a href="/about">Sobre</a>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <section class="cards">
+
+        <div class="card" id="starter">
+            <div class="card_image">
+                <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/starter.svg" alt="Starter">
+            </div>
+
+            <div class="card_content">
+                <h1>Rocketseat | Starter</h1>
+            </div>
+
+            <div class="card_info">
+                <p>2 módulos</p>
+                <p class="card_price">Curso gratuito</p>
+            </div>
+        </div>
+
+        <div class="card" id="launchbase">
+            <div class="card_image">
+                <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/launchbase.svg" alt="Launchbase">
+            </div>
+
+            <div class="card_content">
+                <h1>Rocketseat | LaunchBase</h1>
+            </div>
+
+            <div class="card_info">
+                <p>8 módulos</p>
+                <p class="card_price">Curso pago</p>
+            </div>
+        </div>
+
+        <div class="card" id="gostack">
+            <div class="card_image">
+                <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/gostack.svg" alt="GoStack">
+            </div>
+
+            <div class="card_content">
+                <h1>Rocketseat | GoStack</h1>
+            </div>
+
+            <div class="card_info">
+                <p>10 módulos</p>
+                <p class="card_price">Curso pago</p>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="modal_overlay">
+        <div class="modal">
+            <img class="maximize_modal" src="https://img.icons8.com/ios/24/000000/maximize-window.png" alt="Maximizar">
+
+            <img class="close_modal" src="https://img.icons8.com/ios/24/000000/close-window.png" alt="Fechar">
+
+            <div class="modal_content">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/scriptModal.js"></script>
+{% endblock script %}
