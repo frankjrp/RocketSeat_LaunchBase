@@ -36,8 +36,11 @@ div legend {
 }
 
 div legend#desc {
-    margin-top: 40px;
+    margin: 40px 0;
     align-items: initial;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
 }
 
 header div legend img {
@@ -58,15 +61,10 @@ div legend p, ul {
     text-align: justify;
     max-width: 450px;
     margin: 0 auto;
-    padding: 0 90px;
     font-size: 18px;
     line-height: 28px;
     font-weight: normal;
     color: black;
-}
-
-legend#links {
-    margin-top: 20px;
 }
 
 legend#links a {

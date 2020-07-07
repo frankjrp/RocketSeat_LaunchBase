@@ -10,17 +10,13 @@
         grid-template-columns: none;
     }
 
-    legend#desc {
-        display: grid;
+    div legend#desc {
+        grid-template-columns: none;
         gap: 60px 0;
     }
 
     header div a {
         margin: 0;
-    }
-
-    div legend p, ul {
-        padding: 0;
     }
 
 } 
