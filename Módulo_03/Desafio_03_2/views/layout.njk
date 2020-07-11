@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon"/>
+
+        {% block head %}
+            <title>Rocketseat</title>
+        {% endblock head %}
+
+        {% block style %}{% endblock style %}
+
+        <link rel="stylesheet" href="/styles/responsive.css">
+
+    </head>
+
+    <body>
+
+        {% block header %}
+            <header></header>
+        {% endblock header %}
+
+        {% block content %}{% endblock content %}
+
+        {% block script %}{% endblock script %}
+
+    </body>
+
+</html>
