@@ -14,7 +14,7 @@ module.exports = [
     {
         id: "gostack",
         description: "Rocketseat | GoStack",
-        modules: "10 módulo",
+        modules: "10 módulos",
         price: "Curso pago"
     }
 ]
