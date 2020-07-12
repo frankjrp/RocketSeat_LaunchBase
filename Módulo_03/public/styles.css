@@ -149,7 +149,7 @@ header {
     cursor: pointer;
 }
 
-/* === MODAL.ACTIVE */
+/* === MODAL.ACTIVE === */
 
 .modal-overlay.active {
     opacity: 1;
@@ -164,4 +164,21 @@ iframe {
     /* top: 5%; */
     /* height: 90%; */
     /* Esses comentados foram os passados na aula, eu alterei para ficar de outro jeito */ 
+}
+
+/* === FEATURED === */
+
+.card_image-container.featured-wrapper {
+    position: relative;
+}
+
+.featured {
+    position: absolute;
+    background-color: #f7d05f;
+    color: #111111;
+    padding: 2px 8px;
+    right: 5px;
+    top: 130px;
+    border-radius: 16px;
+    font-size: 14px;
 }
