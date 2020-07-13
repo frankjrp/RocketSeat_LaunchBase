@@ -1,0 +1,105 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+:root {
+    --color-rocket: #7159c1;
+    --color-details: #e9d0af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: var(--color-rocket);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: var(--color-rocket);
+    filter: brightness(80%);
+    border-bottom: 1px solid var(--color-details);
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#header {
+    position: relative;
+}
+
+div legend {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div legend#desc {
+    margin: 40px 0;
+    align-items: initial;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
+
+header div legend img {
+    border-radius: 50%;
+    height: 70px;
+    border: 2px solid var(--color-details);
+    margin: 0 10px;
+}
+
+header div legend h1 {
+    color: var(--color-details);
+    filter: brightness(115%);
+    font-size: 28px;
+    margin: 0 10px;
+}
+
+div legend p, ul {
+    text-align: justify;
+    max-width: 450px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    color: black;
+}
+
+div#content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+}
+
+div#content a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    filter: brightness(90%);
+}
+
+header div#content a:hover {
+    color: white;
+    filter: brightness(105%);
+    transition: color 300ms;
+}
+
+legend#links a {
+    padding: 20px;
+    color: black;
+    filter: brightness(80%);
+    text-decoration: none;
+}
+
+legend#links a:hover {
+    color: blanchedalmond;
+    text-decoration: underline;
+    transition: color 400ms;
+}

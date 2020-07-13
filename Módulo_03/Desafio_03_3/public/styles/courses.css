@@ -1,0 +1,101 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+:root {
+    --color-rocket: #7159c1;
+    --color-details: #e9d0af;
+    --color-background: #a6a4a8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: var(--color-background);
+    filter: brightness(100%);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: var(--color-rocket);
+    filter: brightness(80%);
+    border-bottom: 1px solid var(--color-details);
+    position: relative;
+}
+
+header h1 {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header div#about {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+}
+
+header div#about a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    filter: brightness(90%);
+}
+
+header div#about a:hover {
+    color: white;
+    filter: brightness(105%);
+    transition: color 300ms;
+}
+
+/* === CARDS === */
+
+.cards {
+    max-width: fit-content;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--color-background);
+    filter: brightness(85%);
+    cursor: pointer;
+    border: 1px solid var(--color-details);
+    width: 330px;
+    display: grid;
+    align-content: space-between;
+}
+
+.card:hover {
+    border: 2px solid var(--color-details);
+    filter: brightness(102%);
+}
+
+.card_image {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card_image img {
+    height: 150px;
+}
+
+.card_content, 
+.card_info {
+    text-align: center;
+    padding: 20px;
+}
+
+.card_price {
+    background-color: var(--color-rocket);
+    filter: brightness(90%);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}

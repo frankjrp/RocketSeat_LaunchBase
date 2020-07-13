@@ -1,0 +1,29 @@
+@media (max-width: 900px) {
+
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px 0;
+    }
+
+    .cards {
+        grid-template-columns: none;
+    }
+
+    div legend#desc {
+        grid-template-columns: none;
+        gap: 60px 0;
+    }
+
+    header div a {
+        margin: 0;
+    }
+
+    header div#content,
+    header div#about {
+        position: unset;
+        text-align: center;
+        padding: 0 0 15px 0;
+    }
+
+} 

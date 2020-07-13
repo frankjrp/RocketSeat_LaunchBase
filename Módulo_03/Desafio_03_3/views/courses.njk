@@ -1,0 +1,51 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Cursos</title>
+{% endblock head %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/courses.css">
+{% endblock style %}
+
+{% block header %}
+
+    <header>
+        <h1>Cursos oferecidos</h1>
+        <div id="about">
+            <a href="/about">Sobre</a>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <section class="cards">
+
+        {% for course in courses %}
+
+            <div class="card" id="{{course.id}}">
+                <div class="card_image">
+                    <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/{{course.id}}.svg" alt="Imagem do curso {{course.id}}">
+                </div>
+
+                <div class="card_content">
+                    <h1>{{ course.description }}</h1>
+                </div>
+
+                <div class="card_info">
+                    <p>{{ course.modules }}</p>
+                    <p class="card_price">{{ course.price }}</p>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/script.js"></script>
+{% endblock script %}
