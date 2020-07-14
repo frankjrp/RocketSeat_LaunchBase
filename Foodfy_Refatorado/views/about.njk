@@ -1,0 +1,63 @@
+{% extends "layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/about.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Sobre</title>
+{% endblock head %}
+
+{% block header %}
+
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="/">
+                    <img src="/assets/logo.png" alt="">
+                </a>
+                <p>Sobre</p>
+                <a href="/recipes">Receitas</a>
+            </nav>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <main>
+
+        <article>
+            <div class="title" id="main">
+                <p>{{ about.aboutTitle }}</p>
+            </div>
+
+            <div class="text">
+                <p>{{ about.aboutDesc }}</p>
+            </div>
+        </article>
+
+        <article>
+            <div class="title">
+                <p>{{ about.startTitle }}</p>
+            </div>
+
+            <div class="text">
+                <p>{{ about.startDesc }}</p>
+            </div>
+        </article>
+
+        <article>
+            <div class="title">
+                <p>{{about.ourRecipesTitle}}</p>
+            </div>
+
+            <div class="text">
+                <p>{{ about.ourRecipesDesc }}</p>
+            </div>
+        </article>
+
+    </main>
+
+{% endblock content %}

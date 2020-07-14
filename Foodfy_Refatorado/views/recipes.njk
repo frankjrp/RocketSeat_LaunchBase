@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/recipes.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Receitas</title>
+{% endblock head %}
+
+{% block header %}
+
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="/">
+                    <img src="/assets/logo.png" alt="">
+                </a>
+                <a href="/about">Sobre</a>
+                <p>Receitas</p>
+            </nav>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <main>
+
+        <section class="cards">
+
+            {% for recipe in recipes %}
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                    </div>
+
+                    <div class="card-content">
+                        <p id="name">{{ recipe.title }}</p>
+                        <p id="by">{{ recipe.author }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/script.js"></script>
+{% endblock script %}
