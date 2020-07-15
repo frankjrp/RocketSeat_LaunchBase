@@ -35,8 +35,11 @@ server.get("/recipes", function (req, res) {
     return res.render("recipes", { recipes: recipes })
 })
 
-server.get("/recipe", function (req, res) {
-    return res.render("recipe")
+server.get("/recipes/:index", function (req, res) {
+    const recipeIndex = req.params.index;
+
+    return res.render("recipe", { recipe: recipes[recipeIndex] });
+
 })
 
 server.listen(5000, function () {
