@@ -16,9 +16,11 @@
 }
 
 .header-container nav {
-    display: grid;
-    grid-template-columns: 1fr 0fr 4fr;
-    gap: 0 30px;
+    display: inline-flex;
+}
+
+.header-container nav img {
+    padding-right: 120px;
 }
 
 .header-container nav a {
@@ -27,6 +29,7 @@
     line-height: 19px;
     color: #111111;
     text-decoration: none;
+    padding-right: 30px;
 }
 
 .intro {

@@ -19,13 +19,16 @@
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 19px;
-    display: grid;
-    grid-template-columns: 1fr 0fr 4fr;
-    gap: 0 30px;
+    display: inline-flex;
+}
+
+.header-container nav img {
+    padding-right: 120px;
 }
 
 .header-container nav p {
     font-weight: bold;
+    padding-right: 30px;
 }
 
 .header-container nav a {

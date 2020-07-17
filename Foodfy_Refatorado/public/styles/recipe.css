@@ -22,9 +22,11 @@ body {
 .header-container nav {
     font-size: 16px;
     line-height: 19px;
-    display: grid;
-    grid-template-columns: 1fr 0fr 4fr;
-    gap: 0 30px;
+    display: inline-flex;
+}
+
+.header-container nav img {
+    padding-right: 120px;
 }
 
 .header-container nav p {
@@ -34,6 +36,10 @@ body {
 .header-container nav a {
     text-decoration: none;
     color: #111111;
+}
+
+.header-container nav a#menu {
+    padding-right: 30px;
 }
 
 .card .image-container {
