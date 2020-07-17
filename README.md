@@ -15,7 +15,7 @@
 ## 🔖 Sobre
 Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módulo do curso, demonstrando assim o conteúdo aprendido.
 
-## Módulo 1
+## :rocket: Módulo 1
 <details>
   <summary>Cálculo de IMC</summary>
   
