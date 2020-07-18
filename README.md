@@ -21,7 +21,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   
   - Crie um programa para calcular o IMC e nível de obesidade de uma pessoa.
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-1_IMC.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-1_IMC.js">Resposta</a>
 </details>
 
 <details>
@@ -30,7 +30,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   - Crie um programa para calcular a aposentadoria de uma pessoa.
   - *Obs.: Esse cálculo é fictício, dentro da aposentadoria existem muitos outros fatores para serem levados em conta.*
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-1_Aposentadoria.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-1_Aposentadoria.js">Resposta</a>
 </details>
 
 <details>
@@ -40,7 +40,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   - Imprima em tela utilizando `console.log` o nome da empresa e seu endereço no seguinte formato:<br>
   `A empresa Rocketseat está localizada em Rua Guilherme Gembala, 260`
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-2_Objetos.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-2_Objetos.js">Resposta</a>
 </details>
 
 <details>
@@ -52,7 +52,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   - Imprima em tela o nome e especialidade da **primeira** tecnologia que o usuário utiliza no seguinte formato:<br>
   `O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop`
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-2_Vetores.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-2_Vetores.js">Resposta</a>
 </details>
 
 <details>
@@ -62,7 +62,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   - Percorra a lista de usuários com uma estrutura de repetição imprimindo em tela as informações dos usuários, exemplo:<br>
   `Carlos trabalha com HTML, CSS`
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_Usu%C3%A1riosTecnologias.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_Usu%C3%A1riosTecnologias.js">Resposta</a>
 </details>
 
 <details>
@@ -72,7 +72,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   - Crie uma função que recebe os dados de um objeto de usuário e retorna SE o usuário trabalha com CSS ou não. Essa função deve retornar um boolean `true/false`.
   - Percorra o array de usuários e, para cada um, verifique se o mesmo trabalha com CSS utilizando a função construída acima, se SIM, imprima em tela as informações do usuário.
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_BuscaPorTecnologia.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_BuscaPorTecnologia.js">Resposta</a>
 </details>
 
 <details>
@@ -107,7 +107,7 @@ const usuarios = [
 Fulano possui saldo POSITIVO de 43.3
 Sicrano possui saldo NEGATIVO de -90.3
 ```
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_DespesasReceitas.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_DespesasReceitas.js">Resposta</a>
 </details>
 
 <details>
@@ -133,5 +133,24 @@ Sicrano possui saldo NEGATIVO de -90.3
   - Crie uma função chamada `getTransactionsCount` que retorna o número de transações de cada tipo `credit/debit`, o retorno da função deve ser um objeto e seguir exatamente como o modelo apresentado abaixo:<br>
   `getTransactionsCount(); // { credit: 5, debit: 3 }`
   <br><br>
-  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-4_Opera%C3%A7%C3%B5esBanc%C3%A1rias.js" target="_blank">Resposta</a>
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-4_Opera%C3%A7%C3%B5esBanc%C3%A1rias.js">Resposta</a>
+</details>
+
+## :rocket: Módulo 2
+<details>
+  <summary>Primeiro HTML</summary>
+  
+  - Criar um arquivo html que contenha um `favicon` e um header com 3 links: Comunidade, Email e Telefone.<br><br>
+  **ESTILIZAÇÃO**<br>
+  Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
+- Deve ser aplicado um background
+- Deve ser utilizada a fonte Roboto
+- O header precisa ocupar todo o espaço lateral e superior (body sem margin)
+- O header precisa ter um espaçamento interno de 30px em todas as direções
+- Os links devem ter um espaçamento de 30px entre si
+
+
+
+  <br><br>
+  <a href="">Resposta</a>
 </details>
