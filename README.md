@@ -254,3 +254,143 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/Foodfy">Resposta</a>
   #### [Demonstração](https://www.loom.com/share/4a537134137a4272859348b7416d22cc)
 </details>
+
+## :rocket: Módulo 3
+<details>
+  <summary>Primeiro servidor</summary>
+  
+  #### SOBRE
+  - Nesse desafio você deve criar um servidor que tenha duas rotas que devem retornar o conteúdo dos html gerados no desafio 2-3 (Páginas de Cursos e Iframe). Além disso, deve ser implementando um arquivo padrão (layout.njk) que reaproveite o código em comum entre esses dois e também um arquivo que sirva uma página de erro 404.<br>
+*Erro 404 é comum aparecer em páginas da internet, quando não foi encontrado nenhum conteúdo.*
+  #### ARQUIVOS HTML
+  - `courses.njk`: Arquivo referente à pagina de conteúdos, deve ser servido na rota raiz.
+  - `about.njk`: Arquivo referente à pagina de descrição, deve ser servido na rota /about.
+  - `layout.njk`: Arquivo referente à base comum entre as páginas.
+  - `not-found.njk`: Arquivo referente à pagina de erro 404, deve ser servido quando for realizada uma requisição à uma página que não existe. Esse arquivo deve ter:
+  
+      - Layout.njk como base
+      - Ter um texto informativo sobre o erro
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  
+<h1 align="center">
+  <img src="/Images/desafio_3-1_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-1_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-1_3.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-1_4.PNG">
+</h1>
+  
+  #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_03/Desafio_03_1">Resposta</a>
+  #### [Demonstração](https://www.loom.com/share/243ae1d8b09649ba8fb6609037fb9e63)
+</details>
+
+<details>
+  <summary>Arquivos nunjucks e dados dinâmicos</summary>
+  
+  #### SOBRE
+  - Nesse desafio você deve atualizar os arquivos com informações de cursos e descrição de forma dinâmica.
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  #### NOTA
+  - *São exatamente os mesmos layouts do desafio anterior (Primeiro servidor), porém, agora os dados são passados do back-end para o front-end de forma dinâmica.*
+  
+<h1 align="center">
+  <img src="/Images/desafio_3-1_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-1_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-1_3.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-1_4.PNG">
+</h1>
+  
+  #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_03/Desafio_03_2">Resposta</a>
+  #### [Demonstração](https://www.loom.com/share/243ae1d8b09649ba8fb6609037fb9e63)
+</details>
+
+<details>
+  <summary>Página de descrição do curso</summary>
+  
+  #### SOBRE
+  - Nesse desafio você deve criar uma página de descrição do curso que deve ser chamada no lugar da modal quando o usuário clicar no card do curso.
+  #### ROTA
+  - A rota também será a `/courses`, porém o id do curso será passado via route params (ex.: `/courses/id_do_curso`).
+  #### INFORMAÇÕES
+  - Layout padrão
+  - Card do curso
+  - Link que redireciona para a página do curso
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  
+<h1 align="center">
+  <img src="/Images/desafio_3-1_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_3-3.PNG">
+</h1>
+  
+  #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_03/Desafio_03_3">Resposta</a>
+  #### [Demonstração](https://www.loom.com/share/b96a8397b7bc4423a39ee0258c7b7a7d)
+</details>
+
+## :rocket: Foodfy | Back-end
+<details>
+  <summary>Refatorando Foodfy</summary>
+  
+  #### SOBRE
+  - Nesse desafio você irá refatorar, ou seja, reescrever algumas partes, do seu código do desafio anterior, o Foodfy.
+  - Até esse módulo não conhecíamos sobre back-end, ou seja, todos dados da nossa página ficavam no próprio front-end (arquivos HTML).
+  - Agora que conhecemos sobre Node.js vamos tornar a exibição dos dados mais dinâmica.
+  #### ARQUIVO DE DADOS
+  - Crie um arquivo `data.js` na raiz do seu projeto com o conteúdo de [link](https://github.com/Rocketseat/bootcamp-launchbase-desafios-03/blob/master/assets/data.js).
+  #### ALTERAÇÕES NO PROJETO
+  - Use os dados das receitas contidos no arquivo `data.js` para a página de listagem de receitas e para a home.
+  - Na home, liste as 6 primeiras receitas.
+  - Na listagem, liste todas receitas do arquivo.
+  - *Obs.: Você precisará converter seu projeto em um projeto Node.js usando Nunjucks para mostrar cada página.*
+  #### DETALHE DA RECEITA
+  - Ao clicar em uma receita, agora o usuário deve ser redirecionado para uma nova página contendo todas as informações da receita como ingredientes, modo de preparo e informações adicionais (todas essas informações estão contidas no arquivo `data.js`).
+  - Na página de listagem não é mais necessário abrir o modal como tínhamos no desafio anterior do Foodfy.
+  - *Obs.: A página do detalhe da receita precisa buscar no arquivo `data.js` apenas a receita desejada pelo usuário, por isso você usará de parâmetros na rota dessa página, por exemplo: `http://localhost:3000/recipes/3`, nesse caso estaríamos acessando os detalhes da receita com índice 3 no array de receitas (`recipes[3]`).*
+  #### AÇÃO DE MOSTRAR/ESCONDER
+  - Dentro da página do detalhe da receita, em cada seção "Ingredientes", "Modo de preparo" e "Informações adicionais" há um botão `Mostrar` ou `Esconder` que ao ser clicado deve mostrar ou esconder o texto abaixo do título baseado em seu estado de visibilidade.
+  
+<h1 align="center">
+  <img src="/Images/foodfy_refatorado_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/foodfy_refatorado_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/foodfy_refatorado_3.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/foodfy_refatorado_4.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/foodfy_refatorado_5.PNG">
+</h1>
+  
+  #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/Foodfy_Refatorado">Resposta</a>
+  #### [Demonstração](https://www.loom.com/share/fe0117ba413042bd8a8d2df78d70019c)
+</details>
