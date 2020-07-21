@@ -7,7 +7,7 @@
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/frankjrp/RocketSeat_LaunchBase">
   
-  <a href="https://github.com/frankjrp/RocketSeat-NLW/commits/master">
+  <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/frankjrp/RocketSeat_LaunchBase">
   </a>
 </p>
