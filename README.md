@@ -213,6 +213,8 @@ Sicrano possui saldo NEGATIVO de -90.3
   Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
 - Deve ser utilizado o grid para organizar os cursos
 - O modal nunca deve abrir maximizado
+#### NOTA
+- Além do que foi solicitado, inseri também a estilização de responsividade.
 
 <h1 align="center">
   <img src="/Images/desafio_2-3_1.PNG">
@@ -228,6 +230,18 @@ Sicrano possui saldo NEGATIVO de -90.3
 
 <h1 align="center">
   <img src="/Images/desafio_2-3_4.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/responsive_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/responsive_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/responsive_3.PNG">
 </h1>
 
 #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_02/Desafio_02_3">Resposta</a>
