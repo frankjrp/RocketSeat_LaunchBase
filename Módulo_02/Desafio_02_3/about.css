@@ -3,6 +3,7 @@
 :root {
     --color-rocket: #7159c1;
     --color-details: #e9d0af;
+    --color-header: #574399;
 }
 
 * {
@@ -17,50 +18,46 @@ body {
 }
 
 header {
-    background-color: var(--color-rocket);
-    filter: brightness(80%);
+    background-color: var(--color-header);
     border-bottom: 1px solid var(--color-details);
-}
-
-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 div legend {
     padding: 15px;
+}
+
+div legend#header {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    column-gap: 20px;
+    justify-content: center;
 }
 
 div legend#desc {
     margin: 40px 0;
-    align-items: initial;
-    display: grid;
+    display: inline-flex;
     grid-template-columns: 1fr 1fr;
-    column-gap: 50px;
+    justify-content: space-evenly;
+}
+
+div legend#links {
+    text-align: center;
 }
 
 header div legend img {
     border-radius: 50%;
     height: 70px;
     border: 2px solid var(--color-details);
-    margin: 0 10px;
 }
 
 header div legend h1 {
     color: var(--color-details);
-    filter: brightness(115%);
     font-size: 28px;
-    margin: 0 10px;
 }
 
 div legend p, ul {
     text-align: justify;
     max-width: 450px;
-    margin: 0 auto;
     font-size: 18px;
     line-height: 28px;
     font-weight: normal;

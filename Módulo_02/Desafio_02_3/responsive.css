@@ -1,9 +1,29 @@
 @media (max-width: 900px) {
 
-    .links {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px 0;
+    header nav .image-container {
+        padding: 0 30px 0 0;
+    }
+
+    header nav ul {
+        position: fixed;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        background: #0e0a14ef;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header li + li {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .description {
+        width: 90%;
     }
 
     .cards {
@@ -11,12 +31,95 @@
     }
 
     div legend#desc {
+        display: grid;
         grid-template-columns: none;
         gap: 60px 0;
     }
 
-    header div a {
-        margin: 0;
+    div legend p, ul {
+        margin: 0 auto;
     }
 
-} 
+    /* === MENU === */
+
+    .menu_mobile {
+        display: block;
+    }
+
+    #checkbox-menu{
+        position: absolute;
+        opacity: 0;
+      }
+
+    label{
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 22px;
+        width: 30px;
+    }
+
+    label span{
+        position: absolute;
+        display: block;
+        height: 5px;
+        width: 100%;
+        border-radius: 30px;
+        background: #f16234;
+        transition: 0.25s ease-in-out;
+    }
+
+    label span:nth-child(1){
+        top: 0;
+    }
+      
+    label span:nth-child(2){
+        top: 8px;
+    }
+      
+    label span:nth-child(3){
+        top: 16px;
+    }
+
+    #checkbox-menu:checked + label span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+      
+      #checkbox-menu:checked + label span:nth-child(2){
+        opacity: 0;
+    }
+      
+      #checkbox-menu:checked + label span:nth-child(3){
+        transform: rotate(45deg);
+        top:8px;
+    }
+
+    /* === MENU ACTIVE === */
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    /* === FOOTER === */
+    .footer-container {
+        position: relative;
+        z-index: -1;
+    }
+
+}
+
+@media (max-height: 430px) {
+
+    header nav ul {
+        flex-flow: row wrap;
+        align-content: center;
+        row-gap: 30px;
+    }
+
+    header nav ul li {
+        padding: 0 30px;
+        margin-top: 0;
+    }
+
+}
