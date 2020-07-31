@@ -214,7 +214,7 @@ Sicrano possui saldo NEGATIVO de -90.3
 - Deve ser utilizado o grid para organizar os cursos
 - O modal nunca deve abrir maximizado
 #### NOTA
-- Além do que foi solicitado, inseri também a estilização de responsividade.
+- *Além do que foi solicitado, inseri também a estilização de responsividade.*
 
 <h1 align="center">
   <img src="/Images/desafio_2-3_1.PNG">
@@ -253,7 +253,6 @@ Sicrano possui saldo NEGATIVO de -90.3
 </h1>
 
 #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_02/Desafio_02_3">Resposta</a>
-#### [Demonstração](https://www.loom.com/share/89006d5e3eb6438686992311a18a43f2)
 </details>
 
 ## :rocket: Foodfy | Front-end
@@ -312,7 +311,6 @@ Sicrano possui saldo NEGATIVO de -90.3
 </h1>
   
   #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_03/Desafio_03_1">Resposta</a>
-  #### [Demonstração](https://www.loom.com/share/243ae1d8b09649ba8fb6609037fb9e63)
 </details>
 
 <details>
@@ -342,7 +340,6 @@ Sicrano possui saldo NEGATIVO de -90.3
 </h1>
   
   #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_03/Desafio_03_2">Resposta</a>
-  #### [Demonstração](https://www.loom.com/share/243ae1d8b09649ba8fb6609037fb9e63)
 </details>
 
 <details>
@@ -368,7 +365,6 @@ Sicrano possui saldo NEGATIVO de -90.3
 </h1>
   
   #### <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_03/Desafio_03_3">Resposta</a>
-  #### [Demonstração](https://www.loom.com/share/b96a8397b7bc4423a39ee0258c7b7a7d)
 </details>
 
 ## :rocket: Foodfy | Back-end
