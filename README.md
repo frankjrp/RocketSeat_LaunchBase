@@ -419,3 +419,28 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/Foodfy_Refatorado">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=mwzbzur2Snw)
 </details>
+
+## :rocket: Módulo 4
+<details>
+  <summary>Header</summary>
+  
+  #### SOBRE
+  - Esse é o primeiro desafio da sequência de criação de um site de aulas particulares. A ideia é que você aplique, em pequenas doses, os conhecimentos aprendidos nas aulas. Nessa primeira etapa, você deve criar um header com dois links: `Teachers` e `Students`.
+  #### ESTILIZAÇÃO
+  Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
+- Deve ser aplicado um background
+- Deve ser utilizada a fonte Roboto
+- Utilize o conceito de `box-sizing` e o seletor `+` para centralizar os seus links
+- Utilize o `after` e o `transition` para aplicar um efeito visual nos links quando o mouse passar por cima
+
+<h1 align="center">
+  <img src="/Images/desafio_4-1_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-1_2.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_1">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=hmFB_k5huhA)
+</details>
