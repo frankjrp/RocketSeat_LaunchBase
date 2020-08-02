@@ -1,7 +1,11 @@
 @media (max-width: 900px) {
 
+    header nav {
+        justify-content: space-evenly;
+    }
+
     header nav .image-container {
-        padding: 0 30px 0 0;
+        padding: 0;
     }
 
     header nav ul {
@@ -107,6 +111,13 @@
         z-index: -1;
     }
 
+}
+
+@media (max-width: 500px) {
+
+    header nav {
+        justify-content: space-between;
+    }
 }
 
 @media (max-height: 430px) {
