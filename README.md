@@ -448,3 +448,33 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_1">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=hmFB_k5huhA)
 </details>
+
+<details>
+  <summary>Card do professor</summary>
+  
+  #### SOBRE
+  - Nessa etapa você deve utilizar o browser-sync e criar um card para apresentação das informações do professor.
+  #### CARD
+  Esse componente deve ser dividido em duas seções: `imagem` e `detalhes`. As seguintes informações são obrigatórias:
+  - Imagem randômica de uma coleção de professores (utilize a api do unsplash)
+  - Nome completo
+  - Idade
+  - Grau de escolaridade (ex.: Doutorado)
+  - Tipo de aula (presencial ou à distância)
+  - Acompanhamento (ex.: Matemática e Física)
+  - Desde (data de cadastro na plataforma)
+  #### ESTILIZAÇÃO
+  Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
+  - A imagem deve ocupar 40% do card e os detalhes 60%
+  - Utilize o seletor `first-child` e `border-top` para estilizar as divisórias entre os items
+  - Utilize o seletor `nth-child()` para estilizar o label (ex.: Desde) e valor (ex.: 02/02/2020) do item
+  - Utilize o `keyframes` e o `animation` para fazer uma animação do card
+  - Utilize o `box-shadow` para aplicar uma sombra no card
+
+<h1 align="center">
+  <img src="/Images/desafio_4-2.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_2">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=rlzawtJTyM8)
+</details>
