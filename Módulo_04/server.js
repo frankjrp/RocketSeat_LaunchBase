@@ -4,6 +4,7 @@ const routes = require('./routes') //arquivo responsável pelas rotas
 
 const server = express()
 
+server.use(express.urlencoded({ extended: true })) //responsável pela leitura do req.body
 server.use(express.static('public'))
 server.use(routes)
 
