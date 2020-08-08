@@ -1,0 +1,44 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "image_url": "https://google.com",
+      "name": "Fulano",
+      "birth": 164937600000,
+      "education_level": "2",
+      "class_type": "D",
+      "school_subjects": "Português, Geografia",
+      "created_at": 1596871168730
+    },
+    {
+      "id": 2,
+      "image_url": "https://teste.com.br",
+      "name": "Maria do Carmo",
+      "birth": 635385600000,
+      "education_level": "3",
+      "class_type": "P",
+      "school_subjects": "História, Geografia",
+      "created_at": 1596871384480
+    },
+    {
+      "id": 3,
+      "image_url": "https://testando.com",
+      "name": "Ciclano da Silva",
+      "birth": 932515200000,
+      "education_level": "4",
+      "class_type": "P",
+      "school_subjects": "Matemática, Física, Química",
+      "created_at": 1596871511632
+    },
+    {
+      "id": 4,
+      "image_url": "https://school.com",
+      "name": "Robert",
+      "birth": 867196800000,
+      "education_level": "1",
+      "class_type": "D",
+      "school_subjects": "Inglês, Francês",
+      "created_at": 1596874308595
+    }
+  ]
+}

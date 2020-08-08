@@ -1,0 +1,63 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <form class="card" method="POST" action="/teachers">
+        <section class="image"></section>
+
+        <section class="details">
+
+            <h3>Novo professor</h3>
+
+            <div class="item">
+                <div>URL da imagem</div>
+                <div>
+                    <input type="url" name="image_url" placeholder="https://">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Professor</div>
+                <div>
+                    <input type="text" name="name" placeholder="Nome do professor">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de nascimento</div>
+                <div>
+                    <input type="date" name="birth">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Grau de escolaridade</div>
+                <select name="education_level">
+                    <option value="1" selected>Ensino Médio Completo</option>
+                    <option value="2">Ensino Superior Completo</option>
+                    <option value="3">Mestrado</option>
+                    <option value="4">Doutorado</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Tipo de aula</div>
+                <div>
+                    <span><input type="radio" name="class_type" value="P" checked="checked">Presencial</span>
+                    <span><input type="radio" name="class_type" value="D">À distância</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Área de atuação</div>
+                <div>
+                    <input type="text" name="school_subjects" placeholder="Separe as matérias com uma vírgula">
+                </div>
+            </div>
+
+            <button type="submit">Salvar</button>
+
+        </section>
+    </form>
+
+{% endblock content %}
