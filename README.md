@@ -478,3 +478,29 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_2">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=rlzawtJTyM8)
 </details>
+
+<details>
+  <summary>Formulário e rota de cadastro do professor</summary>
+  
+  #### SOBRE
+  - Nessa etapa você deve criar um formulário de cadastro do professor e uma rota do tipo `post` que irá realizar as validações e salvar os dados enviados.
+  #### FORMULÁRIO
+  Os seguintes campos são necessários:
+  - Avatar url: campo do tipo `url` para cadastrar o caminho da imagem do professor
+  - Nome completo: campo do tipo `text`
+  - Data de nascimento: campo do tipo `date`
+  - Grau de escolaridade: campo do tipo `select` que deve conter as opções **Ensino Médio Completo**, **Ensino Superior Completo**, **Mestrado** e **Doutorado**
+  - Tipo de aula: campo do tipo `radio` que deve conter as opções **Presencial** e **À distância**
+  - Área de atuação: campo do tipo `text` que deve conter as informações das matérias que o professor pode lecionar
+  #### ROTA
+  - Crie um arquivo `teachers.js` na raiz do seu projeto e faça a validação de todos os campos utilizando `keys` e o constructor `Object`. Além disso, utilize o método             `writeFile` da lib `fs` para gerar um arquivo `json` que irá conter um array de todos os professores cadastrados. Ao final desses dois processos (validação e salvamento), faça   o redirecionamento para a página de listagem de professores.
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+
+<h1 align="center">
+  <img src="/Images/desafio_4-3.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_3">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=ZcBmpIqo33Y)
+</details>
