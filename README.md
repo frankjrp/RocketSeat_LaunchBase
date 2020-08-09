@@ -496,11 +496,13 @@ Sicrano possui saldo NEGATIVO de -90.3
   - Crie um arquivo `teachers.js` na raiz do seu projeto e faça a validação de todos os campos utilizando `keys` e o constructor `Object`. Além disso, utilize o método             `writeFile` da lib `fs` para gerar um arquivo `json` que irá conter um array de todos os professores cadastrados. Ao final desses dois processos (validação e salvamento), faça   o redirecionamento para a página de listagem de professores.
   #### ESTILIZAÇÃO
   - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  #### NOTA
+  - *Além do que foi solicitado, adicionei, na validação dos dados, uma condicional `switch` para personalizar a mensagem com o nome do campo deixado em branco.*
 
 <h1 align="center">
   <img src="/Images/desafio_4-3.PNG">
 </h1>
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_3">Código</a>
-  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=ZcBmpIqo33Y)
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=zkO5KlfsG50)
 </details>
