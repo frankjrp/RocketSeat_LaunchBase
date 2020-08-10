@@ -1,8 +1,32 @@
 const fs = require('fs') //file system, usado para criar um arquivo json com os dados enviados do formulário
 const data = require('./data.json')
+const { age } = require('./util')
+const Intl = require('intl')
 
+//pode ser usado qualquer nome para exportar, neste caso usaremos 'show', 'create', 'update', 'delete'
 
-//pode ser usado qualquer nome para exportar, neste caso usamos o "post", "exports.post"
+//show
+exports.show = function (req, res) {
+    const { id } = req.params //req.params.id - assim foi usado a desestruturação para tirar o id do req.params
+
+    const foundInstructor = data.instructors.find(function (instructor) {
+        return instructor.id == id //find retorna true ou false
+    })
+
+    if (!foundInstructor) {
+        res.send("Instructor not found!")
+    }
+
+    const instructor = {
+        ...foundInstructor, //spread operator, joga todos os campos da variável aqui dentro
+        age: age(foundInstructor.birth),
+        services: foundInstructor.services.split(","),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
+    }
+
+    return res.render("instructors/show", { instructor: instructor }) //ou só 'instructor' por ser o mesmo nome
+}
+
 //create
 exports.post = function (req, res) {
     const keys = Object.keys(req.body) //["avatar_url","name","birth","gender","services"]
