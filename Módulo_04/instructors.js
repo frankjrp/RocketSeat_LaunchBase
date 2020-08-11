@@ -1,6 +1,6 @@
 const fs = require('fs') //file system, usado para criar um arquivo json com os dados enviados do formulário
 const data = require('./data.json')
-const { age } = require('./util')
+const { age, date } = require('./util')
 const Intl = require('intl')
 
 //pode ser usado qualquer nome para exportar, neste caso usaremos 'show', 'create', 'update', 'delete'
@@ -63,6 +63,24 @@ exports.post = function (req, res) {
 
 }
 
-//update
+//edit
+exports.edit = function (req, res) {
+    const { id } = req.params
+
+    const foundInstructor = data.instructors.find(function (instructor) {
+        return instructor.id == id
+    })
+
+    if (!foundInstructor) {
+        res.send("Instructor not found!")
+    }
+
+    const instructor = {
+        ...foundInstructor,
+        birth: date(foundInstructor.birth)
+    }
+
+    return res.render("instructors/edit", { instructor: instructor })
+}
 
 //delete
