@@ -3,7 +3,13 @@ const data = require('./data.json')
 const { age, date } = require('./util')
 const Intl = require('intl')
 
-//pode ser usado qualquer nome para exportar, neste caso usaremos 'show', 'create', 'update', 'delete'
+//pode ser usado qualquer nome para exportar, neste caso usaremos 'show', 'create', 'edit', 'put', 'delete'
+
+//HTTP VERBS
+//GET: receber RESOURCE
+//POST: criar um novo RESOURCE com os dados enviados
+//PUT: atualizar RESOURCE
+//DELETE: deletar RESOURCE
 
 //show
 exports.show = function (req, res) {
@@ -83,4 +89,36 @@ exports.edit = function (req, res) {
     return res.render("instructors/edit", { instructor: instructor })
 }
 
-//delete
+//put
+exports.put = function (req, res) {
+    const { id } = req.body
+    let index = 0
+
+    const foundInstructor = data.instructors.find(function (instructor, foundIndex) {
+        if (id == instructor.id) {
+            index = foundIndex
+            return true
+        }
+    })
+
+    if (!foundInstructor) {
+        res.send("Instructor not found!")
+    }
+
+    const instructor = {
+        ...foundInstructor,
+        ...req.body,
+        id: Number(req.body.id),
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.instructors[index] = instructor
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) {
+            return res.send("Write error!")
+        }
+
+        return res.redirect(`/instructors/${id}`)
+    })
+}
