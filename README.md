@@ -506,3 +506,37 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_3">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=zkO5KlfsG50)
 </details>
+
+<details>
+  <summary>Apresentação, edição e formatação dos dados de um professor</summary>
+  
+  #### SOBRE
+  - Nessa etapa você deve criar duas rotas: uma para apresentar os dados do professor (show) e outra para a edição dos dados cadastrados (edit). Além disso, realize a         formatação dos dados cadastrados para a correta exibição no HTML.
+  #### SHOW
+  Crie uma rota para lidar com a apresentação dos dados cadastrados de um professor. Dentro do arquivo `teachers.js`, crie um método `show` para buscar e retornar o professor a partir do `id` fornecido na rota. Os seguintes dados precisam ser formatados:
+  - Idade: Crie um arquivo `utils.js` que exporta uma função chamada `age`. Essa função deve retornar a idade a partir do parâmetro (data de nascimento) informado
+  - Grau de escolaridade: crie uma função `graduation` no arquivo `utils.js`. Essa função deve retornar o grau de escolaridade formatado a partir do valor do `select` informado (ex.: **Ensino Médio Completo** para o valor **medio** do `select`)
+  - Acompanhamento: Utilize o método `split` da string para gerar um array com as matérias que o professor leciona
+  - Desde: Utilize o constructor `Intl` e seus métodos para gerar uma data no formato `dia/mes/ano`
+  #### EDIÇÃO
+  - Crie uma rota para lidar com a edição dos dados cadastrados de um professor. Dentro do arquivo `teachers.js`, crie um método `edit` para buscar e retornar o professor a partir do `id` fornecido na rota. Utilize a mesma interface da rota de apresentação dos dados do professor (lembrando de fazer o reaproveitamento do form com um arquivo `fields.njk`). Por fim, crie uma função chamada `date` no arquivo `utils.js`. Essa função deve retornar a data no formato `yyyy-mm-dd` para a correta exibição no input do tipo `date` no HTML (lembre de tratar os dias e meses menores que 10 utilizando o método `slice` da string).
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  #### NOTA
+  - *Além do que foi solicitado, adicionei o parâmetro `required` nos campos do tipo `input` no arquivo `fields.njk`, para uma validação automática caso algum campo esteja em branco ao adicionar um novo registro através do arquivo `create.njk`*.
+
+<h1 align="center">
+  <img src="/Images/desafio_4-4_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-4_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-4_3.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_4">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=XTh5wlLNghA)
+</details>
