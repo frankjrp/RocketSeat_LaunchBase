@@ -122,3 +122,22 @@ exports.put = function (req, res) {
         return res.redirect(`/instructors/${id}`)
     })
 }
+
+//delete
+exports.delete = function (req, res) {
+    const { id } = req.body
+
+    const filteredInstructors = data.instructors.filter(function (instructor) {
+        return instructor.id != id //retorna true ou false, se false (nesse caso), coloca o instructor dentro do filteredInstructors (array)
+    })
+
+    data.instructors = filteredInstructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) {
+            return res.send("Delete file error!")
+        }
+
+        return res.redirect("/instructors")
+    })
+}
