@@ -540,3 +540,29 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_4">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=XTh5wlLNghA)
 </details>
+
+<details>
+  <summary>HTTP: PUT e DELETE</summary>
+  
+  #### SOBRE
+  - Nessa etapa você irá implementar duas rotas: PUT e DELETE para a atualização e remoção, respectivamente, dos dados cadastrados de um professor.
+  #### PUT
+  - Crie uma rota para receber os dados do formulário de edição e propagar no arquivo `json`. Lembre de sobrescrever o método POST do form para PUT (utilize a lib `method-override`). Dentro do arquivo `teachers.js`, crie um método `update` para buscar e retornar o professor a partir do `id` fornecido na rota. Faça a busca pelo professor a partir do `id` e atualize no arquivo `json` os dados que foram alterados (utilize o constructor `Number` para formatar o id como número). Por fim, redirecione para a página de apresentação dos dados de um professor (show).
+  #### DELETE
+  - Crie um botão na página de apresentação dos dados do professor. Esse botão irá chamar uma rota para deletar o professor do arquivo `json`. Lembre de sobrescrever o método POST do form para DELETE (utilize a lib `method-override`). Dentro do arquivo `teachers.js`, crie um método `delete` e gere um array com todos os professores, exceto o que deve ser removido (`filter`). Por fim, redirecione para a página de listagem dos professores.
+  #### ESTILIZAÇÃO
+  Você tem liberdade para escolher a estilização que preferir para esse desafio. Porém, algumas coisas são obrigatórias:
+  - O botão de deletar deve ficar ao lado do botão de editar
+  - O botão de deletar deve ser da cor vermelha
+  
+<h1 align="center">
+  <img src="/Images/desafio_4-5_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-5_2.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_5">Código</a>
+  #### :clapper: [Demonstração]()
+</details>
