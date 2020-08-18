@@ -3,13 +3,18 @@ const data = require('./data.json')
 const { age, date } = require('./util')
 const Intl = require('intl')
 
-//pode ser usado qualquer nome para exportar, neste caso usaremos 'show', 'create', 'edit', 'put', 'delete'
+//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'show', 'create', 'edit', 'put', 'delete'
 
 //HTTP VERBS
 //GET: receber RESOURCE
 //POST: criar um novo RESOURCE com os dados enviados
 //PUT: atualizar RESOURCE
 //DELETE: deletar RESOURCE
+
+//index
+exports.index = function (req, res) {
+    return res.render("instructors/index", { instructors: data.instructors })
+}
 
 //show
 exports.show = function (req, res) {
