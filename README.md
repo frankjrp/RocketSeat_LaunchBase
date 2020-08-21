@@ -41,7 +41,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   #### SOBRE
   - Crie um programa que armazena dados da empresa Rocketseat dentro de um objeto chamado `empresa`.
   - Imprima em tela utilizando `console.log` o nome da empresa e seu endereço no seguinte formato:<br>
-  `A empresa Rocketseat está localizada em Rua Guilherme Gembala, 260`
+  `A empresa Rocketseat está localizada em Rua Guilherme Gembala, 260`.
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-2_Objetos.js">Código</a>
 </details>
@@ -54,7 +54,7 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   - Um programador pode trabalhar com várias tecnologias, por isso armazene essas tecnologias em um array.
   - As tecnologias também devem ser objetos contendo `nome` e `especialidade`.
   - Imprima em tela o nome e especialidade da **primeira** tecnologia que o usuário utiliza no seguinte formato:<br>
-  `O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop`
+  `O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop`.
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-2_Vetores.js">Código</a>
 </details>
@@ -63,9 +63,9 @@ Projetos desenvolvidos mediante os desafios propostos no bootcamp em cada módul
   <summary>Usuários e tecnologias</summary>
   
   #### SOBRE
-  - Crie um programa que armazena um array de usuários (objetos), cada usuário tem um `nome` e suas `tecnologias.` (novo array)
+  - Crie um programa que armazena um array de usuários (objetos), cada usuário tem um `nome` e suas `tecnologias.` (novo array).
   - Percorra a lista de usuários com uma estrutura de repetição imprimindo em tela as informações dos usuários, exemplo:<br>
-  `Carlos trabalha com HTML, CSS`
+  `Carlos trabalha com HTML, CSS`.
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/blob/master/M%C3%B3dulo_01/Desafio_01/Desafio_1-3_Usu%C3%A1riosTecnologias.js">Código</a>
 </details>
@@ -152,11 +152,11 @@ Sicrano possui saldo NEGATIVO de -90.3
   - Criar um arquivo html que contenha um `favicon` e um header com 3 links: Comunidade, Email e Telefone.
   #### ESTILIZAÇÃO
   Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
-- Deve ser aplicado um background
-- Deve ser utilizada a fonte Roboto
-- O header precisa ocupar todo o espaço lateral e superior (body sem margin)
-- O header precisa ter um espaçamento interno de 30px em todas as direções
-- Os links devem ter um espaçamento de 30px entre si
+- Deve ser aplicado um background;
+- Deve ser utilizada a fonte Roboto;
+- O header precisa ocupar todo o espaço lateral e superior (body sem margin);
+- O header precisa ter um espaçamento interno de 30px em todas as direções;
+- Os links devem ter um espaçamento de 30px entre si.
 
 <h1 align="center">
   <img src="/Images/desafio_2-1.PNG">
@@ -178,10 +178,10 @@ Sicrano possui saldo NEGATIVO de -90.3
 - Links para as redes sociais da empresa (Github, Instagram e Facebook)
 #### ESTILIZAÇÃO
   Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
-- A imagem deve ter uma borda e um formato circular
-- Deve ser utilizada a fonte Roboto
-- O nome da empresa e a imagem devem ser destacar do restante
-- Os links das redes sociais devem ter alguma alteração visual quando o cursor do mouse passar por cima
+- A imagem deve ter uma borda e um formato circular;
+- Deve ser utilizada a fonte Roboto;
+- O nome da empresa e a imagem devem ser destacar do restante;
+- Os links das redes sociais devem ter alguma alteração visual quando o cursor do mouse passar por cima.
 
 <h1 align="center">
   <img src="/Images/desafio_2-2_1.PNG">
@@ -211,8 +211,8 @@ Sicrano possui saldo NEGATIVO de -90.3
 - O modal deve conter um iframe que busca a página do curso (dica: basta adicionar `starter`, `launchbase` ou `gostack` ao final de `https://rocketseat.com.br/`). Além do botão de fechar o modal, é preciso implementar a funcionalidade de maximizar o modal (dica: utilize a mesma lógica implementada para fechar o `modalOverlay`, mas trabalhe com a classe `modal` e utilize o método `contains` do `classList` para verificar se o elemento está ou não com a classe `maximize`).
 #### ESTILIZAÇÃO
   Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
-- Deve ser utilizado o grid para organizar os cursos
-- O modal nunca deve abrir maximizado
+- Deve ser utilizado o grid para organizar os cursos;
+- O modal nunca deve abrir maximizado.
 #### NOTA
 - *Além do que foi solicitado, inseri também a estilização de responsividade.*
 
@@ -432,10 +432,10 @@ Sicrano possui saldo NEGATIVO de -90.3
   - Esse é o primeiro desafio da sequência de criação de um site de aulas particulares. A ideia é que você aplique, em pequenas doses, os conhecimentos aprendidos nas aulas. Nessa primeira etapa, você deve criar um header com dois links: `Teachers` e `Students`.
   #### ESTILIZAÇÃO
   Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
-- Deve ser aplicado um background
-- Deve ser utilizada a fonte Roboto
-- Utilize o conceito de `box-sizing` e o seletor `+` para centralizar os seus links
-- Utilize o `after` e o `transition` para aplicar um efeito visual nos links quando o mouse passar por cima
+- Deve ser aplicado um background;
+- Deve ser utilizada a fonte Roboto;
+- Utilize o conceito de `box-sizing` e o seletor `+` para centralizar os seus links;
+- Utilize o `after` e o `transition` para aplicar um efeito visual nos links quando o mouse passar por cima.
 
 <h1 align="center">
   <img src="/Images/desafio_4-1_1.PNG">
@@ -465,11 +465,11 @@ Sicrano possui saldo NEGATIVO de -90.3
   - Desde (data de cadastro na plataforma)
   #### ESTILIZAÇÃO
   Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
-  - A imagem deve ocupar 40% do card e os detalhes 60%
-  - Utilize o seletor `first-child` e `border-top` para estilizar as divisórias entre os items
-  - Utilize o seletor `nth-child()` para estilizar o label (ex.: Desde) e valor (ex.: 02/02/2020) do item
-  - Utilize o `keyframes` e o `animation` para fazer uma animação do card
-  - Utilize o `box-shadow` para aplicar uma sombra no card
+  - A imagem deve ocupar 40% do card e os detalhes 60%;
+  - Utilize o seletor `first-child` e `border-top` para estilizar as divisórias entre os items;
+  - Utilize o seletor `nth-child()` para estilizar o label (ex.: Desde) e valor (ex.: 02/02/2020) do item;
+  - Utilize o `keyframes` e o `animation` para fazer uma animação do card;
+  - Utilize o `box-shadow` para aplicar uma sombra no card.
 
 <h1 align="center">
   <img src="/Images/desafio_4-2.PNG">
@@ -552,8 +552,8 @@ Sicrano possui saldo NEGATIVO de -90.3
   - Crie um botão na página de apresentação dos dados do professor. Esse botão irá chamar uma rota para deletar o professor do arquivo `json`. Lembre de sobrescrever o método POST do form para DELETE (utilize a lib `method-override`). Dentro do arquivo `teachers.js`, crie um método `delete` e gere um array com todos os professores, exceto o que deve ser removido (`filter`). Por fim, redirecione para a página de listagem dos professores.
   #### ESTILIZAÇÃO
   Você tem liberdade para escolher a estilização que preferir para esse desafio. Porém, algumas coisas são obrigatórias:
-  - O botão de deletar deve ficar ao lado do botão de editar
-  - O botão de deletar deve ser da cor vermelha
+  - O botão de deletar deve ficar ao lado do botão de editar;
+  - O botão de deletar deve ser da cor vermelha.
   
 <h1 align="center">
   <img src="/Images/desafio_4-5_1.PNG">
@@ -565,4 +565,28 @@ Sicrano possui saldo NEGATIVO de -90.3
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_5">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=b4VunyQ_O8o)
+</details>
+
+<details>
+  <summary>Listagem de professores</summary>
+  
+  #### SOBRE
+  - Nessa etapa você deve listar todos os professores salvos no arquivo `json` e apresentá-los em formato de tabela.
+  #### LISTAGEM
+  - Crie uma rota para repassar para o arquivo de listagem os dados dos professores salvos no arquivo `json`.
+  #### TABELA
+  - Crie um arquivo que irá mostrar os dados dos professores em formato de tabela. Utilize `Nome completo`, `Acompanhamento` e `Ação` como cabeçalhos.
+  #### ESTILIZAÇÃO
+  Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
+  - A tabela deve ocupar todo o espaçamento do cartão;
+  - Os cabeçalhos e os valores devem estar centralizados;
+  - A imagem deve ser apresentada antes do nome. Deve ter formato circular e tamanho de 40px;
+  - O campo `Acompanhamento` deve apresentar as matérias lecionadas de forma separada (array, assim como na página de apresentação de dados de um professor).
+  
+<h1 align="center">
+  <img src="/Images/desafio_4-6.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_6">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=x-XkmLv1VCg)
 </details>
