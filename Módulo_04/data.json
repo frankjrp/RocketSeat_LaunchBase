@@ -1,4 +1,28 @@
 {
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1566750382473-33e193e3ef45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "name": "Teste Membro",
+      "email": "teste@testando.com.br",
+      "birth": 291168000000,
+      "gender": "M",
+      "blood": "AB1",
+      "weight": "70",
+      "height": "182"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1566750382473-33e193e3ef45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "name": "Teste Dois",
+      "email": "testando@teste.com",
+      "birth": 927158400000,
+      "gender": "F",
+      "blood": "B0",
+      "weight": "54",
+      "height": "170"
+    }
+  ],
   "instructors": [
     {
       "id": 1,

@@ -1,9 +1,9 @@
 const fs = require('fs') //file system, usado para criar um arquivo json com os dados enviados do formulário
-const data = require('./data.json')
-const { age, date } = require('./util')
+const data = require('../data.json')
+const { age, date } = require('../util')
 const Intl = require('intl')
 
-//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'show', 'create', 'edit', 'put', 'delete'
+//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'show', 'create', 'post', 'edit', 'put', 'delete'
 
 //HTTP VERBS
 //GET: receber RESOURCE
@@ -39,6 +39,11 @@ exports.show = function (req, res) {
 }
 
 //create
+exports.create = function (req, res) {
+    return res.render("instructors/create")
+}
+
+//post
 exports.post = function (req, res) {
     const keys = Object.keys(req.body) //["avatar_url","name","birth","gender","services"]
 

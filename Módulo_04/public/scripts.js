@@ -1,9 +1,8 @@
-const cards = document.querySelectorAll(".card");
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("header .links a")
 
-for (let card of cards) {
-    const videoId = card.id; /* Ou assim: card.getAttribute("id"); */
-
-    card.addEventListener("click", function () {
-        window.location.href = `/video?id=${videoId}`
-    })
+for (item of menuItems) {
+    if (currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("active")
+    }
 }
