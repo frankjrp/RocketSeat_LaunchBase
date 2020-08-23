@@ -3,24 +3,35 @@
     {
       "id": 1,
       "avatar_url": "https://images.unsplash.com/photo-1566750382473-33e193e3ef45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
-      "name": "Teste Membro",
-      "email": "teste@testando.com.br",
-      "birth": 291168000000,
+      "name": "Teste Membro Editado",
+      "email": "edit@testando.com.br",
+      "birth": 949363200000,
       "gender": "M",
-      "blood": "AB1",
-      "weight": "70",
-      "height": "182"
+      "blood": "O+",
+      "weight": "75",
+      "height": "172"
     },
     {
       "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1566750382473-33e193e3ef45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "avatar_url": "https://images.unsplash.com/photo-1511816628855-8a3d86e8f674?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80",
       "name": "Teste Dois",
       "email": "testando@teste.com",
       "birth": 927158400000,
       "gender": "F",
-      "blood": "B0",
+      "blood": "B-",
       "weight": "54",
       "height": "170"
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=545&q=80",
+      "name": "Maria da Silva",
+      "email": "msilva@gym.com.br",
+      "birth": 1001376000000,
+      "gender": "F",
+      "blood": "A-",
+      "weight": "65",
+      "height": "162"
     }
   ],
   "instructors": [
@@ -68,6 +79,15 @@
       "gender": "F",
       "services": "Natação",
       "created_at": 1597471289371
+    },
+    {
+      "id": 7,
+      "avatar_url": "https://images.unsplash.com/photo-1589579234083-e364ef7b8592?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "João da Silva",
+      "birth": 303091200000,
+      "gender": "M",
+      "services": "Natação, Musculação, Ioga",
+      "created_at": 1598169209534
     }
   ]
 }

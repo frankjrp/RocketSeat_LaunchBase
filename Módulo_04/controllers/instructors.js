@@ -3,7 +3,7 @@ const data = require('../data.json')
 const { age, date } = require('../util')
 const Intl = require('intl')
 
-//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'show', 'create', 'post', 'edit', 'put', 'delete'
+//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'create', 'post', 'show', 'edit', 'put', 'delete'
 
 //HTTP VERBS
 //GET: receber RESOURCE
@@ -14,6 +14,53 @@ const Intl = require('intl')
 //index
 exports.index = function (req, res) {
     return res.render("instructors/index", { instructors: data.instructors })
+}
+
+//create
+exports.create = function (req, res) {
+    return res.render("instructors/create")
+}
+
+//post
+exports.post = function (req, res) {
+    const keys = Object.keys(req.body) //["avatar_url","name","birth","gender","services"]
+
+    for (key of keys) {
+        if (req.body[key] == "") {
+            return res.send("Please, fill all fields!")
+        }
+    }
+
+    let { avatar_url, birth, name, gender, services } = req.body
+
+    birth = Date.parse(birth)
+    const created_at = Date.now()
+    
+    let id = 1
+    const lastInstructor = data.instructors[data.instructors.length - 1]
+
+    if (lastInstructor) {
+        id = lastInstructor.id + 1
+    }
+
+    data.instructors.push({
+        id,
+        avatar_url,
+        name,
+        birth,
+        gender,
+        services,
+        created_at
+    }) //salva os dados do formulário no array do arquivo JSON
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) {
+            return res.send("Write file error!")
+        }
+
+        return res.redirect("/instructors")
+    })
+
 }
 
 //show
@@ -38,47 +85,6 @@ exports.show = function (req, res) {
     return res.render("instructors/show", { instructor: instructor }) //ou só 'instructor' por ser o mesmo nome
 }
 
-//create
-exports.create = function (req, res) {
-    return res.render("instructors/create")
-}
-
-//post
-exports.post = function (req, res) {
-    const keys = Object.keys(req.body) //["avatar_url","name","birth","gender","services"]
-
-    for (key of keys) {
-        if (req.body[key] == "") {
-            return res.send("Please, fill all fields!")
-        }
-    }
-
-    let { avatar_url, birth, name, gender, services } = req.body
-
-    birth = Date.parse(birth)
-    const created_at = Date.now()
-    const id = Number(data.instructors.length + 1)
-
-    data.instructors.push({
-        id,
-        avatar_url,
-        name,
-        birth,
-        gender,
-        services,
-        created_at
-    }) //salva os dados do formulário no array do arquivo JSON
-
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-        if (err) {
-            return res.send("Write file error!")
-        }
-
-        return res.redirect("/instructors")
-    })
-
-}
-
 //edit
 exports.edit = function (req, res) {
     const { id } = req.params
@@ -93,7 +99,7 @@ exports.edit = function (req, res) {
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: date(foundInstructor.birth).iso
     }
 
     return res.render("instructors/edit", { instructor: instructor })

@@ -1,8 +1,8 @@
 const fs = require('fs') //file system, usado para criar um arquivo json com os dados enviados do formulário
 const data = require('../data.json')
-const { age, date } = require('../util')
+const { date } = require('../util')
 
-//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'show', 'create', 'post', 'edit', 'put', 'delete'
+//pode ser usado qualquer nome para exportar, neste caso usaremos 'index', 'create', 'post', 'show', 'edit', 'put', 'delete'
 
 //HTTP VERBS
 //GET: receber RESOURCE
@@ -13,26 +13,6 @@ const { age, date } = require('../util')
 //index
 exports.index = function (req, res) {
     return res.render("members/index", { members: data.members })
-}
-
-//show
-exports.show = function (req, res) {
-    const { id } = req.params //req.params.id - assim foi usado a desestruturação para tirar o id do req.params
-
-    const foundMember = data.members.find(function (member) {
-        return member.id == id //find retorna true ou false
-    })
-
-    if (!foundMember) {
-        res.send("Member not found!")
-    }
-
-    const member = {
-        ...foundMember, //spread operator, joga todos os campos da variável aqui dentro
-        age: age(foundMember.birth)
-    }
-
-    return res.render("members/show", { member: member }) //ou só 'member' por ser o mesmo nome
 }
 
 //create
@@ -75,6 +55,26 @@ exports.post = function (req, res) {
 
 }
 
+//show
+exports.show = function (req, res) {
+    const { id } = req.params //req.params.id - assim foi usado a desestruturação para tirar o id do req.params
+
+    const foundMember = data.members.find(function (member) {
+        return member.id == id //find retorna true ou false
+    })
+
+    if (!foundMember) {
+        res.send("Member not found!")
+    }
+
+    const member = {
+        ...foundMember, //spread operator, joga todos os campos da variável aqui dentro
+        birth: date(foundMember.birth).birthDay
+    }
+
+    return res.render("members/show", { member: member }) //ou só 'member' por ser o mesmo nome
+}
+
 //edit
 exports.edit = function (req, res) {
     const { id } = req.params
@@ -89,7 +89,7 @@ exports.edit = function (req, res) {
 
     const member = {
         ...foundMember,
-        birth: date(foundMember.birth)
+        birth: date(foundMember.birth).iso
     }
 
     return res.render("members/edit", { member: member })
