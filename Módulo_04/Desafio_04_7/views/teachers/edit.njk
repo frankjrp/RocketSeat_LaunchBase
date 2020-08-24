@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <form class="card" method="POST" action="/teachers?_method=PUT">
+        <section class="image" style="background: url({{ teacher.image_url }}) no-repeat center center / cover"></section>
+
+        <section class="details">
+
+            <h3>Editar professor</h3>
+
+            {% include "teachers/fields.njk" %}
+
+            <input type="hidden" name="id" value="{{ teacher.id }}">
+
+        </section>
+    </form>
+
+{% endblock content %}
