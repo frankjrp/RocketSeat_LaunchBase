@@ -1,4 +1,33 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "image_url": "https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80",
+      "name": "Fernanda da Silva",
+      "email": "teste@testando.com.br",
+      "birth": 1051228800000,
+      "school_year": "6",
+      "course_load": "54"
+    },
+    {
+      "id": 2,
+      "image_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Amanda Ferreira Mattos",
+      "email": "amandafm@gmail.com",
+      "birth": 1060646400000,
+      "school_year": "7",
+      "course_load": "86"
+    },
+    {
+      "id": 3,
+      "image_url": "https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      "name": "João dos Santos",
+      "email": "jsantos@hotmail.com",
+      "birth": 1089417600000,
+      "school_year": "5",
+      "course_load": "85"
+    }
+  ],
   "teachers": [
     {
       "id": 1,

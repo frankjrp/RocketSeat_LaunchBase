@@ -34,6 +34,36 @@ module.exports = {
         return desc
 
     },
+    grade: function (grade) {
+        let year = ""
+
+        switch (grade) {
+            case "1":
+                year = "5º ano do ensino fundamental"
+                break
+            case "2":
+                year = "6º ano do ensino fundamental"
+                break
+            case "3":
+                year = "7º ano do ensino fundamental"
+                break
+            case "4":
+                year = "8º ano do ensino fundamental"
+                break
+            case "5":
+                year = "1º ano do ensino médio"
+                break
+            case "6":
+                year = "2º ano do ensino médio"
+                break
+            case "7":
+                year = "3º ano do ensino médio"
+                break
+        }
+
+        return year
+
+    },
     date: function (timestamp) {
         const date = new Date(timestamp)
 
