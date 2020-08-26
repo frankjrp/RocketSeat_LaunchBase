@@ -590,3 +590,78 @@ Sicrano possui saldo NEGATIVO de -90.3
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_6">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=x-XkmLv1VCg)
 </details>
+
+<details>
+  <summary>Estruturando estudantes</summary>
+  
+  #### SOBRE
+  - Nessa etapa você deve reaproveitar para os estudantes toda a estrutura já criada para os professores. Além disso, deve implementar a lógica do menu ativo.
+  #### ESTRUTURA
+  Reaproveite o código obedecendo os seguintes padrões:
+  - Crie um arquivo `students.js` com a mesma estrutura que o `teachers.js`. Insira ambos os arquivos dentro uma pasta `controllers`;
+  - Crie um array `students` vazio dentro do arquivo `json`;
+  - Crie uma pasta `students` com a mesma estrutura de views que os professores;
+  - Crie as rotas dos estudantes seguindo a mesma estrutura dos professores.
+  #### MENU ATIVO
+  - Crie um arquivo `scripts.js` e implemente a lógica do menu ativo utilizando o `location` e o `includes` da string. Além disso, implemente um botão de cadastro nas páginas de listagem de professores e estudantes.
+  #### FORMULÁRIO
+  Faça os ajustes de professores para estudantes no formulário de criação. Além disso, remova os campos:
+  - Grau de escolaridade;
+  - Tipo de aula;
+  - Acompanhamento;
+  - Desde.
+  
+  e adicione os campos:
+  - Email: campo do tipo `email`;
+  - Ano escolar: campo do tipo `select` com todas as opções de anos escolares entre o 5º ano do ensino fundamental e o 3º ano do ensino médio;
+  - Carga horária semanal: campo do tipo `number` que indica a quantidade de horas de aulas particulares que o aluno irá ter por semana.
+  #### SALVANDO OS DADOS
+  - Faça os ajustes de professores para estudantes no método `post` do arquivo `students.js`. Além disso, implemente a nova estratégia de `id` (evitar repetição).
+  #### APRESENTAÇÃO
+  Faça os ajustes de professores para estudantes na página de apresentação dos dados de um estudante. Além disso, faça duas alterações no arquivo `utils.js`:
+  - Altere o retorno da função `date` para `day`, `month`, `year`, `iso` e `birthDay` (lembre de fazer o ajuste no método `edit` para buscar o `.iso`);
+  - Crie uma função chamada `grade` que retorna os dados formatados a partir do valor selecionado no `select` (ex.: o valor 1EF representa **1º Ano do Ensino Fundamental**).
+  #### EDIÇÃO
+  - Faça os ajustes de professores para estudantes na página de edição dos dados de um estudante. Implemente o campo `Aniverśario` onde é apresentado o dia e o mês do aniversário do estudante. Além disso, altere tanto no `edit.njk` dos professores quanto no dos alunos a `url` da seção de avatar. Utilize o campo `avatar_url` cadastrado em vez da api do unsplash.
+  #### REMOÇÃO
+  - Crie um arquivo `confirm.njk` e importe ele no seu arquivo `edit.njk`. Esse arquivo deve ser responsável por escutar o evento (`addEventListener`) de `submit` do form de remoção e solicitar pela confirmação do usuário (`confirm`). Caso o usuário cancele a remoção, deve-se cancelar o form (método `preventDefault`).
+  #### LISTAGEM
+  - Faça os ajustes de professores para estudantes na página de listagem dos dados de um estudante. Remova a coluna de `Acompanhamento` e adicione as de `Email` e `Ano escolar`.
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  
+<h1 align="center">
+  <img src="/Images/desafio_4-7_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_3.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_4.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_5.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_6.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_7.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_4-7_8.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_04/Desafio_04_7">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=HA9rd_mUTRs)
+</details>
