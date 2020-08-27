@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    margin-top: 10px;
+    padding-bottom: 50px;
+}
+
+.header-container nav {
+    display: inline-flex;
+}
+
+.header-container nav img {
+    padding-right: 120px;
+}
+
+.header-container nav a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
+    text-decoration: none;
+}
+
+.header-container nav a:nth-child(2) {
+    padding-right: 30px;
+}
+
+.header-container nav a.active {
+    font-weight: bold;
+}
+
+.card .image-container {
+    margin-bottom: 20px;
+}
+
+.card .image-container img {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+
+.card-content {
+    display: grid;
+    gap: 5px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card .card-content p#name {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: bold;
+
+}
+
+.card .card-content p#by {
+    font-size: 20px;    
+    line-height: 24px;
+    color: #777777;
+}
+
+.recipe .content {
+    margin-bottom: 39px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+}
+
+.recipe .content ul {
+    padding-left: 18px;
+}
+
+.recipe .title {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.recipe h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.recipe span {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #999999;
+    padding: 0 0 14px 14px;
+    cursor: pointer;
+}
+
+.footer-container {
+    background-color: #EEEEEE;
+    height: 62px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.footer-container p {
+    color: #999999;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0 auto;
+}
+
+/* === ELEMENT HIDDEN === */
+
+.recipe .content.hidden {
+    display: none;
+}
