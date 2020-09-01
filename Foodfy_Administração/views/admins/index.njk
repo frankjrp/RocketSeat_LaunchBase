@@ -1,0 +1,45 @@
+{% extends "admins/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/admin_index.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Foodfy</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <div class="cards-title">
+            <p>Gerenciar receitas</p>
+        </div>
+
+        <section class="cards">
+
+            {% for recipe in recipes %}
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                    </div>
+
+                    <div class="card-content">
+                        <p id="name">{{ recipe.title }}</p>
+                        <p id="by">{{ recipe.author }}</p>
+                        <p id="show">Visualizar</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/admin.js"></script>
+{% endblock script %}
