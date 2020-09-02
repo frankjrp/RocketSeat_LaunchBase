@@ -80,7 +80,7 @@ body {
 }
 
 .recipe .content ul {
-    padding-left: 18px;
+    list-style-position: inside;
 }
 
 .recipe .title {

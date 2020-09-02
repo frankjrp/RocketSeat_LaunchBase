@@ -1,0 +1,103 @@
+:root {
+    --title-color: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container,
+.header-container nav {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    height: 80px;
+    background-color: var(--title-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.card .card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card .card-title p {
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--title-color);
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.card .card-title button {
+    background-color: #6558C3;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 9px 20px;
+    cursor: pointer;
+}
+
+.card .image-container {
+    margin-bottom: 50px;
+}
+
+.card .image-container img {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+
+.card-content {
+    display: grid;
+    gap: 4px 0;
+    text-align: center;
+    margin-bottom: 31px;
+}
+
+.card .card-content p#name {
+    font-size: 36px;
+    line-height: 42px;
+    color: var(--title-color);
+    font-weight: bold;
+
+}
+
+.card .card-content p#by {
+    font-size: 20px;    
+    line-height: 24px;
+    color: #777777;
+}
+
+.recipe .content {
+    margin-bottom: 41px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+}
+
+.recipe .content ul {
+    list-style-position: inside;
+}
+
+.recipe h1 {
+    color: var(--title-color);
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 19px;
+}
