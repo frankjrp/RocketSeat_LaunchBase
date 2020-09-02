@@ -28,7 +28,6 @@ body {
 }
 
 .header-container nav a {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 19px;
     color: #111111;
@@ -110,8 +109,8 @@ body {
     background-color: #EEEEEE;
     height: 62px;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-top: 100px;
 }
 
@@ -119,7 +118,6 @@ body {
     color: #999999;
     font-size: 14px;
     line-height: 16px;
-    margin: 0 auto;
 }
 
 /* === ELEMENT HIDDEN === */

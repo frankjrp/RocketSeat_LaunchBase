@@ -4,6 +4,10 @@
     border: 0;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .page-container {
     width: 90%;
     max-width: 940px;
@@ -24,7 +28,6 @@
 }
 
 .header-container nav a {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 19px;
     color: #111111;
@@ -62,14 +65,12 @@
 }
 
 .card .card-content p#name {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 21px;
 
 }
 
 .card .card-content p#by {
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;    
     line-height: 16px;
     color: #777777;
@@ -79,15 +80,13 @@
     background-color: #EEEEEE;
     height: 62px;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-top: 250px;
 }
 
 .footer-container p {
-    font-family: 'Roboto', sans-serif;
     color: #999999;
     font-size: 14px;
     line-height: 16px;
-    margin: 0 auto;
 }
