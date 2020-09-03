@@ -1,0 +1,19 @@
+{% extends "admins/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/admin_edit.css">
+{% endblock style %}
+
+{% block content %}
+
+    <form class="card" method="POST" action="/admins?_method=PUT">
+        <section class="details">
+
+            <h3>Editando receita</h3>
+
+            {% include "admins/fields.njk" %}
+
+        </section>
+    </form>
+
+{% endblock content %}

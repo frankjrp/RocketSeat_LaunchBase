@@ -1,0 +1,83 @@
+:root {
+    --title-color: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container,
+.header-container nav {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    height: 80px;
+    background-color: var(--title-color);
+    display: flex;
+    align-items: center;
+}
+
+/* === FORM === */
+
+.details h3 {
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--title-color);
+    font-weight: bold;
+    margin: 55px 0 30px;
+}
+
+.item div:first-child {
+    color: var(--title-color);
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.item .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.item input,
+.item textarea {
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #DDDDDD;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--title-color);
+    border-radius: 4px;
+    padding: 15px 20px;
+}
+
+.item textarea {
+    line-height: 24px;
+    padding: 18px 20px;
+    margin-bottom: 80px;
+}
+
+.item input:last-child {
+    margin-bottom: 30px;
+}
+
+.item button {
+    font-family: 'Roboto', sans-serif;
+    background-color: unset;
+    color: #6558C3;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    margin: 5px 0 30px;
+    cursor: pointer;
+}
