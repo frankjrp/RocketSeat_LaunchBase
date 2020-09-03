@@ -1,7 +1,11 @@
 const data = require('../data.json')
 
 exports.index = function (req, res) {
-    return res.render("users/index", { recipes: data.recipes })
+    const sixRecipes = data.recipes.filter(function (recipe, position) {
+        return position < 6
+    })
+
+    return res.render("users/index", { recipes: sixRecipes })
 }
 
 exports.recipes = function (req, res) {

@@ -93,6 +93,11 @@ body {
 
 .recipe .content ul {
     list-style-position: inside;
+    list-style: none;
+}
+
+.recipe .content ul li::before {
+    content: "- ";
 }
 
 .recipe h1 {
