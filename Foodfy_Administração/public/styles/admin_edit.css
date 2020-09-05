@@ -8,7 +8,9 @@
     border: 0;
 }
 
-body {
+body,
+input,
+textarea {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -28,12 +30,39 @@ body {
 
 /* === FORM === */
 
-.details h3 {
+.details .title {
+    margin: 55px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details .title h3 {
     font-size: 24px;
     line-height: 28px;
     color: var(--title-color);
     font-weight: bold;
-    margin: 55px 0 30px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #6558C3;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 9px 20px;
+    cursor: pointer;
+}
+
+.buttons button#btn_delete {
+    background-color: #DC4747;
+    margin-right: 10px;
 }
 
 .item div:first-child {
@@ -52,7 +81,6 @@ body {
 
 .item input,
 .item textarea {
-    font-family: 'Roboto', sans-serif;
     border: 1px solid #DDDDDD;
     font-size: 16px;
     line-height: 19px;
@@ -71,9 +99,8 @@ body {
     margin-bottom: 30px;
 }
 
-.item button {
-    font-family: 'Roboto', sans-serif;
-    background-color: unset;
+.item span {
+    display: block;
     color: #6558C3;
     font-size: 16px;
     line-height: 19px;

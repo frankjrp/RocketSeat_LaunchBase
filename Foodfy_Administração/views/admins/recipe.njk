@@ -66,7 +66,7 @@
                         <h1>Informações adicionais</h1>
                     </div>
                     <div class="content">
-                        <p>{{ recipe.information }}</p>
+                        <p>{{ recipe.information | striptags(true) | escape | nl2br }}</p>
                     </div>
                 </div>
             {% endif %}

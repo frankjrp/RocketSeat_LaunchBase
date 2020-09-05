@@ -1,3 +1,4 @@
+const fs = require('fs')
 const data = require('../data.json')
 
 exports.index = function (req, res) {
@@ -13,5 +14,36 @@ exports.show = function (req, res) {
 exports.edit = function (req, res) {
     const { index } = req.params
 
-    return res.render("admins/edit", { recipe: data.recipes[index] })
+    const recipe = {
+        ...data.recipes[index],
+        id: index
+    }
+
+    return res.render("admins/edit", { recipe: recipe })
+}
+
+exports.put = function (req, res) {
+    const { id } = req.body
+
+    let { image, title, author, ingredients, preparation, information  } = req.body
+
+    const recipe = {
+        ...data.recipes[id],
+        image,
+        title,
+        author,
+        ingredients,
+        preparation,
+        information
+    }
+
+    data.recipes[id] = recipe
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) {
+            return res.send("Erro ao salvar os dados!")
+        }
+
+        return res.redirect(`/admin/recipes/${id}`)
+    })
 }

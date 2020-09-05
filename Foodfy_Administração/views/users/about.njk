@@ -18,7 +18,7 @@
             </div>
 
             <div class="text">
-                <p>{{ about.aboutDesc }}</p>
+                <p>{{ about.aboutDesc | striptags(true) | escape | nl2br }}</p>
             </div>
         </article>
 
@@ -28,7 +28,7 @@
             </div>
 
             <div class="text">
-                <p>{{ about.startDesc }}</p>
+                <p>{{ about.startDesc | striptags(true) | escape | nl2br }}</p>
             </div>
         </article>
 
@@ -38,7 +38,7 @@
             </div>
 
             <div class="text">
-                <p>{{ about.ourRecipesDesc }}</p>
+                <p>{{ about.ourRecipesDesc | striptags(true) | escape | nl2br }}</p>
             </div>
         </article>
 

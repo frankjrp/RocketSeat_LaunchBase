@@ -39,6 +39,7 @@ body {
 
 .card {
     display: inline-flex;
+    align-items: center;
 }
 
 .card .image-container {
