@@ -65,7 +65,7 @@ textarea {
     margin-right: 10px;
 }
 
-.item div:first-child {
+.item .field {
     color: var(--title-color);
     font-size: 16px;
     line-height: 19px;
@@ -73,7 +73,9 @@ textarea {
     margin-bottom: 10px;
 }
 
-.item .inputs {
+.item .inputs,
+.item .inputs .ingredient,
+.item .inputs .preparation {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -95,9 +97,9 @@ textarea {
     margin-bottom: 80px;
 }
 
-.item input:last-child {
+/* .item input:last-child {
     margin-bottom: 30px;
-}
+} */
 
 .item span {
     display: block;
