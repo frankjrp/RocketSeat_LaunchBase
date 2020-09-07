@@ -19,61 +19,45 @@
     </div>
 </div>
 
-{% if not recipe.ingredients %}
-    <div class="item" id="add">
-        <div class="field">Ingredientes</div>
-        <div class="inputs">
+<div class="item" id="add">
+    <div class="field">Ingredientes</div>
+    <div class="inputs">
+        {% if not recipe.ingredients %}
             <div class="ingredient">
                 <input type="text" name="ingredients[]" placeholder="Digite um novo ingrediente..." value="" required="required">
             </div>
-        </div>
-        <div class="button">
-            <span>Adicionar novo ingrediente</span>
-        </div>
-    </div>
-{% else %}
-    <div class="item" id="add">
-        <div class="field">Ingredientes</div>
-        <div class="inputs">
+        {% else %}
             {% for ingredient in recipe.ingredients %}
                 <div class="ingredient">
                     <input type="text" name="ingredients[]" placeholder="Digite um novo ingrediente..." value="{{ ingredient }}" required="required">
                 </div>
             {% endfor %}
-        </div>
-        <div class="button">
-            <span>Adicionar novo ingrediente</span>
-        </div>
+        {% endif %}
     </div>
-{% endif %}
+    <div class="button">
+        <span>Adicionar novo ingrediente</span>
+    </div>
+</div>
 
-{% if not recipe.preparation %}
-    <div class="item" id="prep">
-        <div class="field">Modo de preparo</div>
-        <div class="inputs">
+<div class="item" id="prep">
+    <div class="field">Modo de preparo</div>
+    <div class="inputs">
+        {% if not recipe.preparation %}
             <div class="preparation">
                 <input type="text" name="preparation[]" placeholder="Digite um novo passo..." value="" required="required">
             </div>
-        </div>
-        <div class="button">
-            <span>Adicionar novo passo</span>
-        </div>
-    </div>
-{% else %}
-    <div class="item" id="prep">
-        <div class="field">Modo de preparo</div>
-        <div class="inputs">
+        {% else %}
             {% for preparation in recipe.preparation %}
                 <div class="preparation">
                     <input type="text" name="preparation[]" placeholder="Digite um novo passo..." value="{{ preparation }}" required="required">
                 </div>
             {% endfor %}
-        </div>
-        <div class="button">
-            <span>Adicionar novo passo</span>
-        </div>
+        {% endif %}
     </div>
-{% endif %}
+    <div class="button">
+        <span>Adicionar novo passo</span>
+    </div>
+</div>
 
 <div class="item">
     <div class="field">Informações adicionais</div>
