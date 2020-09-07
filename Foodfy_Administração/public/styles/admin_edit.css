@@ -75,6 +75,10 @@ textarea {
     box-shadow: 0 0 0 3px var(--btn_delete-color);
 }
 
+.buttons button.hidden[type="submit"] {
+    display: none;
+}
+
 .item .field {
     color: var(--title-color);
     font-size: 16px;

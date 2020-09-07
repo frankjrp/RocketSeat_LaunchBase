@@ -5,6 +5,32 @@ exports.index = function (req, res) {
     return res.render("admins/index", { recipes: data.recipes })
 }
 
+exports.create = function (req, res) {
+    return res.render("admins/create")
+}
+
+exports.post = function (req, res) {
+    let { image, title, author, ingredients, preparation, information  } = req.body
+
+    data.recipes.push({
+        image,
+        title,
+        author,
+        ingredients,
+        preparation,
+        information
+    })
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) {
+            return res.send("Erro ao gravar os dados no arquivo!")
+        }
+
+        return res.redirect("/admin/recipes")
+    })
+
+}
+
 exports.show = function (req, res) {
     const { index } = req.params
 

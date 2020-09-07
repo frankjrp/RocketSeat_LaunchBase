@@ -13,8 +13,10 @@ routes.get('/recipes/:index', recipes.show)
 routes.get('/about', recipes.about)
 
 routes.get('/admin/recipes', admins.index)
+routes.get('/admin/recipes/create', admins.create)
 routes.get('/admin/recipes/:index', admins.show)
 routes.get('/admin/recipes/:index/edit', admins.edit)
+routes.post("/admin/recipes", admins.post)
 routes.put("/admin/recipes", admins.put)
 routes.delete("/admin/recipes", admins.delete)
 

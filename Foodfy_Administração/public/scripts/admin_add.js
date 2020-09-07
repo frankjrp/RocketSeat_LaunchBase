@@ -1,4 +1,10 @@
+const currentPage = location.pathname
 const inputs = document.querySelectorAll(".add")
+
+if (currentPage.includes("create")) {
+    document.getElementById("btn_delete").classList.add("hidden")
+    document.querySelector(".title h3").textContent = "Criando receita"
+}
 
 for (let input of inputs) {
     const btn = input.querySelector("span")
@@ -15,6 +21,10 @@ for (let input of inputs) {
         // Deixa o valor do input vazio
         newField.children[0].value = ""
         input.querySelector(".inputs").appendChild(newField)
+
+        // Coloca o foco no input recém criado
+        const lastInput = input.querySelectorAll(".addInput")
+        lastInput[lastInput.length - 1].querySelector("input").focus()
     })
 
 }
