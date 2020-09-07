@@ -47,3 +47,21 @@ exports.put = function (req, res) {
         return res.redirect(`/admin/recipes/${id}`)
     })
 }
+
+exports.delete = function (req, res) {
+    const { id } = req.body
+
+    const filteredRecipes = data.recipes.filter(function (recipe, position) {
+        return position != id
+    })
+
+    data.recipes = filteredRecipes
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) {
+            return res.send("Erro ao deletar o registro!")
+        }
+
+        return res.redirect("/admin/recipes")
+    })
+}

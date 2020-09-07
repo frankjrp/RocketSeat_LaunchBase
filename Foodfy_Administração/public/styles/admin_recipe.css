@@ -1,5 +1,6 @@
 :root {
     --title-color: #111111;
+    --btn-color: #6558C3;
 }
 
 * {
@@ -43,7 +44,7 @@ body {
 }
 
 .card .card-title button {
-    background-color: #6558C3;
+    background-color: var(--btn-color);
     color: #FFFFFF;
     font-size: 16px;
     line-height: 19px;
@@ -51,6 +52,10 @@ body {
     border-radius: 4px;
     padding: 9px 20px;
     cursor: pointer;
+}
+
+.card .card-title button:hover {
+    box-shadow: 0 0 0 3px var(--btn-color);
 }
 
 .card .image-container {

@@ -1,5 +1,7 @@
 :root {
     --title-color: #111111;
+    --primary-color: #6558C3;
+    --btn_delete-color: #DC4747;
 }
 
 * {
@@ -48,9 +50,9 @@ textarea {
     display: flex;
 }
 
-.buttons button {
+.buttons button[type="submit"] {
     font-family: 'Roboto', sans-serif;
-    background-color: #6558C3;
+    background-color: var(--primary-color);
     color: #FFFFFF;
     font-size: 16px;
     line-height: 19px;
@@ -60,9 +62,17 @@ textarea {
     cursor: pointer;
 }
 
-.buttons button#btn_delete {
-    background-color: #DC4747;
+.buttons button#btn_delete[type="submit"] {
+    background-color: var(--btn_delete-color);
     margin-right: 10px;
+}
+
+.buttons button[type="submit"]:hover {
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.buttons button#btn_delete[type="submit"]:hover {
+    box-shadow: 0 0 0 3px var(--btn_delete-color);
 }
 
 .item .field {
@@ -98,7 +108,7 @@ textarea {
 
 .item span {
     display: block;
-    color: #6558C3;
+    color: var(--primary-color);
     font-size: 16px;
     line-height: 19px;
     font-weight: bold;
