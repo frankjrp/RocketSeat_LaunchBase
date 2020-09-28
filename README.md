@@ -807,3 +807,46 @@ document
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/Foodfy_Administra%C3%A7%C3%A3o">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=SN381vXgaNY)
 </details>
+
+## :rocket: Módulo 5
+<details>
+  <summary>Refatorando a aplicação e configurando o BD</summary>
+  
+  #### SOBRE
+  - Esse é o primeiro desafio de uma sequência que irá implementar o banco de dados na aplicação desenvolvida no módulo anterior.<br><br>
+Nessa etapa, você deve refatorar o código da sua aplicação e preparar o seu ambiente para trabalhar com banco de dados.
+  #### CRIANDO O BANCO DE DADOS
+  Utilizando a ferramenta postbird, crie **através de queries** um banco de dados chamado **my_teacher** e uma tabela com o nome de **teachers** que possua os seguintes campos:
+  
+  - id: INT e PRIMARY KEY;
+  - avatar_url: TEXT e NOT NULL;
+  - name: TEXT e NOT NULL;
+  - birth_date: TIMESTAMP e NOT NULL;
+  - education_level: TEXT e NOT NULL;
+  - class_type: TEXT e NOT NULL;
+  - subjects_taught: TEXT e NOT NULL;
+  - created_at: TIMESTAMP e NOT NULL.
+  
+  _Dicas: Para criar a tabela a partir de uma query, basta selecionar o banco no postbird e na aba **Query** rodar o comando **CREATE TABLE** especificando o nome da tabela e em seguida as colunas, por exemplo:_
+  
+  ```sql
+CREATE TABLE TEST(
+     ID INT PRIMARY KEY,
+     NAME TEXT NOT NULL
+);
+```
+
+_Para mais informações, dê uma olhada nesse [link](https://www.postgresqltutorial.com/postgresql-create-table/)_
+  #### REFATORANDO O CÓDIGO
+  Após preparar o banco de dados, é preciso refatorar a sua aplicação para utilizá-lo. Você deve fazer as seguintes alterações:
+  
+  - Utilizar a nova estrutura de pastas (src, app e lib);
+  - Corrija nos arquivos os caminhos relativos que precisar;
+  - Utilize nos arquivos da pasta `controllers` a nova forma de exportar.
+  #### CONFIGURANDO O BD NA APLICAÇÃO
+  - Por fim, instale a biblioteca `pg` e crie o arquivo de configuração do seu banco de dados (em uma pasta **config**) utilizando o `Pool`. Não esqueça de passar os dados necessários (**user, password, host, port e database**) na hora de instanciar (**new**) o Pool.
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_1">Código</a>
+</details>
