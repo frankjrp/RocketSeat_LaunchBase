@@ -1,0 +1,55 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card table-container">
+        <div class="new">
+            <a href="/students/create">Cadastrar novo estudante</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome completo</th>
+                    <th>E-mail</th>
+                    <th>Ano escolar</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for student in students %}
+                    {% set year = student.school_year %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{ student.image_url }})"></span>
+                            {{ student.name }}
+                        </td>
+                        <td>{{ student.email }}</td>
+                        <td>
+                            {% switch year %}
+                            {% case "1" %}
+                                5º ano do ensino fundamental
+                            {% case "2" %}
+                                6º ano do ensino fundamental
+                            {% case "3" %}
+                                7º ano do ensino fundamental
+                            {% case "4" %}
+                                8º ano do ensino fundamental
+                            {% case "5" %}
+                                1º ano do ensino médio
+                            {% case "6" %}
+                                2º ano do ensino médio
+                            {% case "7" %}
+                                3º ano do ensino médio
+                            {% endswitch %}
+                            </td>
+                            <td>
+                                <a href="/students/{{ student.id }}">Ver</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% endblock content %}
