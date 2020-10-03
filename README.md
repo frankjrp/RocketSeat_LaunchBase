@@ -850,3 +850,32 @@ _Para mais informações, dê uma olhada nesse [link](https://www.postgresqltuto
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_1">Código</a>
 </details>
+
+<details>
+  <summary>Interagindo com o BD</summary>
+  
+  #### SOBRE
+  - Nessa etapa, você deve refatorar os CRUDs dos professores e estudantes para que eles utilizem o banco de dados.
+  #### INSERINDO DADOS
+  - No método `post`, construa uma query usando `INSERT` que crie um novo registro no banco de dados.
+  #### BUSCANDO DADOS
+  - No método `index`, construa uma query usando `SELECT` que retorne todos os registros do banco de dados. Ordene esses resultados pelo nome de forma crescente.
+  #### CRIANDO MODEL
+  As operações com o banco de dados não devem ficar no controller, por isso crie um model que contenha os cinco métodos:
+
+  - `all`: Buscar todos os registros;
+  - `create`: Criar um registro;
+  - `find`: Buscar apenas um registro a partir do id informado;
+  - `update`: Atualiza um registro a partir do id informado;
+  - `delete`: Remove um registro a partir do id informado.
+  #### ATUALIZANDO DADOS
+  - Crie um método `update` no model. Nesse método, construa uma query utilizando `UPDATE`, `SET` e `WHERE` que atualiza um registro do banco de dados a partir do id informado.
+  #### REMOVENDO DADOS
+  - Crie um método `delete` no model. Nesse método, construa uma query utilizando `DELETE` e `WHERE` que remova um registro do banco de dados a partir do id informado.
+  #### REFATORANDO STUDENTS
+  - Refatore o controller de estudantes utilizando as mesmas ideias aplicadas no controller de professores.
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_2">Código</a>
+</details>
