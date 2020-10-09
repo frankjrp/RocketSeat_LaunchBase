@@ -879,3 +879,35 @@ _Para mais informações, dê uma olhada nesse [link](https://www.postgresqltuto
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_2">Código</a>
 </details>
+
+<details>
+  <summary>Relacionamentos e filtros no BD</summary>
+  
+  #### SOBRE
+  - Nessa etapa, você deve criar um relacionamento entre o professor e o estudante. Além disso, deve-se implementar filtros na listagem da tabela de professores.
+  #### RELACIONAMENTOS
+  - Adicione um campo `teacher_id` na tabela de estudantes. Em seguida, nas páginas de cadastro e edição de estudantes adicione um campo select que lista todos os professores cadastrados. Por fim, na página de detalhe de um estudante, crie um campo que mostre o nome do professor do aluno.
+  #### FILTROS
+  - Na página de listagem de professores, adicione um input de texto para os filtros e um botão para retornar uma nova listagem com os dados filtrados. No método `index` do controller, faça uma verificação para checar se existem filtros passados por `query params`. Se existir, crie um método `findBy` no model que retorna todos os professores que tiverem o nome ou a área de atuação em comum com o filtro passado (utilize o `ILIKE`).
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  
+<h1 align="center">
+  <img src="/Images/desafio_5-3_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_5-3_2.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_5-3_3.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_5-3_4.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_3">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=T7DsrRP4jAs)
+</details>
