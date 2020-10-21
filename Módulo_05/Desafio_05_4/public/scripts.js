@@ -65,15 +65,18 @@ function createPagination(pagination) {
 
 /* Página selecionada */
 function selectedPage(pagination) {
-    const pageSelected = new URLSearchParams(location.search)
-    const pageNumber = pageSelected.get('page')
-
+    const pageSelected = new URLSearchParams(window.location.search)
+    const pageNumber = parseInt(pageSelected.get('page'))
     const pages = pagination.querySelectorAll("a")
 
     for (let page of pages) {
-        if (page.innerText == pageNumber) {
+        if (!pageSelected.has('page') && page.innerText == 1) {
             page.classList.add("selected")
 
+        } else {
+            if (page.innerText == pageNumber) {
+                page.classList.add("selected")
+            }
         }
     }
 }
