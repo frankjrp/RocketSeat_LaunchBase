@@ -1,6 +1,9 @@
 const currentPage = location.pathname
 const menuItems = document.querySelectorAll("header .links a")
 
+const pageSelected = new URLSearchParams(window.location.search)
+const pageNumber = parseInt(pageSelected.get('page'))
+
 for (item of menuItems) {
     if (currentPage.includes(item.getAttribute("href"))) {
         item.classList.add("active")
@@ -11,6 +14,8 @@ for (item of menuItems) {
 function paginate(selectedPage, totalPages) {
     let pages = [],
         oldPage
+
+    pages.push("prior")
 
     for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
 
@@ -35,6 +40,8 @@ function paginate(selectedPage, totalPages) {
 
     }
 
+    pages.push("next")
+
     return pages
 }
 
@@ -49,6 +56,53 @@ function createPagination(pagination) {
     for (let page of pages) {
         if (String(page).includes("...")) {
             elements += `<span>${page}</span>`
+
+        } else if (String(page).includes("prior")) {
+            if (pageNumber > 1) {
+                if (filter) {
+                    elements += `<a class="btnPriorNext" href="?page=${pageNumber - 1}&filter=${filter}">
+                    ←
+                    <span></span>
+                    Anterior
+                    </a>`
+                } else {
+                    elements += `<a class="btnPriorNext" href="?page=${pageNumber - 1}">
+                    ←
+                    <span></span>
+                    Anterior
+                    </a>`
+                }
+            }
+
+        } else if (String(page).includes("next")) {
+            if (!pageSelected.has('page') && total > 1) {
+                if (filter) {
+                    elements += `<a class="btnPriorNext" href="?page=2&filter=${filter}">Próximo
+                    <span></span>
+                    →
+                    </a>`
+                } else {
+                    elements += `<a class="btnPriorNext" href="?page=2">Próximo
+                    <span></span>
+                    →
+                    </a>`
+                }
+
+            } else {
+                if (pageNumber < total) {
+                    if (filter) {
+                        elements += `<a class="btnPriorNext" href="?page=${pageNumber + 1}&filter=${filter}">Próximo
+                        <span></span>
+                        →
+                        </a>`
+                    } else {
+                        elements += `<a class="btnPriorNext" href="?page=${pageNumber + 1}">Próximo
+                        <span></span>
+                        →
+                        </a>`
+                    }
+                }
+            }
 
         } else {
             if (filter) {
@@ -65,8 +119,6 @@ function createPagination(pagination) {
 
 /* Página selecionada */
 function selectedPage(pagination) {
-    const pageSelected = new URLSearchParams(window.location.search)
-    const pageNumber = parseInt(pageSelected.get('page'))
     const pages = pagination.querySelectorAll("a")
 
     for (let page of pages) {

@@ -376,7 +376,7 @@ a.button {
     border-radius: 8px;
     background-color: var(--details-color);
     margin-right: 8px;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .table-container .pagination span {
@@ -391,7 +391,13 @@ a.button {
 /* === PAGE SELECTED === */
 
 .table-container .pagination a.selected {
-    filter: brightness(0.8);
-    border-bottom: 1px solid var(--btn_show-color);
-    border: 1px solid var(--details-color);
+    background: none;
+    border: 2px solid var(--links_hover-color);
+    pointer-events: none;
+}
+
+/* === BUTTONS PRIOR NEXT === */
+
+.table-container .pagination a.btnPriorNext {
+    border: 1px solid var(--btn_show-color);
 }
