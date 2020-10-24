@@ -911,3 +911,46 @@ _Para mais informações, dê uma olhada nesse [link](https://www.postgresqltuto
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_3">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=T7DsrRP4jAs)
 </details>
+
+<details>
+  <summary>Paginação de resultados no BD</summary>
+  
+  #### SOBRE
+  - Nessa etapa, você deve implementar a lógica de paginação dos resultados do BD.
+  #### BACKEND
+  - Adicione no método `index` do controller de professores o tratamento dos campos `page` e `limit` que serão transmitidos via `query params`. Além disso, faça o cálculo do `offset` a ser passado para a query. Por fim, crie um novo método `paginate` no model que deve implementar toda a query já existente (com filter e order) e também adicionar a paginação (utilize `LIMIT` e `OFFSET`).
+  #### FRONTEND
+  Crie um algoritmo que realize a paginação dos resultados da seguinte forma:
+  
+  - As duas primeiras e últimas páginas sempre devem ser apresentadas (ex: 1, 2, 45 e 46 de um total de 46 pags.);
+  - Caso existam mais de 7 páginas, as intermediárias selecionadas devem ser apresentadas juntamente com seu sucessor e antecessor (ex.: 1, 2, ..., 12, 13 (selecionada), 14, ..., 23, 24);
+  - Só apresente as reticências se elas representarem um grupo de 2 páginas ou mais (ex.: 1, 2, 3 (sem reticências), 4, 5 (selecionada), 6, ...(pags 7 e 8), 9, 10).
+  
+  Em seguida, implemente na query do método `paginate` no model de professor a lógica da paginação:
+  
+  - Realizar o `count` de todos os registros de professores (utilize uma `subquery`);
+  - Aplicar os filtros tanto na `query` de busca dos professores quanto na `subquery` de `count`.
+  
+  Por fim, utilize o `scripts.js` para renderizar no `html` (não faça no `nunjucks`) a paginação ao final da listagem (não esqueça que as reticências não devem ser links).
+  #### AJUSTES FINAIS
+  Para finalizar, basta:
+  
+  - Estilizar a paginação;
+  - Preservar o filter quando a página for alterada;
+  - Implementar no front dos estudantes a paginação (siga a mesma ideia aplicada nos professores).
+  #### ESTILIZAÇÃO
+  - Você tem liberdade para escolher a estilização que preferir para esse desafio.
+  #### NOTA
+  - _Além do que foi solicitado, inseri os botões `Anterior` e `Próximo`; e a correta parametrização nos filtros, nos casos onde não há nenhum registro correspondente._
+  
+<h1 align="center">
+  <img src="/Images/desafio_5-4_1.PNG">
+</h1>
+
+<h1 align="center">
+  <img src="/Images/desafio_5-4_2.PNG">
+</h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_4">Código</a>
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=IPtBMAgCbvo)
+</details>
