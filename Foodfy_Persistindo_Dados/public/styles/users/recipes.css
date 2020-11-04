@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    margin-top: 10px;
+    padding-bottom: 50px;
+}
+
+.header-container nav {
+    display: inline-flex;
+}
+
+.header-container nav img {
+    padding-right: 120px;
+}
+
+.header-container nav a {
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
+    text-decoration: none;
+}
+
+.header-container nav a:nth-child(2) {
+    padding-right: 30px;
+}
+
+.header-container nav a.active {
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 20px;
+}
+
+.card .image-container {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.card .image-container img {
+    width: 100%;
+    height: 140px;
+    border-radius: 15px;
+}
+
+.card-content {
+    display: grid;
+    gap: 5px 0;
+}
+
+.card .card-content p#name {
+    font-size: 18px;
+    line-height: 21px;
+
+}
+
+.card .card-content p#by {
+    font-size: 14px;    
+    line-height: 16px;
+    color: #777777;
+}
+
+.footer-container {
+    background-color: #EEEEEE;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 250px;
+}
+
+.footer-container p {
+    color: #999999;
+    font-size: 14px;
+    line-height: 16px;
+}

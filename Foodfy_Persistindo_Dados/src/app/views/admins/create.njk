@@ -1,0 +1,21 @@
+{% extends "admins/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/admins/edit_create.css">
+{% endblock style %}
+
+{% block content %}
+
+    <form class="recipe" method="POST" action="/admin/recipes">
+        <section class="details">
+
+            {% include "admins/fields.njk" %}
+
+        </section>
+    </form>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/admins/add.js"></script>
+{% endblock script %}

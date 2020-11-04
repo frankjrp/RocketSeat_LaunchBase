@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+.header-container nav {
+    display: inline-flex;
+}
+
+.header-container nav img {
+    padding-right: 120px;
+}
+
+.header-container nav a {
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
+    text-decoration: none;
+}
+
+.header-container nav a:nth-child(2) {
+    padding-right: 30px;
+}
+
+.intro {
+    background-color: #FBDFDB;
+    height: 366px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.intro .image-container {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.intro .desc {
+    display: grid;
+    gap: 10px;
+    width: 316px;
+    position: absolute;
+    left: 60px;
+    bottom: 117px;
+}
+
+.intro .desc p#title {
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.intro .desc p#text {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    color: #000000;
+    filter: opacity(70%);
+}
+
+.cards-title {
+    margin: 50px 0 20px;
+    font-size: 24px;    
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 20px;
+}
+
+.card .image-container {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.card .image-container img {
+    width: 100%;
+    height: 140px;
+    border-radius: 15px;
+}
+
+.card-content {
+    display: grid;
+    gap: 5px 0;
+}
+
+.card .card-content p#name {
+    font-size: 18px;
+    line-height: 21px;
+
+}
+
+.card .card-content p#by {
+    font-size: 14px;    
+    line-height: 16px;
+    color: #777777;
+}
+
+.footer-container {
+    background-color: #EEEEEE;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.footer-container p {
+    color: #999999;
+    font-size: 14px;
+    line-height: 16px;
+}

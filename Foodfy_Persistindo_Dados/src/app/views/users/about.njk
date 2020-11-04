@@ -1,0 +1,47 @@
+{% extends "users/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/users/about.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Sobre</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <article>
+            <div class="title" id="main">
+                <p>{{ about.aboutTitle }}</p>
+            </div>
+
+            <div class="text">
+                <p>{{ about.aboutDesc | striptags(true) | escape | nl2br }}</p>
+            </div>
+        </article>
+
+        <article>
+            <div class="title">
+                <p>{{ about.startTitle }}</p>
+            </div>
+
+            <div class="text">
+                <p>{{ about.startDesc | striptags(true) | escape | nl2br }}</p>
+            </div>
+        </article>
+
+        <article>
+            <div class="title">
+                <p>{{about.ourRecipesTitle}}</p>
+            </div>
+
+            <div class="text">
+                <p>{{ about.ourRecipesDesc | striptags(true) | escape | nl2br }}</p>
+            </div>
+        </article>
+
+    </main>
+
+{% endblock content %}

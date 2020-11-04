@@ -1,0 +1,40 @@
+{% extends "users/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/users/recipes.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Receitas</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <section class="cards">
+
+            {% for recipe in recipes %}
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                    </div>
+
+                    <div class="card-content">
+                        <p id="name">{{ recipe.title }}</p>
+                        <p id="by">por {{ recipe.author }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/users/recipe.js"></script>
+{% endblock script %}
