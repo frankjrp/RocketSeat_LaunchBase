@@ -12,6 +12,7 @@
 
 body,
 input,
+select,
 textarea {
     font-family: 'Roboto', sans-serif;
 }
@@ -95,6 +96,8 @@ textarea {
 }
 
 .item input,
+.item select,
+.item option,
 .item textarea {
     border: 1px solid #DDDDDD;
     font-size: 16px;
@@ -117,5 +120,13 @@ textarea {
     line-height: 19px;
     font-weight: bold;
     margin-top: 15px;
+    cursor: pointer;
+}
+
+.item select:invalid {
+    color: #999999;
+}
+
+.item select {
     cursor: pointer;
 }

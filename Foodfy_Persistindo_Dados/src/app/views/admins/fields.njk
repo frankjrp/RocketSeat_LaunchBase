@@ -21,9 +21,14 @@
 </div>
 
 <div class="item">
-    <div class="field">Autor da receita</div>
+    <div class="field">Chef</div>
     <div class="inputs">
-        <input type="text" name="author" placeholder="" value="{{ recipe.author }}" required="required">
+        <select name="chef" required="required">
+            <option value="" disabled selected hidden>Selecione um chef</option>
+            {% for chef in chefOptions %}
+                <option value="{{ chef.id }}" {% if recipe.chef_id == chef.id %} selected="selected" {% endif %}>{{ chef.name }}</option>
+            {% endfor %}
+        </select>
     </div>
 </div>
 
