@@ -3,8 +3,8 @@ const User = require('../models/user')
 
 module.exports = {
     index(req, res) {
-        User.all(function (users) {
-            return res.render("users/index", { recipes: users })
+        User.all(function (recipes) {
+            return res.render("users/index", { recipes })
         })
     },
     recipes(req, res) {
