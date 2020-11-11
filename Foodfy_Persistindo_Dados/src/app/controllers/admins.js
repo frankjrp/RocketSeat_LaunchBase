@@ -19,15 +19,34 @@ module.exports = {
         })
     },
     show(req, res) {
+        Admin.find(req.params.id, function (recipe) {
+            if (!recipe) {
+                res.send("Recipe not found!")
+            }
 
+            return res.render("admins/recipe", { recipe })
+        })
     },
     edit(req, res) {
+        Admin.find(req.params.id, function (recipe) {
+            if (!recipe) {
+                res.send("Recipe not found!")
+            }
 
+            Admin.chefsSelectOptions(function (options) {
+                return res.render("admins/edit", { recipe, chefOptions: options })
+    
+            })
+        })
     },
-    put(req, res) {
-
+    update(req, res) {
+        Admin.update(req.body, function () {
+            return res.redirect(`/admin/recipes/${req.body.id}`)
+        })
     },
     delete(req, res) {
-
+        Admin.delete(req.body.id, function () {
+            return res.redirect("/admin/recipes")
+        })
     }
 }

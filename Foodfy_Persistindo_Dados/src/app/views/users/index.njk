@@ -32,7 +32,9 @@
 
                 <div class="card">
                     <div class="image-container">
-                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                        <a href="/recipes/{{ recipe.id }}">
+                            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                        </a>
                     </div>
 
                     <div class="card-content">
@@ -48,7 +50,3 @@
     </main>
 
 {% endblock content %}
-
-{% block script %}
-    <script src="/scripts/users/recipe.js"></script>
-{% endblock script %}

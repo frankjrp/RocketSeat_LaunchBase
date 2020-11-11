@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-title">
                     <h3>Receita: {{ recipe.title }}</h3>
-                    <button>Editar receita</button>
+                    <a href="/admin/recipes/{{ recipe.id }}/edit">Editar receita</a>
                 </div>
 
                 <div class="image-container">
@@ -26,7 +26,7 @@
 
                 <div class="card-content">
                     <p id="name">{{ recipe.title }}</p>
-                    <p id="by">por {{ recipe.author }}</p>
+                    <p id="by">por {{ recipe.chef_name }}</p>
                 </div>
             </div>
 
@@ -76,7 +76,3 @@
     </main>
 
 {% endblock content %}
-
-{% block script %}
-    <script src="/scripts/admins/showEdit.js"></script>
-{% endblock script %}

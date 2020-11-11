@@ -9,15 +9,15 @@ routes.get('/', function (req, res) {
 
 routes.get('/index', users.index)
 routes.get('/recipes', users.recipes)
-routes.get('/recipes/:index', users.show)
+routes.get('/recipes/:id', users.show)
 routes.get('/about', users.about)
 
 routes.get('/admin/recipes', admins.index)
 routes.get('/admin/recipes/create', admins.create)
-routes.get('/admin/recipes/:index', admins.show)
-routes.get('/admin/recipes/:index/edit', admins.edit)
+routes.get('/admin/recipes/:id', admins.show)
+routes.get('/admin/recipes/:id/edit', admins.edit)
 routes.post("/admin/recipes", admins.post)
-routes.put("/admin/recipes", admins.put)
+routes.put("/admin/recipes", admins.update)
 routes.delete("/admin/recipes", admins.delete)
 
 module.exports = routes
