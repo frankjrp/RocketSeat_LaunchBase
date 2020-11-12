@@ -7,9 +7,35 @@ module.exports = {
         })
     },
     recipes(req, res) {
-        User.all(function (recipes) {
-            return res.render("users/recipes", { recipes })
-        })
+        let { filter, page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 6
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(recipes) {
+
+                let total = 0
+
+                if (recipes[0]) {
+                    total = recipes[0].total
+                }
+
+                const pagination = {
+                    total: Math.ceil(total / limit),
+                    page
+                }
+
+                return res.render("users/recipes", { recipes, pagination, filter })
+            }
+        }
+
+        User.paginate(params)
     },
     show(req, res) {
         User.find(req.params.id, function (recipe) {
