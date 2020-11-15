@@ -12,6 +12,12 @@
 
     <main>
 
+        {% if filter %}
+            <div class="search">
+                <p>Buscando por "{{ filter }}"</p>
+            </div>
+        {% endif %}
+
         <section class="cards">
 
             {% for recipe in recipes %}
