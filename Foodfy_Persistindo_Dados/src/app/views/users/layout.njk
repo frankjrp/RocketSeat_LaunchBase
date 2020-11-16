@@ -32,12 +32,14 @@
                         <a href="/chefs">Chefs</a>
                     </nav>
 
-                    <div class="filter">
-                        <form action="/recipes" method="GET">
-                            <input type="text" name="filter" placeholder="Buscar uma receita">
-                            <button type="submit">Buscar</button>
-                        </form>
-                    </div>
+                    {% if recipe or recipes %}
+                        <div class="filter">
+                            <form action="/recipes" method="GET">
+                                <input type="text" name="filter" placeholder="Buscar uma receita">
+                                <button type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    {% endif %}
                 </div>
             </header>
 

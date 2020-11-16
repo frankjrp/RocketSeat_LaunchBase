@@ -123,7 +123,8 @@ textarea {
     cursor: pointer;
 }
 
-.item select:invalid {
+.item select:invalid,
+.item input::placeholder {
     color: #999999;
 }
 
