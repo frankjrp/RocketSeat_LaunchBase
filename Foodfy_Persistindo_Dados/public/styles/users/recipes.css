@@ -196,6 +196,25 @@ body {
 
 /* === BUTTONS PRIOR NEXT === */
 
-.page-container .pagination a.btnPriorNext {
-    border: 1px solid var(--page-detail);
+.page-container .pagination a.btnPrior,
+.page-container .pagination a.btnNext {
+    padding: 8px 24px;
+}
+
+.page-container .pagination a.btnPrior {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAZ0lEQVRIie2UMQ6AIBAEJ/5Bo/9/iZXRYCOFz8FCCmPhLWjnTTnFLCEEcD6mA1ZgFH1xPAIJmAVfRAtsObIDveE9/uc4QMiRyPkELf9IU3uKN9yvYjC8j/iIzvVbXgRfPRKASfSOzQGSolrP/s1zHQAAAABJRU5ErkJggg==) no-repeat;
+    background-position: center;
+}
+
+.page-container .pagination a.btnNext {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAa0lEQVRIie3VMQqEQBBE0Yd3WNH732QTQY3WwONooJE4OKOb2T/8QRU0TTfBDb4YUWf6YnosmA5hKV/MB789bEZ74aMkSvKpbSu6YMjwoHrS+E+Oo2gufIS/OZxtl8/OcsoX0zl/LCkfPGMFIaha0YxwDFEAAAAASUVORK5CYII=) no-repeat;
+    background-position: center;
+}
+
+.page-container .pagination a.btnPrior:hover,
+.page-container .pagination a.btnNext:hover {
+    border: 0;
+    filter: none;
+    border-top: 2px solid var(--page-background);
+    border-bottom: 2px solid var(--page-background);
 }

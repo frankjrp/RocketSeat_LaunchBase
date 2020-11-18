@@ -50,46 +50,26 @@ function createPagination(pagination) {
         } else if (String(page).includes("prior")) {
             if (pageNumber > 1) {
                 if (filter) {
-                    elements += `<a class="btnPriorNext" href="?page=${pageNumber - 1}&filter=${filter}">
-                    ←
-                    <span></span>
-                    Anterior
-                    </a>`
+                    elements += `<a class="btnPrior" href="?page=${pageNumber - 1}&filter=${filter}"></a>`
                 } else {
-                    elements += `<a class="btnPriorNext" href="?page=${pageNumber - 1}">
-                    ←
-                    <span></span>
-                    Anterior
-                    </a>`
+                    elements += `<a class="btnPrior" href="?page=${pageNumber - 1}"></a>`
                 }
             }
 
         } else if (String(page).includes("next")) {
             if (!pageSelected.has('page') && total > 1) {
                 if (filter) {
-                    elements += `<a class="btnPriorNext" href="?page=2&filter=${filter}">Próximo
-                    <span></span>
-                    →
-                    </a>`
+                    elements += `<a class="btnNext" href="?page=2&filter=${filter}"></a>`
                 } else {
-                    elements += `<a class="btnPriorNext" href="?page=2">Próximo
-                    <span></span>
-                    →
-                    </a>`
+                    elements += `<a class="btnNext" href="?page=2"></a>`
                 }
 
             } else {
                 if (pageNumber < total) {
                     if (filter) {
-                        elements += `<a class="btnPriorNext" href="?page=${pageNumber + 1}&filter=${filter}">Próximo
-                        <span></span>
-                        →
-                        </a>`
+                        elements += `<a class="btnNext" href="?page=${pageNumber + 1}&filter=${filter}"></a>`
                     } else {
-                        elements += `<a class="btnPriorNext" href="?page=${pageNumber + 1}">Próximo
-                        <span></span>
-                        →
-                        </a>`
+                        elements += `<a class="btnNext" href="?page=${pageNumber + 1}"></a>`
                     }
                 }
             }

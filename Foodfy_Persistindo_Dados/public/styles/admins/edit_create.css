@@ -130,4 +130,7 @@ textarea {
 
 .item select {
     cursor: pointer;
+    appearance: none;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAArklEQVRIie2PwUrEQBBEX23YT02LoInrh7hJLqb7R/XWXjIgYkKyexBh3mUOVdTrgUql8re4+/nezmktmOf5GfhY3s2Ouz8dFkhqgEbS6O7dz9zdO0nj0mkOC8xszMwREDBERP9t/AEYlszbtp1WD10LADJT7n6V1AMp6ZKZn8B7GTezR0l5k6BIImIAOqAMCZjM7GVrfJfgl5+w5/JDgiKJiFcAM3vbM16p/BO+AJkZS1cfYrxBAAAAAElFTkSuQmCC) no-repeat;
+    background-position: right 20px center;
 }
