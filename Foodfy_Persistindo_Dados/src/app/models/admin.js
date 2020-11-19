@@ -2,20 +2,27 @@ const { date } = require('../../lib/utils')
 const db = require('../../config/db')
 
 module.exports = {
-    all(callback) {
-        db.query(`SELECT recipes.*, chefs.name AS chef_name
+    paginate(params) {
+        const { limit, offset, callback } = params
+
+        let query = "",
+            totalQuery = `(SELECT count(*) FROM recipes) AS total`
+
+        query = `
+        SELECT recipes.*, chefs.name AS chef_name, ${totalQuery}
         FROM recipes
         LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
         ORDER BY recipes.title ASC
-        `, function (err, results) {
+        LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function (err, results) {
             if (err) {
                 throw `Database error! ${err}`
             }
 
             callback(results.rows)
-
         })
-
     },
     create(data, callback) {
         const query = `

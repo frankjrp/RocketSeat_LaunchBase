@@ -1,7 +1,7 @@
-const currentPage = location.pathname
+const currentPageName = location.pathname
 const inputs = document.querySelectorAll(".add")
 
-if (currentPage.includes("create")) {
+if (currentPageName.includes("create")) {
     document.getElementById("btn_delete").classList.add("hidden")
     document.querySelector(".title h3").textContent = "Criando receita"
 }

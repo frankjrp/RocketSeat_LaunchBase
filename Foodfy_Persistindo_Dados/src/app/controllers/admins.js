@@ -2,9 +2,34 @@ const Admin = require('../models/admin')
 
 module.exports = {
     index(req, res) {
-        Admin.all(function (recipes) {
-            return res.render("admins/index", { recipes })
-        })
+        let { page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 6
+        let offset = limit * (page - 1)
+
+        const params = {
+            page,
+            limit,
+            offset,
+            callback(recipes) {
+
+                let total = 0
+
+                if (recipes[0]) {
+                    total = recipes[0].total
+                }
+
+                const pagination = {
+                    total: Math.ceil(total / limit),
+                    page
+                }
+
+                return res.render("admins/index", { recipes, pagination })
+            }
+        }
+
+        Admin.paginate(params)
     },
     create(req, res) {
         Admin.chefsSelectOptions(function (options) {
