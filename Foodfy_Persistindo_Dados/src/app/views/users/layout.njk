@@ -19,39 +19,43 @@
 
     <body>
 
-        <div class="page-container">
+        <div class="page-flex">
 
-            <header>
-                <div class="header-container">
-                    <nav>
-                        <a href="/index">
-                            <img src="/assets/logo.png" alt="Imagem do logo Foodfy">
-                        </a>
-                        <a href="/about">Sobre</a>
-                        <a href="/recipes">Receitas</a>
-                        <a href="/chefs">Chefs</a>
-                    </nav>
+            <div class="page-container">
 
-                    {% if recipe or recipes %}
-                        <div class="filter">
-                            <form action="/recipes" method="GET">
-                                <input type="text" name="filter" placeholder="Buscar uma receita">
-                                <button type="submit">Buscar</button>
-                            </form>
-                        </div>
-                    {% endif %}
+                <header>
+                    <div class="header-container">
+                        <nav>
+                            <a href="/index">
+                                <img src="/assets/logo.png" alt="Imagem do logo Foodfy">
+                            </a>
+                            <a href="/about">Sobre</a>
+                            <a href="/recipes">Receitas</a>
+                            <a href="/chefs">Chefs</a>
+                        </nav>
+
+                        {% if recipe or recipes %}
+                            <div class="filter">
+                                <form action="/recipes" method="GET">
+                                    <input type="text" name="filter" placeholder="Buscar uma receita">
+                                    <button type="submit">Buscar</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </header>
+
+                {% block content %}{% endblock content %}
+
+            </div>
+
+            <footer>
+                <div class="footer-container">
+                    <p>Todos direitos reservados, receitas Foodfy.</p>
                 </div>
-            </header>
-
-            {% block content %}{% endblock content %}
+            </footer>
 
         </div>
-
-        <footer>
-            <div class="footer-container">
-                <p>Todos direitos reservados, receitas Foodfy.</p>
-            </div>
-        </footer>
 
         {% block script %}{% endblock script %}
 

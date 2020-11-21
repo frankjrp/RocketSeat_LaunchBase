@@ -5,8 +5,18 @@
     box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100vh;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+.page-flex {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-container {
@@ -155,6 +165,10 @@ body {
     font-size: 14px;    
     line-height: 16px;
     color: #777777;
+}
+
+footer {
+    margin-top: auto;
 }
 
 .footer-container {
