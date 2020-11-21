@@ -31,7 +31,7 @@ module.exports = {
                     page
                 }
 
-                return res.render("users/recipes", { recipes, pagination, filter })
+                return res.render("users/recipes", { recipes, pagination, filter, total })
             }
         }
 

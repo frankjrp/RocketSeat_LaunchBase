@@ -12,11 +12,21 @@
 
     <main>
 
-        {% if filter %}
-            <div class="search">
-                <p>Buscando por "{{ filter }}"</p>
-            </div>
-        {% endif %}
+        <div class="filter">
+
+            {% if filter %}
+                <div class="search">
+                    <p>Buscando por "{{ filter }}"</p>
+                </div>
+            {% endif %}
+
+            {% if total < 1 %}
+                <div class="none">
+                    <p>Nenhuma receita foi encontrada</p>
+                </div>
+            {% endif %}
+
+        </div>
 
         <section class="cards">
 
