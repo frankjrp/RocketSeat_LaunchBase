@@ -1,0 +1,50 @@
+{% extends "users/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/users/chefs.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Chefs</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <section class="cards">
+
+            {% for chef in chefs %}
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}">
+                    </div>
+
+                    <div class="card-content">
+                        <p id="name">{{ chef.name }}</p>
+
+                        {% if chef.recipes == 1 %}
+                            <p id="total">{{ chef.recipes }} receita</p>
+                        {% else %}
+                            <p id="total">{{ chef.recipes }} receitas</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+        <div class="pagination"
+                data-page = {{pagination.page}}
+                data-total = {{pagination.total}}
+        ></div>
+
+    </main>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/paginate.js"></script>
+{% endblock script %}
