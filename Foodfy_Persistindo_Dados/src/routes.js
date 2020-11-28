@@ -2,6 +2,7 @@ const express = require('express')
 const routes = express.Router()
 const users = require('./app/controllers/users')
 const admins = require('./app/controllers/admins')
+const chefs = require('./app/controllers/chefs')
 
 routes.get('/', function (req, res) {
     return res.redirect("/index")
@@ -20,5 +21,7 @@ routes.get('/admin/recipes/:id/edit', admins.edit)
 routes.post("/admin/recipes", admins.post)
 routes.put("/admin/recipes", admins.update)
 routes.delete("/admin/recipes", admins.delete)
+
+routes.get('/admin/chefs', chefs.index)
 
 module.exports = routes

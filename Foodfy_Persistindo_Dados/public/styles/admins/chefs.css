@@ -59,76 +59,52 @@ body {
 
 .cards-title {
     margin: 50px 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .cards-title p {
-    font-size: 24px;    
+    font-size: 24px;
     line-height: 28px;
     font-weight: bold;
 }
 
-.cards-title a {
-    background-color: var(--btn-color);
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: bold;
-    border-radius: 4px;
-    padding: 9px 20px;
-    cursor: pointer;
-}
-
-.cards-title a:hover {
-    box-shadow: 0 0 0 3px var(--btn-color);
-}
-
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px 20px;
 }
 
 .card {
     display: inline-flex;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
 }
 
 .card .image-container {
-    width: 172px;
-    height: 80px;
     margin-right: 20px;
 }
 
 .card .image-container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8.57px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.card .card-content p#name {
+.card-content {
+    display: grid;
+    row-gap: 10px;
+}
+
+.card .card-content p {
     font-size: 18px;
     line-height: 21px;
-    color: #111111;
-    max-width: 250px;
-    margin-bottom: 5px;
 
-}
-
-.card .card-content p#by {
-    font-size: 14px;    
-    line-height: 16px;
-    color: #777777;
-    margin-bottom: 10px;
 }
 
 .card .card-content a {
     font-size: 14px;
     line-height: 16px;
-    color: #6558C3;
+    color: var(--btn-color);
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
