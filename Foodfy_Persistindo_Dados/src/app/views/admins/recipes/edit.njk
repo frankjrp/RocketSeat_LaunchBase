@@ -9,7 +9,7 @@
     <form class="recipe" method="POST" action="/admin/recipes?_method=PUT">
         <section class="details">
 
-            {% include "admins/fields.njk" %}
+            {% include "admins/recipes/fields.njk" %}
 
             <input type="hidden" name="id" value="{{ recipe.id }}">
 

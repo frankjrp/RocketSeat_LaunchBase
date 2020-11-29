@@ -1,8 +1,8 @@
 const express = require('express')
 const routes = express.Router()
-const users = require('./app/controllers/users')
-const admins = require('./app/controllers/admins')
-const chefs = require('./app/controllers/chefs')
+const users = require('./app/controllers/users/users')
+const recipes = require('./app/controllers/admins/recipes')
+const chefs = require('./app/controllers/admins/chefs')
 
 routes.get('/', function (req, res) {
     return res.redirect("/index")
@@ -14,13 +14,13 @@ routes.get('/recipes/:id', users.show)
 routes.get('/chefs', users.chefs)
 routes.get('/about', users.about)
 
-routes.get('/admin/recipes', admins.index)
-routes.get('/admin/recipes/create', admins.create)
-routes.get('/admin/recipes/:id', admins.show)
-routes.get('/admin/recipes/:id/edit', admins.edit)
-routes.post("/admin/recipes", admins.post)
-routes.put("/admin/recipes", admins.update)
-routes.delete("/admin/recipes", admins.delete)
+routes.get('/admin/recipes', recipes.index)
+routes.get('/admin/recipes/create', recipes.create)
+routes.get('/admin/recipes/:id', recipes.show)
+routes.get('/admin/recipes/:id/edit', recipes.edit)
+routes.post("/admin/recipes", recipes.post)
+routes.put("/admin/recipes", recipes.update)
+routes.delete("/admin/recipes", recipes.delete)
 
 routes.get('/admin/chefs', chefs.index)
 

@@ -1,4 +1,4 @@
-const Chefs = require('../models/chefs')
+const Chefs = require('../../models/admins/chefs')
 
 module.exports = {
     index(req, res) {
@@ -25,7 +25,7 @@ module.exports = {
                     page
                 }
 
-                return res.render("admins/chefs", { chefs, pagination })
+                return res.render("admins/chefs/index", { chefs, pagination })
             }
         }
 

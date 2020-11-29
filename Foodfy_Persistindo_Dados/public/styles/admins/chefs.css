@@ -59,12 +59,33 @@ body {
 
 .cards-title {
     margin: 50px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+
 
 .cards-title p {
     font-size: 24px;
     line-height: 28px;
     font-weight: bold;
+}
+
+.cards-title a {
+    background-color: var(--btn-color);
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 9px 20px;
+    cursor: pointer;
+}
+
+.cards-title a:hover {
+    box-shadow: 0 0 0 3px var(--btn-color);
 }
 
 .cards {

@@ -1,4 +1,4 @@
-const Admin = require('../models/admin')
+const Admin = require('../../models/admins/recipes')
 
 module.exports = {
     index(req, res) {
@@ -25,7 +25,7 @@ module.exports = {
                     page
                 }
 
-                return res.render("admins/index", { recipes, pagination })
+                return res.render("admins/recipes/index", { recipes, pagination })
             }
         }
 
@@ -33,7 +33,7 @@ module.exports = {
     },
     create(req, res) {
         Admin.chefsSelectOptions(function (options) {
-            return res.render("admins/create", { chefOptions: options })
+            return res.render("admins/recipes/create", { chefOptions: options })
 
         })
     },
@@ -49,7 +49,7 @@ module.exports = {
                 res.send("Recipe not found!")
             }
 
-            return res.render("admins/recipe", { recipe })
+            return res.render("admins/recipes/recipe", { recipe })
         })
     },
     edit(req, res) {
@@ -59,7 +59,7 @@ module.exports = {
             }
 
             Admin.chefsSelectOptions(function (options) {
-                return res.render("admins/edit", { recipe, chefOptions: options })
+                return res.render("admins/recipes/edit", { recipe, chefOptions: options })
     
             })
         })
