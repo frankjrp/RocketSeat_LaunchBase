@@ -60,7 +60,7 @@ textarea {
 /* === FORM === */
 
 .details .title {
-    margin-top: 55px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,10 +100,6 @@ textarea {
 
 .buttons button#btn_delete[type="submit"]:hover {
     box-shadow: 0 0 0 3px var(--btn_delete-color);
-}
-
-.buttons button.hidden[type="submit"] {
-    display: none;
 }
 
 .item .field {

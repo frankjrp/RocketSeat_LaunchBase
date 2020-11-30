@@ -1,10 +1,4 @@
-const currentPageName = location.pathname
 const inputs = document.querySelectorAll(".add")
-
-if (currentPageName.includes("create")) {
-    document.getElementById("btn_delete").classList.add("hidden")
-    document.querySelector(".title h3").textContent = "Criando receita"
-}
 
 for (let input of inputs) {
     const btn = input.querySelector("span")
