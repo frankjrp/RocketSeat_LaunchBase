@@ -8,6 +8,10 @@ routes.get('/', function (req, res) {
     return res.redirect("/index")
 })
 
+routes.get('/admin', function (req, res) {
+    return res.redirect("/admin/recipes")
+})
+
 routes.get('/index', users.index)
 routes.get('/recipes', users.recipes)
 routes.get('/recipes/:id', users.show)
@@ -23,5 +27,8 @@ routes.put("/admin/recipes", recipes.update)
 routes.delete("/admin/recipes", recipes.delete)
 
 routes.get('/admin/chefs', chefs.index)
+routes.get('/admin/chefs/create', chefs.create)
+routes.post("/admin/chefs", chefs.post)
+routes.put("/admin/chefs", chefs.update)
 
 module.exports = routes

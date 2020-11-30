@@ -1,0 +1,41 @@
+{% extends "admins/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/admins/edit_create.css">
+{% endblock style %}
+
+{% block content %}
+
+    <form class="recipe" method="POST" action="/admin/chefs?_method=PUT">
+        <section class="details">
+
+            <div class="title">
+                <h3>Editando receita</h3>
+                <div class="buttons">
+                    <button id="btn_delete" type="submit" form="form_delete">Deletar</button>
+                    <button type="submit">Salvar chef</button>
+                </div>
+            </div>
+
+            {% include "admins/chefs/fields.njk" %}
+
+            <input type="hidden" name="id" value="{{ chef.id }}">
+
+        </section>
+    </form>
+
+    <form id="form_delete" method="POST" action="/admin/chefs?_method=DELETE">
+        <input type="hidden" name="id" value="{{ chef.id }}">
+    </form>
+
+    <script>
+        const formDelete = document.querySelector("#form_delete")
+        formDelete.addEventListener("submit", function (event) {
+            const confirmation = confirm(`Deseja realmente deletar o chef "{{ chef.name }}"?`)
+            if (!confirmation) {
+                event.preventDefault()
+            }
+        })
+    </script>
+
+{% endblock content %}

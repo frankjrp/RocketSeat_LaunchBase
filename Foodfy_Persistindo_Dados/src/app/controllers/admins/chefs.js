@@ -32,14 +32,12 @@ module.exports = {
         Chefs.paginate(params)
     },
     create(req, res) {
-        Admin.chefsSelectOptions(function (options) {
-            return res.render("admins/create", { chefOptions: options })
+        return res.render("admins/chefs/create")
 
-        })
     },
     post(req, res) {
-        Admin.create(req.body, function (recipe) {
-            return res.redirect(`/admin/recipes`)
+        Chefs.create(req.body, function (chef) {
+            return res.redirect(`/admin/chefs`)
 
         })
     },
@@ -53,20 +51,18 @@ module.exports = {
         })
     },
     edit(req, res) {
-        Admin.find(req.params.id, function (recipe) {
-            if (!recipe) {
-                res.send("Recipe not found!")
+        Chefs.find(req.params.id, function (chef) {
+            if (!chef) {
+                res.send("Chef not found!")
             }
 
-            Admin.chefsSelectOptions(function (options) {
-                return res.render("admins/edit", { recipe, chefOptions: options })
-    
-            })
+            return res.render("admins/chefs/edit", { chef })
+            
         })
     },
     update(req, res) {
-        Admin.update(req.body, function () {
-            return res.redirect(`/admin/recipes/${req.body.id}`)
+        Chefs.update(req.body, function () {
+            return res.redirect(`/admin/chefs/${req.body.id}`)
         })
     },
     delete(req, res) {

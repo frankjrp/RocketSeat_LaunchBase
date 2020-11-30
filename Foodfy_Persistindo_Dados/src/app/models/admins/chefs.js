@@ -1,3 +1,4 @@
+const { date } = require('../../../lib/utils')
 const db = require('../../../config/db')
 
 module.exports = {
@@ -24,25 +25,17 @@ module.exports = {
     },
     create(data, callback) {
         const query = `
-            INSERT INTO recipes (
-                chef_id,
-                image,
-                title,
-                ingredients,
-                preparation,
-                information,
+            INSERT INTO chefs (
+                name,
+                avatar_url,
                 created_at
-            ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+            ) VALUES ($1, $2, $3)
             RETURNING id
         `
 
         const values = [
-            data.chef,
-            data.image,
-            data.title,
-            data.ingredients,
-            data.preparation,
-            data.information,
+            data.name,
+            data.avatar_url,
             date(Date.now()).iso
         ]
 
@@ -55,25 +48,29 @@ module.exports = {
 
         })
     },
+    find(id, callback) {
+        db.query(`
+        SELECT * FROM chefs
+        WHERE id = $1`, [id], function (err, results) {
+            if (err) {
+                throw `Database error! ${err}`
+            }
+
+            callback(results.rows[0])
+
+        })
+    },
     update(data, callback) {
         const query = `
-            UPDATE recipes SET
-                chef_id = ($1),
-                image = ($2),
-                title = ($3),
-                ingredients = ($4),
-                preparation = ($5),
-                information = ($6)
-            WHERE id = $7
+            UPDATE chefs SET
+                name = ($1),
+                avatar_url = ($2)
+            WHERE id = $3
         `
 
         const values = [
-            data.chef,
-            data.image,
-            data.title,
-            data.ingredients,
-            data.preparation,
-            data.information,
+            data.name,
+            data.avatar_url,
             data.id
         ]
 
