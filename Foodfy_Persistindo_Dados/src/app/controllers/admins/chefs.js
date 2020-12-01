@@ -42,12 +42,15 @@ module.exports = {
         })
     },
     show(req, res) {
-        Admin.find(req.params.id, function (recipe) {
-            if (!recipe) {
-                res.send("Recipe not found!")
+        Chefs.find(req.params.id, function (chef) {
+            if (!chef) {
+                res.send("Chef not found!")
             }
 
-            return res.render("admins/recipe", { recipe })
+            Chefs.findChefRecipes(req.params.id, function (recipes) {
+                return res.render("admins/chefs/chef", { chef, recipes })
+
+            })
         })
     },
     edit(req, res) {
