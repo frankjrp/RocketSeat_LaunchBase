@@ -55,22 +55,23 @@ body {
     color: #FFFFFF;
 }
 
-/* === CARDS === */
+/* === CHEF === */
 
-.cards-title {
-    margin: 50px 0 30px;
+.chef .card-title {
+    margin: 50px 0 42px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.cards-title p {
-    font-size: 24px;    
+.chef .card-title h3 {
+    font-size: 24px;
     line-height: 28px;
+    color: #111111;
     font-weight: bold;
 }
 
-.cards-title a {
+.chef .card-title a {
     background-color: var(--btn-color);
     text-decoration: none;
     color: #FFFFFF;
@@ -82,34 +83,82 @@ body {
     cursor: pointer;
 }
 
-.cards-title a:hover {
+.chef .card-title a:hover {
     box-shadow: 0 0 0 3px var(--btn-color);
 }
 
-.cards {
+.chef .card {
+    display: grid;
+    justify-content: center;
+}
+
+.chef .card .image-container {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.chef .card .image-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chef .card .card-content {
+    display: grid;
+    row-gap: 4px;
+    text-align: center;
+}
+
+.chef .card .card-content p#name {
+    font-size: 36px;
+    line-height: 42px;
+    color: #111111;
+    font-weight: bold;
+}
+
+.chef .card .card-content p#total {
+    font-size: 20px;
+    line-height: 24px;
+    color: #777777;
+}
+
+/* === RECIPES === */
+
+.recipes-title {
+    margin: 50px 0 30px;
+}
+
+.recipes-title p {
+    font-size: 24px;    
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.recipes-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.card {
+.recipes-card .card {
     display: inline-flex;
     align-items: center;
 }
 
-.card .image-container {
+.recipes-card .card .image-container {
     width: 172px;
     height: 80px;
     margin-right: 20px;
 }
 
-.card .image-container img {
+.recipes-card .card .image-container img {
     width: 100%;
     height: 100%;
     border-radius: 8.57px;
 }
 
-.card .card-content p#name {
+.recipes-card .card .card-content p#name {
     font-size: 18px;
     line-height: 21px;
     color: #111111;
@@ -118,14 +167,14 @@ body {
 
 }
 
-.card .card-content p#by {
+.recipes-card .card .card-content p#by {
     font-size: 14px;    
     line-height: 16px;
     color: #777777;
     margin-bottom: 10px;
 }
 
-.card .card-content a {
+.recipes-card .card .card-content a {
     font-size: 14px;
     line-height: 16px;
     color: #6558C3;

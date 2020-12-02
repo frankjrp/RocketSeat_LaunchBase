@@ -1,7 +1,7 @@
 {% extends "admins/layout.njk" %}
 
 {% block style %}
-    <link rel="stylesheet" href="/styles/admins/recipe.css">
+    <link rel="stylesheet" href="/styles/admins/chef.css">
 {% endblock style %}
 
 {% block head %}
@@ -12,14 +12,14 @@
 
     <main>
 
-        <section class="cards">
+        <section class="chef">
+
+            <div class="card-title">
+                <h3>Chef: {{ chef.name }}</h3>
+                <a href="/admin/chefs/{{ chef.id }}/edit">Editar Chef</a>
+            </div>
 
             <div class="card">
-                <div class="card-title">
-                    <h3>Chef: {{ chef.name }}</h3>
-                    <a href="/admin/chefs/{{ chef.id }}/edit">Editar Chef</a>
-                </div>
-
                 <div class="image-container">
                     <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}">
                 </div>
@@ -37,29 +37,33 @@
 
         </section>
 
-        {% if chef.total > 0 %}
+        <section class="recipes">
 
-            <div class="recipes-title">
-                <p>Receitas</p>
-            </div>
+            {% if chef.total > 0 %}
 
-            <section class="recipes">
+                <div class="recipes-title">
+                    <p>Receitas</p>
+                </div>
 
-                {% for recipe in recipes %}
+                <div class="recipes-card">
 
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                    {% for recipe in recipes %}
+
+                        <div class="card">
+                            <div class="image-container">
+                                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                            </div>
+
+                            <div class="card-content">
+                                <p id="name">{{ recipe.title }}</p>
+                                <p id="by">por {{ recipe.chef_name }}</p>
+                                <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+                            </div>
                         </div>
 
-                        <div class="card-content">
-                            <p id="name">{{ recipe.title }}</p>
-                            <p id="by">por {{ recipe.chef_name }}</p>
-                            <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
-                        </div>
-                    </div>
+                    {% endfor %}
 
-                {% endfor %}
+                </div>
 
             {% endif %}
 
