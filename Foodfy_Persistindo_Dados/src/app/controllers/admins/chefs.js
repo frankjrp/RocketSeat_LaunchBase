@@ -69,8 +69,19 @@ module.exports = {
         })
     },
     delete(req, res) {
-        Admin.delete(req.body.id, function () {
-            return res.redirect("/admin/recipes")
+        Chefs.find(req.body.id, function (chef) {
+            if (!chef) {
+                res.send("Chef not found!")
+            }
+
+            if (chef.total < 1) {
+                Chefs.delete(req.body.id, function () {
+                    return res.redirect("/admin/chefs")
+                })
+                
+            } else {
+                return res.send(`"${chef.name}" não pode ser removido(a), pois possui ${chef.total} receita(s) cadastrada(s)`)
+            }
         })
     }
 }
