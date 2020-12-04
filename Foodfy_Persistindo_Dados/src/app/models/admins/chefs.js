@@ -66,19 +66,27 @@ module.exports = {
             callback(results.rows[0])
         })
     },
-    findChefRecipes(id, callback) {
-        db.query(`
-        SELECT recipes.*, chefs.name AS chef_name
+    findChefRecipes(params) {
+        const { id, limit, offset, callback } = params
+
+        let query = "",
+            totalQuery = `(SELECT count(*) FROM recipes WHERE recipes.chef_id = $1) AS total`
+
+        query = `
+        SELECT recipes.*, chefs.name AS chef_name, ${totalQuery}
         FROM recipes
         LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
         WHERE recipes.chef_id = $1
-        ORDER BY recipes.title ASC`, [id], function (err, results) {
+        ORDER BY recipes.title ASC
+        LIMIT $2 OFFSET $3
+        `
+
+        db.query(query, [id, limit, offset], function (err, results) {
             if (err) {
                 throw `Database error! ${err}`
             }
 
             callback(results.rows)
-
         })
     },
     update(data, callback) {

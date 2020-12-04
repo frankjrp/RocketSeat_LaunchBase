@@ -27,10 +27,10 @@
                 <div class="card-content">
                     <p id="name">{{ chef.name }}</p>
 
-                    {% if chef.total == 1 %}
-                        <p id="total">{{ chef.total }} receita</p>
+                    {% if total == 1 %}
+                        <p id="total">{{ total }} receita</p>
                     {% else %}
-                        <p id="total">{{ chef.total }} receitas</p>
+                        <p id="total">{{ total }} receitas</p>
                     {% endif %}
                 </div>
             </div>
@@ -39,7 +39,7 @@
 
         <section class="recipes">
 
-            {% if chef.total > 0 %}
+            {% if total > 0 %}
 
                 <div class="recipes-title">
                     <p>Receitas</p>
@@ -69,6 +69,15 @@
 
         </section>
 
+        <div class="pagination"
+                data-page = {{pagination.page}}
+                data-total = {{pagination.total}}
+        ></div>
+
     </main>
 
 {% endblock content %}
+
+{% block script %}
+    <script src="/scripts/paginate.js"></script>
+{% endblock script %}

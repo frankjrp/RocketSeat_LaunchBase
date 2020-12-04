@@ -42,16 +42,43 @@ module.exports = {
         })
     },
     show(req, res) {
-        Chefs.find(req.params.id, function (chef) {
-            if (!chef) {
-                res.send("Chef not found!")
+        const { id } = req.params
+        let { page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 6
+        let offset = limit * (page - 1)
+
+        const params = {
+            id,
+            page,
+            limit,
+            offset,
+            callback(recipes) {
+
+                let total = 0
+
+                if (recipes[0]) {
+                    total = recipes[0].total
+                }
+
+                const pagination = {
+                    total: Math.ceil(total / limit),
+                    page
+                }
+
+                Chefs.find(id, function (chef) {
+                    if (!chef) {
+                        res.send("Chef not found!")
+                    }
+        
+                    return res.render("admins/chefs/chef", { chef, recipes, total, pagination })
+                    
+                })
             }
+        }
 
-            Chefs.findChefRecipes(req.params.id, function (recipes) {
-                return res.render("admins/chefs/chef", { chef, recipes })
-
-            })
-        })
+        Chefs.findChefRecipes(params)
     },
     edit(req, res) {
         Chefs.find(req.params.id, function (chef) {
@@ -69,13 +96,15 @@ module.exports = {
         })
     },
     delete(req, res) {
-        Chefs.find(req.body.id, function (chef) {
+        const { id } = req.body
+
+        Chefs.find(id, function (chef) {
             if (!chef) {
                 res.send("Chef not found!")
             }
 
             if (chef.total < 1) {
-                Chefs.delete(req.body.id, function () {
+                Chefs.delete(id, function () {
                     return res.redirect("/admin/chefs")
                 })
                 
