@@ -1,0 +1,98 @@
+:root {
+    --btn-color: #6558C3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container,
+.header-container nav {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    height: 80px;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+}
+
+.header-container nav {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header-container nav img {
+    padding-right: 50.4px;
+}
+
+.header-container nav a {
+    font-size: 15px;
+    line-height: 18px;
+    color: #999999;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header-container nav a + a:not(:last-child) {
+    padding-right: 30px;
+}
+
+.header-container nav a.active {
+    color: #FFFFFF;
+}
+
+/* === MESSAGE === */
+
+.message {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.message span {
+    background: url(data:image/png;base64,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) no-repeat;
+    background-position: center;
+    display: flex;
+    padding: 35px;
+    margin-bottom: 30px;
+}
+
+.message p#name {
+    font-size: 26px;    
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.message p#remove {
+    margin-bottom: 5px;
+}
+
+.message p#message {
+    margin-bottom: 50px;
+}
+
+.message a {
+    background-color: var(--btn-color);
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 9px 20px;
+    cursor: pointer;
+}
+
+.message a:hover {
+    box-shadow: 0 0 0 2px var(--btn-color);
+}

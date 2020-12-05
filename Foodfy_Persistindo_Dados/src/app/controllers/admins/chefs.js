@@ -109,7 +109,16 @@ module.exports = {
                 })
                 
             } else {
-                return res.send(`"${chef.name}" não pode ser removido(a), pois possui ${chef.total} receita(s) cadastrada(s)`)
+                let quant = ""
+
+                if (chef.total == 1) {
+                    quant = "receita cadastrada"
+                } else {
+                    quant = "receitas cadastradas"
+                }
+
+                let message = `Possui ${chef.total} ${quant} em seu nome`
+                return res.render("admins/chefs/delete-error", { chef, message })
             }
         })
     }
