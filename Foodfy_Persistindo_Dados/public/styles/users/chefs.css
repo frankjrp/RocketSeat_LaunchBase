@@ -107,6 +107,7 @@ body {
 }
 
 footer {
+    display: grid;
     margin-top: auto;
 }
 
@@ -127,16 +128,12 @@ footer {
 
 /* === PAGINATION === */
 
-.page-container main {
-    display: grid;
-}
-
-.page-container .pagination {
-    justify-self: center;
+footer .pagination {
     margin-top: 80px;
+    justify-self: center;
 }
 
-.page-container .pagination a {
+footer .pagination a {
     color: black;
     text-decoration: none;
     padding: 8px 16px;
@@ -145,26 +142,26 @@ footer {
     font-size: 13px;
 }
 
-.page-container .pagination a + a {
+footer .pagination a + a {
     margin-left: 8px;
 }
 
-.page-container .pagination span + a {
+footer .pagination span + a {
     margin-left: 8px;
 }
 
-.page-container .pagination a + span {
+footer .pagination a + span {
     margin-left: 8px;
 }
 
-.page-container .pagination a:hover {
+footer .pagination a:hover {
     filter: brightness(0.8);
     border-bottom: 1px solid var(--page-detail);
 }
 
 /* === PAGE SELECTED === */
 
-.page-container .pagination a.selected {
+footer .pagination a.selected {
     background: none;
     border: 2px solid var(--page-selected);
     pointer-events: none;
@@ -172,23 +169,23 @@ footer {
 
 /* === BUTTONS PRIOR NEXT === */
 
-.page-container .pagination a.btnPrior,
-.page-container .pagination a.btnNext {
+footer .pagination a.btnPrior,
+footer .pagination a.btnNext {
     padding: 8px 20px;
 }
 
-.page-container .pagination a.btnPrior {
+footer .pagination a.btnPrior {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAa0lEQVRIie3VywmAMBBF0eunEvvRLgQJ2o7VubEBwQaC20FxM5lBhHnrcG7IJuC8xsAYgA7YDKzHEpCBwxPPwGSNjwKfAw/8O7wXeNIitdl1lJNPtEQkIv+LuH4498j5dqAtDKzADlSFjn4X9wg3Ca0pnzIAAAAASUVORK5CYII=) no-repeat;
     background-position: center;
 }
 
-.page-container .pagination a.btnNext {
+footer .pagination a.btnNext {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAYElEQVRIie3VwQpAQBQF0JNPEBN/id+0Y+Fz2Cg1W16oudupe+rVdPlAaoxoooAJO1akCKA5y0ORFsuJbOgLUpB/Icn1T+b8sYoQn0x+oq6Ul/J3ysMHJ3wyawwCR/9WDteMNeIXIMFQAAAAAElFTkSuQmCC) no-repeat;
     background-position: center;
 }
 
-.page-container .pagination a.btnPrior:hover,
-.page-container .pagination a.btnNext:hover {
+footer .pagination a.btnPrior:hover,
+footer .pagination a.btnNext:hover {
     border: 0;
     filter: none;
     border-top: 2px solid var(--page-background);

@@ -36,14 +36,16 @@
 
         </section>
 
-        <div class="pagination"
-                data-page = {{pagination.page}}
-                data-total = {{pagination.total}}
-        ></div>
-
     </main>
 
 {% endblock content %}
+
+{% block paginate %}
+    <div class="pagination"
+                data-page = {{pagination.page}}
+                data-total = {{pagination.total}}
+        ></div>
+{% endblock paginate %}
 
 {% block script %}
     <script src="/scripts/paginate.js"></script>
