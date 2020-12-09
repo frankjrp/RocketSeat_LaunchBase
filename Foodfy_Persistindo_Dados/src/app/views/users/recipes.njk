@@ -54,13 +54,13 @@
 {% endblock content %}
 
 {% block paginate %}
-<div class="pages">
-    <div class="pagination"
-                data-page = {{pagination.page}}
-                data-total = {{pagination.total}}
-                data-filter = {{filter}}
-    ></div>
-</div>
+    <div class="pages">
+        <div class="pagination"
+            data-page = {{pagination.page}}
+            data-total = {{pagination.total}}
+            data-filter = {{filter}}
+        ></div>
+    </div>
 {% endblock paginate %}
 
 {% block script %}

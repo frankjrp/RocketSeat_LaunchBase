@@ -124,12 +124,9 @@ body {
 /* === PAGINATION === */
 
 .pages {
-    display: grid;
+    display: flex;
+    justify-content: center;
     margin-top: auto;
-}
-
-.pages .pagination {
-    justify-self: center;
 }
 
 .pages .pagination a {
