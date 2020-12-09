@@ -55,6 +55,8 @@ body {
 /* === MESSAGE === */
 
 .message {
+    display: grid;
+    justify-content: center;
     margin-top: 30px;
     text-align: center;
 }
@@ -67,15 +69,13 @@ body {
     margin-bottom: 30px;
 }
 
-.message p#name {
+.message p#warning {
+    max-width: 320px;
     font-size: 26px;    
-    line-height: 30px;
+    line-height: 32px;
     font-weight: bold;
+    justify-self: center;
     margin-bottom: 20px;
-}
-
-.message p#remove {
-    margin-bottom: 5px;
 }
 
 .message p#message {
@@ -90,6 +90,7 @@ body {
     font-weight: bold;
     border-radius: 4px;
     padding: 9px 20px;
+    justify-self: center;
     cursor: pointer;
 }
 

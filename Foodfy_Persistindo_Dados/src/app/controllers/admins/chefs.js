@@ -117,7 +117,7 @@ module.exports = {
                     quant = "receitas cadastradas"
                 }
 
-                let message = `Possui ${chef.total} ${quant} em seu nome`
+                let message = `${chef.name} possui ${chef.total} ${quant} em seu nome`
                 return res.render("admins/chefs/delete-error", { chef, message })
             }
         })
