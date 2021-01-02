@@ -954,3 +954,124 @@ _Para mais informações, dê uma olhada nesse [link](https://www.postgresqltuto
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/M%C3%B3dulo_05/Desafio_05_4">Código</a>
   #### :clapper: [Demonstração](https://www.youtube.com/watch?v=IPtBMAgCbvo)
 </details>
+
+## :rocket: Foodfy | Persistindo Dados
+<details>
+  <summary>Persistindo dados no Foodfy</summary>
+  
+  #### SOBRE
+  - Nesse desafio você irá criar um banco de dados para o Foodfy.<br><br>
+  A partir desse desafio, os dados que antes você vinha salvando em um arquivo JSON agora serão armazenados em um banco de dados PostgreSQL.<br><br>
+  Você irá criar novas páginas de cadastro, listagem e edição de chefs, pois uma receita será atribuída a um chef.<br><br>
+  Você irá criar um busca de receitas, onde você poderá filtrar receitas pelo seu nome.<br><br>
+  Por fim, você irá adicionar a funcionalidade de paginação na listagem de receitas.
+  #### BANCO DE DADOS
+  Usando os conhecimentos adquiridos até aqui, você irá criar um banco de dados pelo Postgres, utilize o nome `foodfy`.<br><br>
+  Você irá criar uma tabela de receitas, chame-a de `recipes` e uma tabela de cozinheiros, nomeie-a como `chefs`.<br><br>
+  A tabela `recipes` deverá conter os seguintes campos:<br>
+  - `id integer primary unique` (o postbird cria esse campo por padrão)
+  - `chef_id integer` (esse campo armazenará o ID do chef que criou essa receita)
+  - `image text`
+  - `title text`
+  - `ingredients text[]`
+  - `preparation text[]`
+  - `information text`
+  - `created_at datetime` (armazena a data de criação da receita no banco de dados)
+   
+  _Obs.: Você consegue armazenar vetores (`arrays`) no Postgres utilizando o `[]` no fim do campo._<br><br>
+ 
+  A tabela `chefs` deverá conter os seguinte campos:<br>
+  - `id integer primary unique` (o postbird cria esse campo por padrão)
+  - `name text`
+  - `avatar_url text`
+  - `created_at datetime` (armazena a data de criação do chef no banco de dados)
+  #### [ADMIN] CADASTRO DE CHEFS
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_0a.png">
+  </h1>
+ 
+  - Você irá colocar novas páginas administrativas que serão capazes de fazer as operação de cadastro, listagem, atualização e remoção de chefs.
+  
+  > Importante: Ao deletar o chef, se o mesmo possuir pelo menos uma receita, retorne um erro informando que chefs que possuem receitas não podem ser deletados.
+  #### [SITE] BUSCA DE RECEITAS
+  
+ <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_0b.png">
+ </h1>
+ 
+ - Para facilitar a busca de uma receita cadastrada, a pessoa que acessar o site poderá filtrar por nome da receita.<br><br>
+ Você criará também uma página de resultado da busca que listará as receitas de acordo com a busca do usuário.
+ 
+  #### [SITE] LISTAGEM DE CHEFS
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_0c.png">
+  </h1>
+  
+  - Fazer uma página com nome "Chefs" no site onde irá mostrar os chefs do Foodfy.<br><br>
+  Fazer uma contagem de todas a receitas daquele chef, e apresentar nessa página.
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_1.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_2.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_3.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_4.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_5a.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_5b.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_6.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_7a.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_7b.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_7c.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_8.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_9.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_10.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_11.PNG">
+  </h1>
+  
+  <h1 align="center">
+  <img src="/Images/foodfy_persistindodados_12.PNG">
+  </h1>
+  
+  #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/Foodfy_Persistindo_Dados">Código</a>
+  #### :clapper: [Demonstração]()
+</details>
