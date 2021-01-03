@@ -966,25 +966,27 @@ _Para mais informações, dê uma olhada nesse [link](https://www.postgresqltuto
   Você irá criar um busca de receitas, onde você poderá filtrar receitas pelo seu nome.<br><br>
   Por fim, você irá adicionar a funcionalidade de paginação na listagem de receitas.
   #### BANCO DE DADOS
-  Usando os conhecimentos adquiridos até aqui, você irá criar um banco de dados pelo Postgres, utilize o nome `foodfy`.<br><br>
+  - Usando os conhecimentos adquiridos até aqui, você irá criar um banco de dados pelo Postgres, utilize o nome `foodfy`.<br><br>
   Você irá criar uma tabela de receitas, chame-a de `recipes` e uma tabela de cozinheiros, nomeie-a como `chefs`.<br><br>
-  A tabela `recipes` deverá conter os seguintes campos:<br>
-  - `id integer primary unique` (o postbird cria esse campo por padrão)
-  - `chef_id integer` (esse campo armazenará o ID do chef que criou essa receita)
-  - `image text`
-  - `title text`
-  - `ingredients text[]`
-  - `preparation text[]`
-  - `information text`
-  - `created_at datetime` (armazena a data de criação da receita no banco de dados)
+  A tabela `recipes` deverá conter os seguintes campos:
+  
+    - `id integer primary unique` (o postbird cria esse campo por padrão)
+    - `chef_id integer` (esse campo armazenará o ID do chef que criou essa receita)
+    - `image text`
+    - `title text`
+    - `ingredients text[]`
+    - `preparation text[]`
+    - `information text`
+    - `created_at datetime` (armazena a data de criação da receita no banco de dados)<br><br>
    
-  _Obs.: Você consegue armazenar vetores (`arrays`) no Postgres utilizando o `[]` no fim do campo._<br><br>
+    > _Obs.: Você consegue armazenar vetores (`arrays`) no Postgres utilizando o `[]` no fim do campo._
  
-  A tabela `chefs` deverá conter os seguinte campos:<br>
-  - `id integer primary unique` (o postbird cria esse campo por padrão)
-  - `name text`
-  - `avatar_url text`
-  - `created_at datetime` (armazena a data de criação do chef no banco de dados)
+    A tabela `chefs` deverá conter os seguinte campos:
+  
+    - `id integer primary unique` (o postbird cria esse campo por padrão)
+    - `name text`
+    - `avatar_url text`
+    - `created_at datetime` (armazena a data de criação do chef no banco de dados)
   #### [ADMIN] CADASTRO DE CHEFS
   
   <h1 align="center">
@@ -1073,5 +1075,5 @@ _Para mais informações, dê uma olhada nesse [link](https://www.postgresqltuto
   </h1>
   
   #### :computer: <a href="https://github.com/frankjrp/RocketSeat_LaunchBase/tree/master/Foodfy_Persistindo_Dados">Código</a>
-  #### :clapper: [Demonstração]()
+  #### :clapper: [Demonstração](https://www.youtube.com/watch?v=j2cCZnjcs_g)
 </details>
