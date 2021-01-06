@@ -135,10 +135,7 @@ body {
 
 .footer-container {
     background-color: #EEEEEE;
-    height: 62px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     margin-top: 100px;
 }
 
@@ -146,6 +143,7 @@ body {
     color: #999999;
     font-size: 14px;
     line-height: 16px;
+    padding: 23px 0;
 }
 
 /* === SEARCH === */
