@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{ item.id }}</title>
+{% endblock head %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/course.css">
+{% endblock style %}
+
+{% block header %}
+
+    <header>
+        <h1>{{ item.title }}</h1>
+        <div id="courses">
+            <a href="/">Cursos</a>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <section class="page">
+
+        <div class="page-container">
+            <iframe src="https://www.rocketseat.com.br/{{item.id}}" frameborder="0"></iframe>
+        </div>
+
+    </section>
+
+{% endblock content%}

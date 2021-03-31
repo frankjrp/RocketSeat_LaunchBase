@@ -1,0 +1,82 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+:root {
+    --color-rocket: #7159c1;
+    --color-details: #e9d0af;
+    --color-background: #4d4753;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-flex {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--color-rocket);
+    filter: brightness(80%);
+    border-bottom: 1px solid var(--color-details);
+    position: relative;
+}
+
+header h1 {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header div#courses {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+}
+
+header div#courses a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    filter: brightness(90%);
+}
+
+header div#courses a:hover {
+    color: white;
+    filter: brightness(105%);
+    transition: color 300ms;
+}
+
+.page-container {
+    height: 88vh;
+}
+
+.page-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    margin-top: auto;
+    border-top: 1px solid var(--color-details);
+    background-color: var(--color-background);
+    color: rgba(245, 245, 245, 0.644);
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 4px 0;
+}

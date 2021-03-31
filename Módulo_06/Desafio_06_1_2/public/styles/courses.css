@@ -1,0 +1,153 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+:root {
+    --color-rocket: #7159c1;
+    --color-details: #e9d0af;
+    --color-background: #a6a4a8;
+    --color-launchbase: rgb(253, 149, 31);
+    --color-gostack: rgb(4, 211, 97);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    background-color: var(--color-background);
+    filter: brightness(100%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-flex {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--color-rocket);
+    filter: brightness(80%);
+    border-bottom: 1px solid var(--color-details);
+    position: relative;
+}
+
+header h1 {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header div#about {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+}
+
+header div#about a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    filter: brightness(90%);
+}
+
+header div#about a:hover {
+    color: white;
+    filter: brightness(105%);
+    transition: color 300ms;
+}
+
+/* === CARDS === */
+
+.cards {
+    max-width: fit-content;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--color-background);
+    filter: brightness(85%);
+    cursor: pointer;
+    border: 1px solid var(--color-details);
+    width: 330px;
+    display: grid;
+    align-content: space-between;
+}
+
+.card#starter:hover {
+    border: 2px solid var(--color-rocket);
+    border-radius: 6px;
+    filter: brightness(90%);
+}
+
+.card#launchbase:hover {
+    border: 2px solid var(--color-launchbase);
+    border-radius: 6px;
+    filter: brightness(90%);
+}
+
+.card#gostack:hover {
+    border: 2px solid var(--color-gostack);
+    border-radius: 6px;
+    filter: brightness(90%);
+}
+
+.card_image {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card_image img {
+    height: 150px;
+}
+
+.card_content, 
+.card_info {
+    text-align: center;
+    padding: 20px;
+}
+
+.card_content p {
+    font-size: 18px;
+}
+
+.card_price {
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.card#starter .card_price {
+    background: var(--color-rocket);
+}
+
+.card#launchbase .card_price {
+    background: var(--color-launchbase);
+    filter: brightness(90%);
+}
+
+.card#gostack .card_price {
+    background: var(--color-gostack);
+    filter: brightness(90%);
+}
+
+footer {
+    margin-top: auto;
+    background-color: var(--color-background);
+    filter: brightness(85%);
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 4px 0;
+}
