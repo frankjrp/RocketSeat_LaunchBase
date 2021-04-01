@@ -64,9 +64,9 @@ CREATE TABLE "car_order" (
   "order_id" int
 );
 
-ALTER TABLE "managers" ADD FOREIGN KEY ("id") REFERENCES "agencies" ("manager_id");
+ALTER TABLE "agencies" ADD FOREIGN KEY ("manager_id") REFERENCES "managers" ("id");
 
-ALTER TABLE "addresses" ADD FOREIGN KEY ("id") REFERENCES "agencies" ("address_id");
+ALTER TABLE "agencies" ADD FOREIGN KEY ("address_id") REFERENCES "addresses" ("id");
 
 ALTER TABLE "cars" ADD FOREIGN KEY ("model_id") REFERENCES "models" ("id");
 
