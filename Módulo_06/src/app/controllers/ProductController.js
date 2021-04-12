@@ -13,7 +13,7 @@ module.exports = {
 
             const categories = results.rows
 
-            return res.render("products/create.njk", { categories })
+            return res.render("products/create", { categories })
 
         }).catch(function(err) {
             throw new Error(err)
@@ -40,6 +40,9 @@ module.exports = {
 
         return res.redirect(`/products/${productId}/edit`)
         
+    },
+    show(req, res) {
+        return res.render("products/show")
     },
     async edit(req, res) {
         let results = await Product.find(req.params.id)
