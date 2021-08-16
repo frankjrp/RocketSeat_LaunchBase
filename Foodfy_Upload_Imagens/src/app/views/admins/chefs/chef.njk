@@ -1,0 +1,83 @@
+{% extends "admins/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/admins/chef.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Chef</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <section class="chef">
+
+            <div class="card-title">
+                <h3>Chef: {{ chef.name }}</h3>
+                <a href="/admin/chefs/{{ chef.id }}/edit">Editar Chef</a>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}">
+                </div>
+
+                <div class="card-content">
+                    <p id="name">{{ chef.name }}</p>
+
+                    {% if total == 1 %}
+                        <p id="total">{{ total }} receita</p>
+                    {% else %}
+                        <p id="total">{{ total }} receitas</p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </section>
+
+        <section class="recipes">
+
+            {% if total > 0 %}
+
+                <div class="recipes-title">
+                    <p>Receitas</p>
+                </div>
+
+                <div class="recipes-card">
+
+                    {% for recipe in recipes %}
+
+                        <div class="card">
+                            <div class="image-container">
+                                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                            </div>
+
+                            <div class="card-content">
+                                <p id="name">{{ recipe.title }}</p>
+                                <p id="by">por {{ recipe.chef_name }}</p>
+                                <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+        <div class="pagination"
+                data-page = {{pagination.page}}
+                data-total = {{pagination.total}}
+        ></div>
+
+    </main>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/paginate.js"></script>
+{% endblock script %}

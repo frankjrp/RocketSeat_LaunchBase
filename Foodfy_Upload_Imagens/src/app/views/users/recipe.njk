@@ -1,0 +1,80 @@
+{% extends "users/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/users/recipe.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Receitas</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <section class="cards">
+
+            <div class="card">
+                <div class="image-container">
+                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                </div>
+
+                <div class="card-content">
+                    <p id="name">{{ recipe.title }}</p>
+                    <p id="by">por {{ recipe.chef_name }}</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="recipe">
+
+            <div class="topic">
+                <div class="title">
+                    <h1>Ingredientes</h1>
+                    <span>Esconder</span>
+                </div>
+                <div class="content">
+                    <ul>
+                        {% for ingredient in recipe.ingredients %}
+                            <li>{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic">
+                <div class="title">
+                    <h1>Modo de preparo</h1>
+                    <span>Esconder</span>
+                </div>
+                <div class="content">
+                    <ul>
+                        {% for preparation in recipe.preparation %}
+                            <li>{{ preparation }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            {% if recipe.information != "" %}
+                <div class="topic">
+                    <div class="title">
+                        <h1>Informações adicionais</h1>
+                        <span>Esconder</span>
+                    </div>
+                    <div class="content">
+                        <p>{{ recipe.information | striptags(true) | escape | nl2br }}</p>
+                    </div>
+                </div>
+            {% endif %}
+
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts/users/showHide.js"></script>
+{% endblock script %}

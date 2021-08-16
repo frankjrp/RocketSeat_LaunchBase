@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-flex {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 50px;
+}
+
+.header-container nav {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header-container nav img {
+    padding-right: 120px;
+}
+
+.header-container nav a {
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
+    text-decoration: none;
+}
+
+.header-container nav a + a:not(:last-child) {
+    padding-right: 30px;
+}
+
+.header-container nav a.active {
+    font-weight: bold;
+}
+
+.header-container .filter form {
+    display: grid;
+    grid-template-columns: 246px 1fr;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.header-container .filter form input {
+    border: 1px solid #DDDDDD;
+    padding: 10px 0 10px 15px;
+    border-radius: 4px;
+}
+
+.header-container .filter form input::placeholder{
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+}
+
+.header-container .filter form button {
+    background-color: #6558C3;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.header-container .filter form button:hover {
+    box-shadow: 0 0 0 3px #6558C3;
+}
+
+.card .image-container {
+    margin-bottom: 20px;
+}
+
+.card .image-container img {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+
+.card-content {
+    display: grid;
+    gap: 5px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card .card-content p#name {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: bold;
+
+}
+
+.card .card-content p#by {
+    font-size: 20px;    
+    line-height: 24px;
+    color: #777777;
+}
+
+.recipe .content {
+    margin-bottom: 39px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+}
+
+.recipe .content ul {
+    list-style-position: inside;
+}
+
+.recipe .title {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.recipe h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.recipe span {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #999999;
+    padding: 0 0 14px 14px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.footer-container {
+    background-color: #EEEEEE;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.footer-container p {
+    color: #999999;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 23px 0;
+}
+
+/* === ELEMENT HIDDEN === */
+
+.recipe .content.hidden {
+    display: none;
+}

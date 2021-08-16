@@ -1,0 +1,28 @@
+{% extends "admins/layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/styles/admins/delete-error.css">
+{% endblock style %}
+
+{% block head %}
+    <title>Chefs</title>
+{% endblock head %}
+
+{% block content %}
+
+    <main>
+
+        <div class="message-container">
+
+            <div class="message">
+                <span></span>
+                <p id="warning">Chefs que possuem receita não podem ser deletados</p>
+                <p id="message">{{ message }}</p>
+                <a href="/admin/chefs/{{ chef.id }}">Ok</a>
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock content %}
