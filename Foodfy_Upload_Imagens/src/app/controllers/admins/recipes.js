@@ -2,7 +2,7 @@ const Admin = require('../../models/admins/recipes')
 const Chefs = require('../../models/admins/chefs')
 
 module.exports = {
-    index(req, res) {
+    async index(req, res) {
         let { page, limit } = req.query
 
         page = page || 1
@@ -12,25 +12,24 @@ module.exports = {
         const params = {
             page,
             limit,
-            offset,
-            callback(recipes) {
-
-                let total = 0
-
-                if (recipes[0]) {
-                    total = recipes[0].total
-                }
-
-                const pagination = {
-                    total: Math.ceil(total / limit),
-                    page
-                }
-
-                return res.render("admins/recipes/index", { recipes, pagination })
-            }
+            offset
         }
 
-        Admin.paginate(params)
+        let results =  await Admin.paginate(params)
+        const recipes = results.rows
+
+        let total = 0
+
+        if (recipes[0]) {
+            total = recipes[0].total
+        }
+
+        const pagination = {
+            total: Math.ceil(total / limit),
+            page
+        }
+
+        return res.render("admins/recipes/index", { recipes, pagination })
     },
     async create(req, res) {
         // get chefs

@@ -3,7 +3,7 @@ const db = require('../../../config/db')
 
 module.exports = {
     paginate(params) {
-        const { limit, offset, callback } = params
+        const { limit, offset } = params
 
         let query = "",
             totalQuery = `(SELECT count(*) FROM recipes) AS total`
@@ -16,13 +16,7 @@ module.exports = {
         LIMIT $1 OFFSET $2
         `
 
-        db.query(query, [limit, offset], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-        })
+        return db.query(query, [limit, offset])
     },
     create(data) {
         const query = `
