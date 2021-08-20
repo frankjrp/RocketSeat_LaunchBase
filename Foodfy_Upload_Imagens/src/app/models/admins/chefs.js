@@ -120,5 +120,11 @@ module.exports = {
             return callback()
 
         })
+    },
+    all() {
+        return db.query(`
+            SELECT name, id FROM chefs
+            ORDER BY name
+        `)
     }
 }

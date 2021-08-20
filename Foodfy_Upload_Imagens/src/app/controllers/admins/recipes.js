@@ -1,4 +1,5 @@
 const Admin = require('../../models/admins/recipes')
+const Chefs = require('../../models/admins/chefs')
 
 module.exports = {
     index(req, res) {
@@ -31,47 +32,47 @@ module.exports = {
 
         Admin.paginate(params)
     },
-    create(req, res) {
-        Admin.chefsSelectOptions(function (options) {
-            return res.render("admins/recipes/create", { chefOptions: options })
+    async create(req, res) {
+        // get chefs
+        let results = await Chefs.all()
+        const chefOptions = results.rows
 
-        })
+        return res.render("admins/recipes/create", { chefOptions })
     },
-    post(req, res) {
-        Admin.create(req.body, function (recipe) {
-            return res.redirect(`/admin/recipes`)
+    async post(req, res) {
+        await Admin.create(req.body)
 
-        })
+        return res.redirect(`/admin/recipes`)
     },
-    show(req, res) {
-        Admin.find(req.params.id, function (recipe) {
-            if (!recipe) {
-                res.send("Recipe not found!")
-            }
+    async show(req, res) {
+        let results = await Admin.find(req.params.id)
+        const recipe = results.rows[0]
 
-            return res.render("admins/recipes/recipe", { recipe })
-        })
-    },
-    edit(req, res) {
-        Admin.find(req.params.id, function (recipe) {
-            if (!recipe) {
-                res.send("Recipe not found!")
-            }
+        if(!recipe) return res.send("Recipe not found!")
 
-            Admin.chefsSelectOptions(function (options) {
-                return res.render("admins/recipes/edit", { recipe, chefOptions: options })
-    
-            })
-        })
+        return res.render("admins/recipes/recipe", { recipe })
     },
-    update(req, res) {
-        Admin.update(req.body, function () {
-            return res.redirect(`/admin/recipes/${req.body.id}`)
-        })
+    async edit(req, res) {
+        let results = await Admin.find(req.params.id)
+        const recipe = results.rows[0]
+            
+        if (!recipe) return res.send("Recipe not found!")
+
+        // get chefs
+        results = await Chefs.all()
+        const chefOptions = results.rows
+
+        return res.render("admins/recipes/edit", { recipe, chefOptions })
+        
     },
-    delete(req, res) {
-        Admin.delete(req.body.id, function () {
-            return res.redirect("/admin/recipes")
-        })
+    async update(req, res) {
+        await Admin.update(req.body)
+
+        return res.redirect(`/admin/recipes/${req.body.id}`)
+    },
+    async delete(req, res) {
+        await Admin.delete(req.body.id)
+
+        return res.redirect("/admin/recipes")
     }
 }
