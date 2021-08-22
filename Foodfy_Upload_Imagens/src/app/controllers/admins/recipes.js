@@ -44,9 +44,16 @@ module.exports = {
         if (req.files.lenght == 0)
             return res.send('Please, send at least one image.')
 
-        await Admin.create(req.body)
+        let results = await Admin.create(req.body)
+        const recipeId = results.rows[0].id
 
-        const filesPromise = req.files.map(file => File.create({...file}))
+        const filesPromise = req.files.map(file => {
+            File.create({...file})
+            .then(file => {
+                const fileId = file.rows[0].id
+                RecipeFile.create({recipeId, fileId})
+            })
+        })
 
         await Promise.all(filesPromise)
 
