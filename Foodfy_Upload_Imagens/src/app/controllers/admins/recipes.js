@@ -77,10 +77,35 @@ module.exports = {
         results = await Chefs.all()
         const chefOptions = results.rows
 
-        return res.render("admins/recipes/edit", { recipe, chefOptions })
+        // get images
+        results = await Admin.files(recipe.id)
+        let files = results.rows
+        files = files.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("admins/recipes/edit", { recipe, chefOptions, files })
         
     },
     async update(req, res) {
+        if (req.files.length != 0) {
+            const newFilesPromise = req.files.map(file => File.create({...file}))
+
+            await Promise.all(newFilesPromise)
+        }
+
+        if (req.body.removed_files) {
+            // 1,2,3,
+            const removedFiles = req.body.removed_files.split(",") // [1,2,3,]
+            const lastIndex = removedFiles.length - 1
+            removedFiles.splice(lastIndex, 1) // [1,2,3]
+
+            const removedFilesPromise = removedFiles.map(id => File.delete(id))
+
+            await Promise.all(removedFilesPromise)
+        }
+        
         await Admin.update(req.body)
 
         return res.redirect(`/admin/recipes/${req.body.id}`)
