@@ -41,9 +41,6 @@ module.exports = {
         return res.render("admins/recipes/create", { chefOptions })
     },
     async post(req, res) {
-        if (req.files.lenght == 0)
-            return res.send('Please, send at least one image.')
-
         let results = await Admin.create(req.body)
         const recipeId = results.rows[0].id
 
@@ -90,7 +87,15 @@ module.exports = {
     },
     async update(req, res) {
         if (req.files.length != 0) {
-            const newFilesPromise = req.files.map(file => File.create({...file}))
+            const recipeId = req.body.id
+
+            const newFilesPromise = req.files.map(file => {
+                File.create({...file})
+                .then(file => {
+                    const fileId = file.rows[0].id
+                    RecipeFile.create({recipeId, fileId})
+                })
+            })
 
             await Promise.all(newFilesPromise)
         }
@@ -101,7 +106,7 @@ module.exports = {
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1) // [1,2,3]
 
-            const removedFilesPromise = removedFiles.map(id => File.delete(id))
+            const removedFilesPromise = removedFiles.map(id => RecipeFile.delete(id).then(File.delete(id)))
 
             await Promise.all(removedFilesPromise)
         }

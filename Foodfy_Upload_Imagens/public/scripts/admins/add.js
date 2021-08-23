@@ -128,6 +128,14 @@ const PhotosUpload = {
         }
 
         photoDiv.remove()
+    },
+    handleEdit() {
+        const images = this.preview.querySelectorAll('.photo')
+
+        if(images.length < 1) {
+            document.querySelector('#photos-input').setAttribute('required', 'required')
+        }
+
     }
 }
 
@@ -161,4 +169,10 @@ const Lightbox = {
         Lightbox.target.style.bottom = "initial"
         Lightbox.closeButton.style.top = "-80px"
     }
+}
+
+currentPage = location.pathname
+
+if (currentPage.includes('create')) {
+    document.querySelector('#photos-input').setAttribute('required', 'required')
 }

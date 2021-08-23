@@ -7,7 +7,6 @@
                 type="file" 
                 name="photos" 
                 multiple 
-                required="required"
                 accept="image/*"
                 onchange="PhotosUpload.handleFileInput(event)"
             >
@@ -15,7 +14,7 @@
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABmJLR0QA/wD/AP+gvaeTAAABBUlEQVRIie1WQarCMBScV1wUcocPtgtFl/8MHkMED9F1xF0P4cJtj+A5FEVa8RChXWifmxaM1ZJIQJTO7j3emxmSDATo4BhkMyyl7BVFsWLmEQAQ0c73/bmU8mLK0bMRVEr1Pc+b1jUz/yullgCOphyejSARNeaf9ZwJukAn+P2CWg6rnP21zAfMvNEIiCYAslcLaZqekyS51rWWwyrU0+baazwaaDgMgjWAWV1rR1qWZWAjZmgovK8/+2iIKHUt8Mip3WGWZfMwDBct+289Gm3e3CsQRdGAiPb3PWYexnF8MOX4/eB3gp8VZObSpNcGqz+NEOKU5/kawLhqbYUQJxuODs5xA8aGXeJhkFCFAAAAAElFTkSuQmCC">
             </span>
         </div>
-        <div id="photos-preview">
+        <div id="photos-preview" onclick="PhotosUpload.handleEdit()">
             {% if files %}
                 {% for image in files %}
                     <div class="photo" id="{{image.id}}">
