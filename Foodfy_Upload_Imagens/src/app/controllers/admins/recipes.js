@@ -86,6 +86,20 @@ module.exports = {
         
     },
     async update(req, res) {
+        if (req.body.removed_files) {
+            // 1,2,3,
+            const removedFiles = req.body.removed_files.split(",") // [1,2,3,]
+            const lastIndex = removedFiles.length - 1
+            removedFiles.splice(lastIndex, 1) // [1,2,3]
+
+            const removedFilesPromise = removedFiles.map(id => {
+                RecipeFile.delete(id)
+                .then(File.delete(id))
+            })
+
+            await Promise.all(removedFilesPromise)
+        }
+
         if (req.files.length != 0) {
             const recipeId = req.body.id
 
@@ -99,23 +113,27 @@ module.exports = {
 
             await Promise.all(newFilesPromise)
         }
-
-        if (req.body.removed_files) {
-            // 1,2,3,
-            const removedFiles = req.body.removed_files.split(",") // [1,2,3,]
-            const lastIndex = removedFiles.length - 1
-            removedFiles.splice(lastIndex, 1) // [1,2,3]
-
-            const removedFilesPromise = removedFiles.map(id => RecipeFile.delete(id).then(File.delete(id)))
-
-            await Promise.all(removedFilesPromise)
-        }
         
         await Admin.update(req.body)
 
         return res.redirect(`/admin/recipes/${req.body.id}`)
     },
     async delete(req, res) {
+        let results = await Admin.files(req.body.id)
+        let files = results.rows
+        
+        const removeRecipeFiles = files.map(file => {
+            console.log("Remove File: " + file.id)
+
+            RecipeFile.delete(file.id)
+        })
+
+        const removeFiles = files.map(file => {
+            File.delete(file.id)
+        })
+
+        await Promise.all(removeRecipeFiles)
+        await Promise.all(removeFiles)
         await Admin.delete(req.body.id)
 
         return res.redirect("/admin/recipes")
