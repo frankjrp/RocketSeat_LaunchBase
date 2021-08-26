@@ -22,8 +22,15 @@
             {% for recipe in recipes %}
 
                 <div class="card">
-                    <div class="image-container">
-                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                    <div class="gallery">
+                        {% if not files[0] %}
+                            <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO">
+                        {% else %}
+                            <img 
+                                src="{{files[0].src}}" 
+                                alt="{{files[0].name}}"
+                            >
+                        {% endif %}
                     </div>
 
                     <div class="card-content">

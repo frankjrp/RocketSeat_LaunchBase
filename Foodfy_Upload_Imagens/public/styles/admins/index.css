@@ -97,13 +97,13 @@ body {
     align-items: center;
 }
 
-.card .image-container {
+.card .gallery {
     width: 172px;
     height: 80px;
     margin-right: 20px;
 }
 
-.card .image-container img {
+.card .gallery img {
     width: 100%;
     height: 100%;
     border-radius: 8.57px;
