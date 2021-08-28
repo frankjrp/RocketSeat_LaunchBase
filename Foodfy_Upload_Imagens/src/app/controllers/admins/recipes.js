@@ -17,8 +17,19 @@ module.exports = {
             offset
         }
 
+        // get recipes
         let results =  await Admin.paginate(params)
         const recipes = results.rows
+
+        //get files
+        results = await Admin.allFiles()
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        console.log("Length: " + files.length)
+        console.log(files)
 
         let total = 0
 
@@ -31,7 +42,7 @@ module.exports = {
             page
         }
 
-        return res.render("admins/recipes/index", { recipes, pagination })
+        return res.render("admins/recipes/index", { recipes, pagination, files })
     },
     async create(req, res) {
         // get chefs
