@@ -21,15 +21,24 @@ module.exports = {
         let results =  await Admin.paginate(params)
         const recipes = results.rows
 
-        //get files
-        results = await Admin.allFiles()
-        const files = results.rows.map(file => ({
+        // get files
+        let files = []
+        let recipeIds = new Set()
+
+        results = await RecipeFile.allFiles()
+        const preFiles = results.rows.map(file => ({
             ...file,
             src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
         }))
 
-        console.log("Length: " + files.length)
-        console.log(files)
+        preFiles.forEach(file => {
+            recipeIds.add(file.id)
+        })
+
+        recipeIds.forEach(id => {
+            const image = preFiles.find(item => item.id == id)
+            files.push(image)
+        })
 
         let total = 0
 
@@ -73,7 +82,15 @@ module.exports = {
 
         if(!recipe) return res.send("Recipe not found!")
 
-        return res.render("admins/recipes/recipe", { recipe })
+        // get files
+        results = await RecipeFile.findFilesId(recipe.id)
+        let files = results.rows
+        files = files.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("admins/recipes/recipe", { recipe, files })
     },
     async edit(req, res) {
         let results = await Admin.find(req.params.id)
@@ -85,8 +102,8 @@ module.exports = {
         results = await Chefs.all()
         const chefOptions = results.rows
 
-        // get images
-        results = await Admin.files(recipe.id)
+        // get files
+        results = await RecipeFile.findFilesId(recipe.id)
         let files = results.rows
         files = files.map(file => ({
             ...file,
