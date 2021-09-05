@@ -23,17 +23,13 @@
 
                 <div class="card">
                     <div class="gallery">
-                        {% if not files[0] %}
+                        {% if not recipe.files[0] %}
                             <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO">
                         {% else %}
-                            {% for file in files %}
-                                {% if file.id == recipe.id %}
-                                    <img 
-                                        src="{{file.src}}" 
-                                        alt="{{file.name}}"
-                                    >
-                                {% endif %}
-                            {% endfor %}
+                            <img 
+                                src="{{recipe.files[0].src}}" 
+                                alt="{{recipe.files[0].name}}"
+                            >
                         {% endif %}
                     </div>
 
