@@ -22,23 +22,14 @@ module.exports = {
         const prepRecipes = results.rows
 
         // get files
-        let files
         let recipes = []
 
-        results = await RecipeFile.allFiles()
-        const preFiles = results.rows.map(file => ({
-            ...file,
-            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-        }))
-
         for (let recipe of prepRecipes) {
-            files = []
-
-            for (let file of preFiles) {
-                if (file.id == recipe.id) {
-                    files.push(file)
-                }
-            }
+            results = await RecipeFile.findFilesId(recipe.id)
+            const files = results.rows.map(file => ({
+                ...file,
+                src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+            }))
 
             recipe = ({
                 ...recipe, 
