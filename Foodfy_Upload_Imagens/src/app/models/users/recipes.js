@@ -16,20 +16,13 @@ module.exports = {
 
         })
     },
-    sixRecipes(callback) {
-        db.query(`
+    sixRecipes() {
+        return db.query(`
         SELECT recipes.*, chefs.name AS chef_name
         FROM recipes
         LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
         ORDER BY recipes.title ASC
-        LIMIT $1`, [6], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-
-        })
+        LIMIT $1`, [6])
     },
     find(id, callback) {
         db.query(`
@@ -78,40 +71,6 @@ module.exports = {
             }
 
             callback(results.rows)
-        })
-    },
-    chefsPaginate(params) {
-        const { limit, offset, callback } = params
-
-        let query = "",
-            totalRecipes = `(SELECT count(*) FROM recipes WHERE recipes.chef_id = chefs.id ) AS recipes`,
-            totalQuery = `(SELECT count(*) FROM chefs) AS total`
-
-        query = `
-        SELECT chefs.*, ${totalRecipes}, ${totalQuery}
-        FROM chefs
-        ORDER BY chefs.name ASC
-        LIMIT $1 OFFSET $2
-        `
-
-        db.query(query, [limit, offset], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-        })
-    },
-    about(callback) {
-        db.query(`
-        SELECT * FROM about
-        `, function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows[0])
-
         })
     }
 }

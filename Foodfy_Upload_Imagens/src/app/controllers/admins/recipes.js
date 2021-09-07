@@ -1,4 +1,4 @@
-const Admin = require('../../models/admins/recipes')
+const Recipes = require('../../models/admins/recipes')
 const Chefs = require('../../models/admins/chefs')
 const File = require('../../models/admins/files')
 const RecipeFile = require('../../models/admins/recipe_files')
@@ -18,7 +18,7 @@ module.exports = {
         }
 
         // get recipes
-        let results = await Admin.paginate(params)
+        let results = await Recipes.paginate(params)
         const prepRecipes = results.rows
 
         // get files
@@ -60,7 +60,7 @@ module.exports = {
         return res.render("admins/recipes/create", { chefOptions })
     },
     async post(req, res) {
-        let results = await Admin.create(req.body)
+        let results = await Recipes.create(req.body)
         const recipeId = results.rows[0].id
 
         const filesPromise = req.files.map(file => {
@@ -76,7 +76,7 @@ module.exports = {
         return res.redirect(`/admin/recipes`)
     },
     async show(req, res) {
-        let results = await Admin.find(req.params.id)
+        let results = await Recipes.find(req.params.id)
         const recipe = results.rows[0]
 
         if (!recipe) return res.send("Recipe not found!")
@@ -92,7 +92,7 @@ module.exports = {
         return res.render("admins/recipes/recipe", { recipe, files })
     },
     async edit(req, res) {
-        let results = await Admin.find(req.params.id)
+        let results = await Recipes.find(req.params.id)
         const recipe = results.rows[0]
 
         if (!recipe) return res.send("Recipe not found!")
@@ -141,7 +141,7 @@ module.exports = {
             await Promise.all(newFilesPromise)
         }
 
-        await Admin.update(req.body)
+        await Recipes.update(req.body)
 
         return res.redirect(`/admin/recipes/${req.body.id}`)
     },
@@ -161,7 +161,7 @@ module.exports = {
 
         await Promise.all(removeRecipeFiles)
         await Promise.all(removeFiles)
-        await Admin.delete(req.body.id)
+        await Recipes.delete(req.body.id)
 
         return res.redirect("/admin/recipes")
     }
