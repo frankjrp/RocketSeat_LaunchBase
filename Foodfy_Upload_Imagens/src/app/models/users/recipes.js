@@ -1,21 +1,6 @@
 const db = require('../../../config/db')
 
 module.exports = {
-    all(callback) {
-        db.query(`
-        SELECT recipes.*, chefs.name AS chef_name
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        ORDER BY recipes.title ASC
-        `, function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-
-        })
-    },
     sixRecipes() {
         return db.query(`
         SELECT recipes.*, chefs.name AS chef_name
@@ -24,22 +9,15 @@ module.exports = {
         ORDER BY recipes.title ASC
         LIMIT $1`, [6])
     },
-    find(id, callback) {
-        db.query(`
+    find(id) {
+        return db.query(`
         SELECT recipes.*, chefs.name AS chef_name
         FROM recipes
         LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        WHERE recipes.id = $1`, [id], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows[0])
-
-        })
+        WHERE recipes.id = $1`, [id])
     },
     paginate(params) {
-        const { filter, limit, offset, callback } = params
+        const { filter, limit, offset } = params
 
         let query = "",
             filterQuery = "",
@@ -65,12 +43,6 @@ module.exports = {
         LIMIT $1 OFFSET $2
         `
 
-        db.query(query, [limit, offset], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-        })
+        return db.query(query, [limit, offset])
     }
 }

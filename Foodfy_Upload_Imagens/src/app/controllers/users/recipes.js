@@ -28,7 +28,7 @@ module.exports = {
         return res.render("users/index", { recipes })
 
     },
-    recipes(req, res) {
+    async allRecipes(req, res) {
         let { filter, page, limit } = req.query
 
         page = page || 1
@@ -40,32 +40,58 @@ module.exports = {
             page,
             limit,
             offset,
-            callback(recipes) {
-
-                let total = 0
-
-                if (recipes[0]) {
-                    total = recipes[0].total
-                }
-
-                const pagination = {
-                    total: Math.ceil(total / limit),
-                    page
-                }
-
-                return res.render("users/recipes", { recipes, pagination, filter, total })
-            }
         }
 
-        Recipes.paginate(params)
-    },
-    show(req, res) {
-        Recipes.find(req.params.id, function (recipe) {
-            if (!recipe) {
-                res.send("Recipe not found!")
-            }
+        // get recipes
+        let results = await Recipes.paginate(params)
+        const prepRecipes = results.rows
 
-            return res.render("users/recipe", { recipe })
-        })
+        // get files
+        let recipes = []
+
+        for (let recipe of prepRecipes) {
+            results = await RecipeFile.findFilesId(recipe.id)
+            const files = results.rows.map(file => ({
+                ...file,
+                src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+            }))
+
+            recipe = ({
+                ...recipe, 
+                files
+            })
+
+            recipes.push(recipe)
+        }
+
+        let total = 0
+
+        if (recipes[0]) {
+            total = recipes[0].total
+        }
+
+        const pagination = {
+            total: Math.ceil(total / limit),
+            page
+        }
+
+        return res.render("users/recipes", { recipes, pagination, filter })
+
+    },
+    async show(req, res) {
+        let results = await Recipes.find(req.params.id)
+        const recipe = results.rows[0]
+
+        if (!recipe) return res.send("Recipe not found!")
+
+        // get files
+        results = await RecipeFile.findFilesId(recipe.id)
+        let files = results.rows
+        files = files.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("users/recipe", { recipe, files })
     }
 }

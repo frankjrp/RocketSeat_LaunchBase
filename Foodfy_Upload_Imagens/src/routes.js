@@ -16,7 +16,7 @@ routes.get('/admin', function (req, res) {
 })
 
 routes.get('/index', UserRecipes.index)
-routes.get('/recipes', UserRecipes.recipes)
+routes.get('/recipes', UserRecipes.allRecipes)
 routes.get('/recipes/:id', UserRecipes.show)
 routes.get('/chefs', UserChefs.chefs)
 routes.get('/about', UserAbout.about)
