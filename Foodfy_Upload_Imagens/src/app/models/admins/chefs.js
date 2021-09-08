@@ -3,7 +3,7 @@ const db = require('../../../config/db')
 
 module.exports = {
     paginate(params) {
-        const { limit, offset, callback } = params
+        const { limit, offset } = params
 
         let query = "",
             totalQuery = `(SELECT count(*) FROM chefs) AS total`
@@ -15,13 +15,7 @@ module.exports = {
         LIMIT $1 OFFSET $2
         `
 
-        db.query(query, [limit, offset], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-        })
+        return db.query(query, [limit, offset])
     },
     create(data, callback) {
         const query = `
@@ -48,7 +42,7 @@ module.exports = {
 
         })
     },
-    find(id, callback) {
+    find(id) {
         let query = "",
             totalRecipes = `(SELECT count(*) FROM recipes WHERE recipes.chef_id = $1) AS total`
 
@@ -58,16 +52,10 @@ module.exports = {
         WHERE chefs.id = $1
         `
 
-        db.query(query, [id], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows[0])
-        })
+        return db.query(query, [id])
     },
     findChefRecipes(params) {
-        const { id, limit, offset, callback } = params
+        const { id, limit, offset } = params
 
         let query = "",
             totalQuery = `(SELECT count(*) FROM recipes WHERE recipes.chef_id = $1) AS total`
@@ -81,13 +69,7 @@ module.exports = {
         LIMIT $2 OFFSET $3
         `
 
-        db.query(query, [id, limit, offset], function (err, results) {
-            if (err) {
-                throw `Database error! ${err}`
-            }
-
-            callback(results.rows)
-        })
+        return db.query(query, [id, limit, offset])
     },
     update(data, callback) {
         const query = `
