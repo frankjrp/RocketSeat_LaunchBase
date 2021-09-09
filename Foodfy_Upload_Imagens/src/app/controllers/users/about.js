@@ -1,9 +1,10 @@
 const About = require('../../models/users/about')
 
 module.exports = {
-    about(req, res) {
-        About.about(function (about) {
-            return res.render("users/about", { about })
-        })
+    async about(req, res) {
+        let results = await About.about()
+        const about = results.rows[0]
+
+        return res.render("users/about", { about })
     }
 }
