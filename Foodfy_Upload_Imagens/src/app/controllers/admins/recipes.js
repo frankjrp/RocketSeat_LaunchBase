@@ -119,12 +119,11 @@ module.exports = {
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1) // [1,2,3]
 
-            const removedFilesPromise = removedFiles.map(id => {
-                RecipeFile.delete(id)
-                    .then(File.delete(id))
-            })
+            const removeRecipeFilePromise = removedFiles.map(id => RecipeFile.delete(id))
+            await Promise.all(removeRecipeFilePromise)
 
-            await Promise.all(removedFilesPromise)
+            const removeFilePromise = removedFiles.map(id => File.delete(id))
+            await Promise.all(removeFilePromise)
         }
 
         if (req.files.length != 0) {
@@ -149,18 +148,12 @@ module.exports = {
         let results = await RecipeFile.findFilesId(req.body.id)
         let files = results.rows
 
-        const removeRecipeFiles = files.map(file => {
-            console.log("Remove File: " + file.id)
+        const removeRecipeFilePromise = files.map(file => RecipeFile.delete(file.id))
+        await Promise.all(removeRecipeFilePromise)
 
-            RecipeFile.delete(file.id)
-        })
-
-        const removeFiles = files.map(file => {
-            File.delete(file.id)
-        })
-
-        await Promise.all(removeRecipeFiles)
-        await Promise.all(removeFiles)
+        const removeFilePromise = files.map(file => File.delete(file.id))
+        await Promise.all(removeFilePromise)
+        
         await Recipes.delete(req.body.id)
 
         return res.redirect("/admin/recipes")
