@@ -119,11 +119,10 @@ module.exports = {
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1) // [1,2,3]
 
-            const removeRecipeFilePromise = removedFiles.map(id => RecipeFile.delete(id))
-            await Promise.all(removeRecipeFilePromise)
-
-            const removeFilePromise = removedFiles.map(id => File.delete(id))
-            await Promise.all(removeFilePromise)
+            await Promise.all(removedFiles.map(async id => {
+                await RecipeFile.delete(id)
+                await File.delete(id)
+            }))
         }
 
         if (req.files.length != 0) {
@@ -148,11 +147,10 @@ module.exports = {
         let results = await RecipeFile.findFilesId(req.body.id)
         let files = results.rows
 
-        const removeRecipeFilePromise = files.map(file => RecipeFile.delete(file.id))
-        await Promise.all(removeRecipeFilePromise)
-
-        const removeFilePromise = files.map(file => File.delete(file.id))
-        await Promise.all(removeFilePromise)
+        await Promise.all(files.map(async file => {
+            await RecipeFile.delete(file.id)
+            await File.delete(file.id)
+        }))
         
         await Recipes.delete(req.body.id)
 

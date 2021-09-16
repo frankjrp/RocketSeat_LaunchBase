@@ -26,9 +26,9 @@ module.exports = {
         WHERE recipe_files.recipe_id = $1
         ORDER BY files.id`, [id])
     },
-    async delete(id) {
+    delete(id) {
         try {
-            return await db.query(`DELETE FROM recipe_files WHERE file_id = $1`, [id])
+            return db.query(`DELETE FROM recipe_files WHERE file_id = $1`, [id])
 
         }catch(err) {
             console.error(err)
