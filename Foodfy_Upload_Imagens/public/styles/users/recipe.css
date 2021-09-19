@@ -93,15 +93,47 @@ body {
     box-shadow: 0 0 0 3px #6558C3;
 }
 
-.card .image-container {
-    margin-bottom: 20px;
+/* === IMAGE GALLERY === */
+
+.card .gallery {
+    display: grid;
+    row-gap: 6px;
 }
 
-.card .image-container img {
+.card .gallery .highlight img {
     width: 100%;
     height: 280px;
     border-radius: 15px;
+    object-fit: cover;
 }
+
+.card .gallery-preview {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 6px;
+}
+
+.card .gallery-preview .all_images-container {
+    display: flex;
+    column-gap: 10px;
+}
+
+.card .gallery-preview .all_images-container img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #DDDDDD;
+    border-radius: 3.5px;
+    object-fit: cover;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.card .gallery-preview .all_images-container img:hover,
+.card .gallery-preview .all_images-container img.active {
+    opacity: unset;
+}
+
+/* === CARD CONTENT === */
 
 .card-content {
     display: grid;
