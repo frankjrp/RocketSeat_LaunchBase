@@ -63,17 +63,15 @@ module.exports = {
         let results = await Recipes.create(req.body)
         const recipeId = results.rows[0].id
 
-        const filesPromise = req.files.map(file => {
-            File.create({ ...file })
-                .then(file => {
+        await Promise.all(req.files.map(async file => {
+            await File.create({ ...file })
+                .then(async file => {
                     const fileId = file.rows[0].id
-                    RecipeFile.create({ recipeId, fileId })
+                    await RecipeFile.create({ recipeId, fileId })
                 })
-        })
+        }))
 
-        await Promise.all(filesPromise)
-
-        return res.redirect(`/admin/recipes`)
+        return res.redirect(`/admin/recipes/${recipeId}`)
     },
     async show(req, res) {
         let results = await Recipes.find(req.params.id)
@@ -127,16 +125,14 @@ module.exports = {
 
         if (req.files.length != 0) {
             const recipeId = req.body.id
-
-            const newFilesPromise = req.files.map(file => {
-                File.create({ ...file })
-                    .then(file => {
+            
+            await Promise.all(req.files.map(async file => {
+                await File.create({ ...file })
+                    .then(async file => {
                         const fileId = file.rows[0].id
-                        RecipeFile.create({ recipeId, fileId })
+                        await RecipeFile.create({ recipeId, fileId })
                     })
-            })
-
-            await Promise.all(newFilesPromise)
+            }))
         }
 
         await Recipes.update(req.body)
